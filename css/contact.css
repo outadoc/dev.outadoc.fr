@@ -1,0 +1,37 @@
+.page-header h1 {
+	font-size: 40px;
+}
+
+.page-header {
+	padding: 30px;
+	margin-bottom: 0;
+}
+
+.span4 {
+	text-align: justify;
+	margin-left: 40px;
+	border-left: 1px solid #eee;
+	padding-left: 10px;
+}
+
+.span6 {
+	margin-left: 0;
+}
+
+#recaptcha_widget_div {
+	float: right;
+}
+
+.form-actions {
+	padding-bottom: 15px;
+	margin-bottom: 0;
+}
+
+.form {
+	margin-bottom: 0;
+}
+
+.content .span12 {
+	margin-top: 0;
+	width: 828px;
+}
