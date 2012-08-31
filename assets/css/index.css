@@ -1,0 +1,69 @@
+.page-header {
+	width: 100%;
+	height: 250px;
+	background: url("../img/bg.jpg") repeat 40% 40%;
+	background-size: cover;
+	margin-top: 0;
+	margin-bottom: 10px;
+	border-top: 1px solid #bdbdbd;
+	border-bottom: 1px solid #bdbdbd;
+}
+
+#home-info div {
+	text-align: justify;
+}
+
+#home-info div h1 {
+	font-size: 23px;
+}
+
+.page-header .thumbnails {
+	width: auto;
+	display: table;
+	margin: auto;
+	padding-top: 40px;
+}
+
+.page-header .thumbnail {
+	width: auto;
+	height: auto;
+	margin: auto;
+	padding: 20px;
+	border: none;
+	overflow: hidden;
+	margin: auto;
+	display: table-cell;
+	
+	-webkit-box-shadow: none;
+			box-shadow: none;
+}
+
+.page-header .thumbnail a {
+	display: block;
+	border-radius: 55px;
+	overflow: hidden;
+	border: 3px solid #ffffff;
+	
+	-webkit-transition: border-radius 300ms;
+	   -moz-transition: border-radius 300ms;
+			transition: border-radius 300ms;
+	-webkit-box-shadow: 0 0 30px #b2b2b2;
+	   -moz-box-shadow: 0 0 30px #b2b2b2;
+			box-shadow: 0 0 30px #b2b2b2;
+}
+
+.page-header .thumbnail a:hover {
+	border-radius: 20px;
+}
+
+.page-header .thumbnail img {
+	height: 100px;
+	width: 100px;
+}
+
+.page-header .thumbnail h3 {
+	margin-top: 17px;
+	color: white;
+	text-align: center;
+	font: 18px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
