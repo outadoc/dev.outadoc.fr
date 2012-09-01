@@ -63,10 +63,10 @@ include_once('includes/sql.php');
 		<?php include_once("includes/footer.php"); ?>
 		<script type="text/javascript">
 			$('#screenshots-bg ul li').click(function() {
-				if($(this).css('height') == '390px') {
+				if($(this).css('height') != '150px') {
 					$(this).css('height', '150px');
 				} else {
-					$(this).css('height', '390px');
+					$(this).css('height', $(this).children('img').css('height'));
 				}
 			});
 			$('#screenshots-bg ul li').mouseleave(function() {
