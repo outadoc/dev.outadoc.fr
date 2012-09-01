@@ -72,12 +72,17 @@ html, body {
 }
 
 /*content*/
-.container {
-	width: 870px;
-}
-
 body, body p {
 	font-family: Verdana, Arial, serif;
+}
+
+.page-header {
+	padding: 0;
+	margin-top: 0;
+}
+
+.page-header h1 {
+	font-size: 24px;
 }
 
 /*footer*/
