@@ -18,7 +18,7 @@ include_once('includes/sql.php');
 	    			while($data = $query->fetch()) {
     				?>
     					<li class="thumbnail">
-    						<a href="projects/<?php echo $data['name_normalized']; ?>"><img src="assets/img/data/icon/<?php echo $data['name_normalized']; ?>.png" alt="" /></a>
+    						<a href="projects/<?php echo $data['name_normalized']; ?>/"><img src="assets/img/data/icon/<?php echo $data['name_normalized']; ?>.png" alt="" /></a>
     						<h3><?php echo $data['name']; ?></h3>
     					</li>
     				<?php
@@ -33,11 +33,19 @@ include_once('includes/sql.php');
 	    	<div class="row" id="home-info">
 	    		<div class="span5">
 	    			<h1>Amateur Programming</h1>
-	    			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a faucibus nunc. Integer tincidunt, ligula eget lobortis pharetra, ligula tellus suscipit mi, ut pharetra erat justo in odio. In ut erat sit amet nulla ullamcorper semper. Cras fringilla, dolor lobortis egestas auctor, justo urna interdum sem, vel pharetra sapien sem ut urna.
+	    			I'm a young developer who has completed a few projects; you can find them on this website. You can also find most of them on my <a href="http://github.com/outadoc">Github repo</a>, and you can <a href="http://twitter.com/outadoc">follow me</a> on Twitter.
 	    		</div>
 	    		<div class="span5 offset1">
 	    			<h1>Donate!</h1>
-	    			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a faucibus nunc. Integer tincidunt, ligula eget lobortis pharetra, ligula tellus suscipit mi, ut pharetra erat justo in odio. In ut erat sit amet nulla ullamcorper semper. Cras fringilla, dolor lobortis egestas auctor, justo urna interdum sem, vel pharetra sapien sem ut urna.
+	    			I distribute most of my apps for free, and they are often open-source. If you feel the need to thank me, you can do so by clicking the button below. Thanks!&nbsp;:)
+	    			<div class="donate-container">
+	    				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+	    					<input type="hidden" name="cmd" value="_s-xclick">
+	    					<input type="hidden" name="hosted_button_id" value="RSVCTFJFV7PNW">
+	    					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+	    					<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+	    				</form>
+	    			</div>
 	    		</div>
 	    	</div>
 	    </div>
