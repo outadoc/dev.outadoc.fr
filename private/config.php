@@ -11,7 +11,6 @@ define('MYSQL_HOSTNAME', 'localhost');     					//host name of the mysql server
 define('MYSQL_DATABASE', 'outadev');  						//name of the mysql database
 
 /***** ADMIN VARS *****/
-define('ADMIN_PASSWORD', '');								//password for the administration section
 define('CONTACT_EMAIL', 'outadev@outadoc.fr');				//email address where the manager can be contacted (used for forms)
 
 /***** USER TRACKING *****/
