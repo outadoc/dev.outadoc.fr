@@ -70,6 +70,9 @@ include_once('includes/sql.php');
 					$(this).css('height', '390px');
 				}
 			});
+			$('#screenshots-bg ul li').mouseleave(function() {
+				$(this).css('height', '150px');
+			});
 		</script>
 	</body>
 </html>
