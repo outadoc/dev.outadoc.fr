@@ -49,15 +49,14 @@ include_once('includes/sql.php');
 						<h2><?php 
 							if($data['price'] != null){
 								echo $data['price'] . ' - ';
-							} 
-							if($data['download_version'] != null){
+							} if($data['download_version'] != null){
 								echo 'v' . $data['download_version'] . ' - ';
 							} if($data['download_size'] != null){
 								echo $data['download_size'] . 'Mo';
 							} 
 						?></h2>
 					</a>
-					<a class="btn" href="<?php echo ROOT_SITE_URL; ?>contact.php">Report a bug</a>
+					<a class="btn" href="<?php echo ROOT_SITE_URL; ?>contact.html"><i class="icon-flag"></i>&nbsp;Report a bug</a>
 				</div>
 			</div>
 		</div>

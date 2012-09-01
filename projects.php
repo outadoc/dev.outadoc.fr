@@ -11,7 +11,7 @@ include_once('includes/sql.php');
 	    include_once("includes/navbar.php");
 	 	
 	 	function get_thumbnail($data) {
-	 		return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'projects/' . $data['name_normalized'] . '" title="' . $data['name'] . '" data-content="' . $data['description_short'] . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="" /><div class="caption">' . $data['name'] . '</div></a></li>';
+	 		return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'projects/' . $data['name_normalized'] . '/" title="' . $data['name'] . '" data-content="' . $data['description_short'] . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="" /><div class="caption">' . $data['name'] . '</div></a></li>';
 	 	}
 	 	
 	    function display_projects($db, $cat_id, $cat_disp_name) {
@@ -38,13 +38,17 @@ include_once('includes/sql.php');
 	    	<?php
 	    }
 	    ?>
+	    
 	    <div class="container">
+	    	<div class="page-header">
+	    		<h1>Projects</h1>
+	    	</div>
 	   		<?php 
 	   		try {
 	   			$db = get_PDO_connection();
 	   			
-	   			display_projects($db, 'app', 'Applications');
-	   			display_projects($db, 'desktop', 'Programs');
+	   			display_projects($db, 'app', 'Mobile Applications');
+	   			display_projects($db, 'desktop', 'Desktop Programs');
 	   			display_projects($db, 'web', 'Websites');
 	   			display_projects($db, 'extension', 'Browser Extensions');
 	   			display_projects($db, 'other', 'Other');
