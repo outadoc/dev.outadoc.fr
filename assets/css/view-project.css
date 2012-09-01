@@ -71,36 +71,36 @@
 	width: 100%;
 }
 
-#one {
+#one img {
 	background-color: #2062fe;	
 }
 
-#two {
+#two img {
 	background-color: #3d83ff;
 }
 
-#three {
+#three img {
 	background-color: #4dabfe;
 }
 
-#four {
+#four img {
 	background-color: #7bd0ff;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 	#two, #three, #four {
-		display: none;
+		visibility: hidden;
 	}
 }
  
-@media (max-width: 900px) {
+@media (max-width: 910px) {
 	#three, #four {
-		display: none;
+		visibility: hidden;
 	}
 }
  
-@media (min-width: 900px) and (max-width: 1200px) {
+@media (min-width: 910px) and (max-width: 1210px) {
 	#four {
-		display: none;
+		visibility: hidden;
 	}
 }

@@ -27,13 +27,13 @@ include_once('includes/sql.php');
 			<ul>
 				<?php 
 				if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/0.png')) {
-					echo '<li><img id="one" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/0.png" /></li>';
+					echo '<li id="one"><img src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/0.png" /></li>';
 				} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/1.png')) {
-					echo '<li><img id="two" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/1.png" /></li>';
+					echo '<li id="two"><img src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/1.png" /></li>';
 				} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/2.png')) {
-					echo '<li><img id="three" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/2.png" /></li>';
+					echo '<li id="three"><img src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/2.png" /></li>';
 				} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/3.png')) {
-					echo '<li><img id="four" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/3.png" /></li>';
+					echo '<li id="four"><img src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/3.png" /></li>';
 				}
 				?>
 			</ul>
