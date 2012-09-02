@@ -54,15 +54,18 @@ include_once('includes/sql.php');
 				<div class="span3">
 					<a class="btn btn-primary" href="<?php echo $data['download_url']; ?>">
 						<?php 
-							$dl_title;
-							if($data['category'] == 'web') {
-								$dl_title = 'Go to';
-							} else {
-								$dl_title = 'Download';
-							} 
+						$dl_title;
+						
+						if($data['category'] == 'web') {
+							$dl_title = 'Go to';
+						} else {
+							$dl_title = 'Download';
+						} 
+						
+						echo '<h1>'$dl_title . ' ' . $data['name'] . '</h1>'; 
 						?>
-						<h1><?php echo $dl_title . ' ' . $data['name']; ?></h1>
-						<h2><?php 
+						<h2>
+							<?php 
 							if($data['price'] != null){
 								echo $data['price'] . ' - ';
 							} if($data['download_version'] != null){
@@ -70,7 +73,8 @@ include_once('includes/sql.php');
 							} if($data['download_size'] != null && $data['download_size'] != 0){
 								echo $data['download_size'] . 'Mo';
 							} 
-						?></h2>
+							?>
+						</h2>
 					</a>
 					<a class="btn" href="<?php echo ROOT_SITE_URL; ?>contact.html"><i class="icon-flag"></i>&nbsp;Report a bug</a>
 				</div>
