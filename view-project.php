@@ -43,7 +43,13 @@ include_once('includes/sql.php');
 		<div class="container">
 			<div class="row">
 				<div class="span8">
-					<?php echo $data['description']; ?>
+					<?php 
+					if($data['french_only']) {
+						echo '<p style="color:red;">This app is only available in French!</p>';
+					}
+					
+					echo $data['description']; 
+					?>
 				</div>
 				<div class="span3">
 					<a class="btn btn-primary" href="<?php echo $data['download_url']; ?>">
