@@ -52,7 +52,7 @@ include_once('includes/sql.php');
 					?>
 				</div>
 				<div class="span3">
-					<a class="btn btn-primary" href="<?php echo $data['download_url']; ?>">
+					<a class="btn btn-primary" target="_blank" href="<?php echo $data['download_url']; ?>">
 						<?php 
 						$dl_title;
 						
@@ -62,7 +62,7 @@ include_once('includes/sql.php');
 							$dl_title = 'Download';
 						} 
 						
-						echo '<h1>'$dl_title . ' ' . $data['name'] . '</h1>'; 
+						echo '<h1>' . $dl_title . ' ' . $data['name'] . '</h1>';
 						?>
 						<h2>
 							<?php 
