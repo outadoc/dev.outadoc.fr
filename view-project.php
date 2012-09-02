@@ -45,7 +45,7 @@ include_once('includes/sql.php');
 				<div class="span8">
 					<?php 
 					if($data['french_only']) {
-						echo '<p style="color:red;">This app is only available in French!</p>';
+						echo '<p style="color:red;">This project is only available in French!</p>';
 					}
 					
 					echo $data['description']; 
@@ -53,13 +53,21 @@ include_once('includes/sql.php');
 				</div>
 				<div class="span3">
 					<a class="btn btn-primary" href="<?php echo $data['download_url']; ?>">
-						<h1><?php echo 'Download ' . $data['name']; ?></h1>
+						<?php 
+							$dl_title;
+							if($data['category'] == 'web') {
+								$dl_title = 'Go to';
+							} else {
+								$dl_title = 'Download';
+							} 
+						?>
+						<h1><?php echo $dl_title . ' ' . $data['name']; ?></h1>
 						<h2><?php 
 							if($data['price'] != null){
 								echo $data['price'] . ' - ';
 							} if($data['download_version'] != null){
 								echo 'v' . $data['download_version'] . ' - ';
-							} if($data['download_size'] != null){
+							} if($data['download_size'] != null && $data['download_size'] != 0){
 								echo $data['download_size'] . 'Mo';
 							} 
 						?></h2>
