@@ -19,10 +19,12 @@ include_once('includes/sql.php');
 			die('Error connecting to the database: ' . $e->getMessage());
 		}
 		?>
+		<div class="container">
 			<div class="page-header">
 				<h1><?php echo $data['name']; ?></h1>
 				<h2><?php echo $data['description_short']; ?></h2>
 			</div>
+		</div>
 		<div id="screenshots-bg">
 			<ul>
 				<?php 
