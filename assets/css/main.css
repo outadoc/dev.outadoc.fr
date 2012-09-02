@@ -7,7 +7,6 @@ html, body {
 .navbar {
 	margin-top: 20px;
 	margin-bottom: 0;
-	height: 40px;
 }
 
 .navbar .navbar-inner {
@@ -15,12 +14,8 @@ html, body {
 	box-shadow: none;
 	margin: auto;
 	padding: 0;
-	width: 870px;
+	width: 70%;
 	border: none;
-}
-
-.navbar .nav {
-	height: 30px;
 }
 
 .navbar .nav li a {
@@ -66,7 +61,7 @@ html, body {
 	color: #0b0b0b;
 	font-weight: bold;
 	font-size: 25px;
-	padding-left: 0;
+	margin-left: 1%;
 	margin-top: -10px;
 	font-family: "Helvetica Neue", Verdana, Arial, serif;
 }
