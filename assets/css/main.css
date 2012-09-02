@@ -14,10 +14,36 @@ html, body {
 	box-shadow: none;
 	margin: auto;
 	padding: 0;
-	width: 70%;
 	border: none;
 }
 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.navbar .navbar-inner {
+		width: 100%;
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.navbar .navbar-inner {
+		width: 90%;
+	}
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.navbar .navbar-inner {
+		width: 80%;
+	}
+}
+ 
+/* Large desktop */
+@media (min-width: 1200px) {
+	.navbar .navbar-inner {
+		width: 70%;
+	}
+}
 .navbar .nav li a {
 	-webkit-transition: margin-top 0.3s, color 0.3s;
 	   -moz-transition: margin-top 0.3s, color 0.3s;
