@@ -52,9 +52,9 @@ include_once('includes/sql.php');
 	   			$db = get_PDO_connection();
 	   			
 	   			display_projects($db, 'app', 'Mobile Applications');
-	   			display_projects($db, 'desktop', 'Desktop Programs');
 	   			display_projects($db, 'web', 'Websites');
 	   			display_projects($db, 'extension', 'Browser Extensions');
+	   			display_projects($db, 'desktop', 'Desktop Programs');
 	   			display_projects($db, 'other', 'Other');
 	   		} catch (Exception $e) {
 	   			die('Error connecting to the database: ' . $e->getMessage());
