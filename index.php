@@ -28,7 +28,7 @@ include_once('includes/sql.php');
 	    		}
 	    		?>
 	    		<li class="thumbnail other">
-	    			<a href="<?php echo ROOT_SITE_URL; ?>projects/"><img src="assets/img/other.png" alt="" /></a>
+	    			<a href="<?php echo ROOT_SITE_URL; ?>projects.html"><img src="assets/img/other.png" alt="" /></a>
 	    			<h3>Other</h3>
 	    		</li>
 	    	</ul>
