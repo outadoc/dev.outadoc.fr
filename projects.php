@@ -11,7 +11,11 @@ include_once('includes/sql.php');
 	    include_once("includes/navbar.php");
 	 	
 	 	function get_thumbnail($data) {
-	 		return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'projects/' . $data['name_normalized'] . '/" title="' . $data['name'] . '" data-content="' . $data['description_short'] . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="" /><div class="caption">' . $data['name'] . '</div></a></li>';
+	 		$language_alert='';
+	 		if($data['french_only']) {
+	 			$language_alert = '<p class=\'language-alert\'>This project is available in French only.</p>';
+	 		}
+	 		return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'projects/' . $data['name_normalized'] . '/" title="' . $data['name'] . '" data-content="' . $data['description_short'] . $language_alert . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="" /><div class="caption">' . $data['name'] . '</div></a></li>';
 	 	}
 	 	
 	    function display_projects($db, $cat_id, $cat_disp_name) {
@@ -60,7 +64,7 @@ include_once('includes/sql.php');
 	    <?php include_once("includes/footer.php"); ?>
 	    <script type="text/javascript">
 	    	$('.thumbnail a').popover({
-	    		html: false,
+	    		html: true,
 	    		trigger: 'hover'
 	    	});
 	    </script>

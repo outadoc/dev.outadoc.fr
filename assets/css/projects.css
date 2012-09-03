@@ -40,3 +40,8 @@
 .projects-list p {
 	margin-left: 20px;
 }
+
+.language-alert {
+	color: red;
+	font-size: 10px;
+}
