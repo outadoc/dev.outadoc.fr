@@ -44,12 +44,8 @@ include_once('private/config.php');
 				
 				$msg = "<html><body><h1 style=\"font-size:25px; font-family: Minecraft\">Formulaire de contact outa[dev]</h1><hr /><div style=\"font-size:17px; line-height: 1.5;\"><p>" . str_replace("\n", "<br />", stripslashes(htmlspecialchars($_POST['inputMessage']))) . "</p><p>-- " . $_POST['inputName'] . "</p></div></body></html>";
 				
-				$error = mail(CONTACT_EMAIL, $subject, $msg, $headers);
-				if($error) {
-					$error_text = "Could not send the mail.";
-				} else {
-					$success = true;
-				}
+				mail(CONTACT_EMAIL, $subject, $msg, $headers);
+				$success = true;
 			}
 		}
 		?>
