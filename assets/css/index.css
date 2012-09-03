@@ -7,6 +7,7 @@
 	margin-bottom: 10px;
 	border-top: 1px solid #bdbdbd;
 	border-bottom: 1px solid #bdbdbd;
+	overflow: hidden;
 }
 
 #home-info div {
@@ -67,6 +68,17 @@
 	color: white;
 	text-align: center;
 	font: 18px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+.page-header .other {
+	opacity: .5;
+	padding-top: 32px;
+}
+
+.page-header .other a {
+	border-radius: 20px;
+	height: 80px;
+	width: 80px;
 }
 
 .donate-container {

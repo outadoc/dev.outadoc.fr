@@ -27,6 +27,10 @@ include_once('includes/sql.php');
 	    			die('Erreur lors de la connexion à la base de données : ' . $e->getMessage());
 	    		}
 	    		?>
+	    		<li class="thumbnail other">
+	    			<a href="<?php echo ROOT_SITE_URL; ?>projects/"><img src="assets/img/other.png" alt="" /></a>
+	    			<h3>Other</h3>
+	    		</li>
 	    	</ul>
 	    </div>
 	    <div class="container">
