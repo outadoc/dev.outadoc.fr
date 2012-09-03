@@ -15,6 +15,7 @@ $db->query("CREATE TABLE IF NOT EXISTS `projects` (
   `download_version` varchar(5) DEFAULT NULL,
   `download_size` float DEFAULT NULL,
   `price` varchar(5) DEFAULT NULL,
+  `browse_source` varchar(400) DEFAULT NULL,
   `show_on_home` tinyint(1) NOT NULL DEFAULT '0',
   `french_only` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
