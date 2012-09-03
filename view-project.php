@@ -42,7 +42,7 @@ include_once('includes/sql.php');
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="span8">
+				<div class="span6 offset1">
 					<?php 
 					if($data['french_only']) {
 						echo '<p style="color:red;">This project is only available in French!</p>';
