@@ -71,22 +71,6 @@
 	width: 100%;
 }
 
-#one img {
-	background-color: #2062fe;	
-}
-
-#two img {
-	background-color: #3d83ff;
-}
-
-#three img {
-	background-color: #4dabfe;
-}
-
-#four img {
-	background-color: #7bd0ff;
-}
-
 @media (max-width: 650px) {
 	#two, #three, #four {
 		visibility: hidden;
