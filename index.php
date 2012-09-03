@@ -31,11 +31,11 @@ include_once('includes/sql.php');
 	    </div>
 	    <div class="container">
 	    	<div class="row" id="home-info">
-	    		<div class="span5">
+	    		<div class="span5 offset1">
 	    			<h1>Amateur Programming</h1>
 	    			I'm a young developer who has completed a few projects; you can find them on this website. You can also find most of them on my <a href="http://github.com/outadoc">Github repo</a>, and you can <a href="http://twitter.com/outadoc">follow me</a> on Twitter.
 	    		</div>
-	    		<div class="span5 offset1">
+	    		<div class="span5">
 	    			<h1>Donate!</h1>
 	    			I distribute most of my apps for free, and they are often open-source. If you feel the need to thank me, you can do so by clicking the button below. Thanks!&nbsp;:)
 	    			<div class="donate-container">
