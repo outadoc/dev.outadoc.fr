@@ -65,7 +65,9 @@ include_once('includes/sql.php');
 	    <script type="text/javascript">
 	    	$('.thumbnail a').popover({
 	    		html: true,
-	    		trigger: 'hover'
+	    		trigger: 'hover',
+	    		placement: 'top',
+	    		delay: 50
 	    	});
 	    </script>
 	</body>
