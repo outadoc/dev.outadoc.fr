@@ -13,7 +13,7 @@ include_once('includes/sql.php');
 	 	function get_thumbnail($data) {
 	 		$language_alert='';
 	 		if($data['french_only']) {
-	 			$language_alert = '<p class=\'language-alert\'>This project is available in French only.</p>';
+	 			$language_alert = '<p class=\'language-alert\'>This project is only available in French.</p>';
 	 		}
 	 		return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'project/' . $data['name_normalized'] . '/" title="' . $data['name'] . '" data-content="' . $data['description_short'] . $language_alert . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="" /><div class="caption">' . $data['name'] . '</div></a></li>';
 	 	}
