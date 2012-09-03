@@ -2,5 +2,5 @@ Options -Indexes
 Options +FollowSymlinks
 
 RewriteEngine on
-RewriteRule ^projects/([^/\.]+)/?$ view-project.php?name=$1 [L]
+RewriteRule ^project/([^/\.]+)/?$ view-project.php?name=$1 [L]
 RewriteRule ^(.*)\.html$ $1.php [nc]
