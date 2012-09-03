@@ -12,7 +12,7 @@ include_once('includes/sql.php');
 
 		try {
 			$db = get_PDO_connection();
-			$query = $db->prepare("SELECT * FROM projects WHERE name_normalized=?");
+			$query = $db->prepare("SELECT * FROM dev_projects WHERE name_normalized=?");
 			$query->execute(array($_GET['name']));
 			$data = $query->fetch();
 		} catch (Exception $e) {

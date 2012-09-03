@@ -13,7 +13,7 @@ include_once('includes/sql.php');
 	    		<?php 
 	    		try {
 	    			$db = get_PDO_connection();
-	    			$query = $db->query("SELECT * FROM projects WHERE show_on_home=1");
+	    			$query = $db->query("SELECT * FROM dev_projects WHERE show_on_home=1");
 
 	    			while($data = $query->fetch()) {
     				?>

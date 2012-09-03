@@ -19,7 +19,7 @@ include_once('includes/sql.php');
 	 	}
 	 	
 	    function display_projects($db, $cat_id, $cat_disp_name) {
-	    	$query = $db->prepare("SELECT * FROM projects WHERE category=?");
+	    	$query = $db->prepare("SELECT * FROM dev_projects WHERE category=?");
 	    	$query->execute(array($cat_id));
 	    	
 	    	?>
