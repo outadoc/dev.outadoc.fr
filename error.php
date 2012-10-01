@@ -85,13 +85,18 @@
 				color: lightgray;
 			}
 			
+			.links a {
+				text-decoration: none;
+				color: gray;
+			}
+			
 		</style>
 
 		<div id="wrapper">
 			<div id="content">
 				<h1>Error <?php echo htmlspecialchars($_GET['code']); ?> <small><?php echo $code_string[0]; ?></small></h1>
 				<p><?php echo $code_string[1]; ?></p>
-				<div class="links"><a href="#" onclick="history.go(0);">Réessayer</a> ou <a href="./">retourner à l'accueil</a></div>
+				<div class="links"><a href="#" onclick="document.location.reload(true);">RETRY</a> | <a href="./">HOME</a> | <a href="#" onclick="history.go(0);">PREVIOUS</a></div>
 			</div>
 		</div>
 	</body>
