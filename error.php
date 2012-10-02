@@ -119,7 +119,7 @@
 				<div id="carrot">
 					<img src="<?php echo ROOT_SITE_URL; ?>assets/img/carrot.png" alt="" />
 				</div>
-				<div class="links"><a href="#" onclick="document.location.reload(true);">RETRY</a> | <a href="<?php echo ROOT_SITE_URL; ?>">HOME</a> | <a href="#" onclick="history.go(0);">PREVIOUS</a></div>
+				<div class="links"><a href="<?php echo ROOT_SITE_URL; ?>">HOME</a> | <a href="#" onclick="history.go(0);">PREVIOUS</a></div>
 			</div>
 		</div>
 	</body>
