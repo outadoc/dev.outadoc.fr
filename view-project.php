@@ -52,7 +52,7 @@ include_once('includes/sql.php');
 					?>
 				</div>
 				<div class="span3">
-					<a class="btn btn-primary btn-dl" target="_blank" href="<?php echo $data['download_url']; ?>">
+					<a class="btn btn-primary btn-dl" href="<?php echo $data['download_url']; ?>">
 						<?php 
 						$dl_title;
 						
@@ -81,7 +81,7 @@ include_once('includes/sql.php');
 						echo '<a class="btn btn-source" href="' . $data['browse_source'] . '">Browse source</a>';
 					} 
 					?>
-					<a class="btn" target="_blank" href="<?php echo ROOT_SITE_URL; ?>contact.html"><i class="icon-flag"></i>&nbsp;Report a bug</a>
+					<a class="btn" href="<?php echo ROOT_SITE_URL; ?>contact.html"><i class="icon-flag"></i>&nbsp;Report a bug</a>
 				</div>
 			</div>
 		</div>
