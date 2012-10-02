@@ -1,4 +1,6 @@
 <?php 
+	include_once('private/config.php');
+	
 	function get_message_from_http_error($code) {
 		switch($code) {
 			case 400:
@@ -68,8 +70,8 @@
 			#wrapper {
 				position: absolute;
 				top: 50%;
-				height: 240px;
-				margin-top: -140px;
+				height: 350px;
+				margin-top: -200px;
 				width: 99%;
 			}
 
@@ -90,13 +92,34 @@
 				color: gray;
 			}
 			
+			.links {
+				margin-top: 30px;
+			}
+			
+			#carrot img {
+				width: 500px;
+				height: auto;
+			}
+			
+			#carrot {
+				width: 100%;
+			}
+			
+			.very-small {
+				font-size: 10px;
+			}
+			
 		</style>
 
 		<div id="wrapper">
 			<div id="content">
 				<h1>Error <?php echo htmlspecialchars($_GET['code']); ?> <small><?php echo $code_string[0]; ?></small></h1>
 				<p><?php echo $code_string[1]; ?></p>
-				<div class="links"><a href="#" onclick="document.location.reload(true);">RETRY</a> | <a href="./">HOME</a> | <a href="#" onclick="history.go(0);">PREVIOUS</a></div>
+				<small class="very-small">Here's a flying carrot to comfort you. &lt;3</small>
+				<div id="carrot">
+					<img src="<?php echo ROOT_SITE_URL; ?>assets/img/carrot.png" alt="" />
+				</div>
+				<div class="links"><a href="#" onclick="document.location.reload(true);">RETRY</a> | <a href="<?php echo ROOT_SITE_URL; ?>">HOME</a> | <a href="#" onclick="history.go(0);">PREVIOUS</a></div>
 			</div>
 		</div>
 	</body>
