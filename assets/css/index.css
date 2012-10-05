@@ -1,12 +1,12 @@
 .page-header {
 	width: 100%;
-	height: 250px;
+	height: 280px;
 	background-image: url("../img/bg.jpg");
 	background-size: cover;
 	margin-top: 0;
 	margin-bottom: 10px;
-	border-top: 1px solid #bdbdbd;
-	border-bottom: 1px solid #bdbdbd;
+	border-top: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
 	overflow: hidden;
 }
 
@@ -22,7 +22,7 @@
 	display: table;
 	width: auto;
 	margin: auto;
-	padding-top: 35px;
+	padding-top: 50px;
 }
 
 .page-header .thumbnail {
@@ -68,6 +68,7 @@
 	color: white;
 	text-align: center;
 	font: 18px "Lucida Grande", Lucida, Verdana, sans-serif;
+	text-shadow: 0 0 2px #424242;
 }
 
 .page-header .other {
