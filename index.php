@@ -1,6 +1,13 @@
 <?php 
 include_once('private/config.php');
 include_once('includes/sql.php');
+
+try {
+	$db = get_PDO_connection();
+	$query = $db->query("SELECT * FROM dev_projects WHERE show_on_home=1");
+} catch (Exception $e) {
+	header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,10 +18,6 @@ include_once('includes/sql.php');
 	    <div class="page-header">
 	    	<ul class="thumbnails">
 	    		<?php 
-	    		try {
-	    			$db = get_PDO_connection();
-	    			$query = $db->query("SELECT * FROM dev_projects WHERE show_on_home=1");
-
 	    			while($data = $query->fetch()) {
     				?>
     					<li class="thumbnail">
@@ -23,9 +26,6 @@ include_once('includes/sql.php');
     					</li>
     				<?php
 	    			}
-	    		} catch (Exception $e) {
-	    			die('Erreur lors de la connexion à la base de données : ' . $e->getMessage());
-	    		}
 	    		?>
 	    		<li class="thumbnail other">
 	    			<a href="<?php echo ROOT_SITE_URL; ?>projects.html"><img src="assets/img/other.png" alt="" /></a>

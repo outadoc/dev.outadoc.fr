@@ -12,7 +12,7 @@ try {
 		header("Location: " . ROOT_SITE_URL . "error.php?code=-200");
 	}
 } catch (Exception $e) {
-	die('Error connecting to the database: ' . $e->getMessage());
+	header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
 }
 
 ?>

@@ -23,8 +23,7 @@ try {
 	  PRIMARY KEY (`id`)
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0");
 } catch(PDOException $e) {
-	echo "Could not connect to SQL database.";
-	exit();
+	header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
 }
 
 ?>
