@@ -131,4 +131,8 @@ footer p a img {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
+	
+	.btn {
+		padding: 0;
+	}
 }
