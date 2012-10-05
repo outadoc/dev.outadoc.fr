@@ -1,24 +1,27 @@
 <?php 
 include_once('private/config.php');
 include_once('includes/sql.php');
+
+try {
+	$db = get_PDO_connection();
+	$query = $db->prepare("SELECT * FROM dev_projects WHERE name_normalized=?");
+	$query->execute(array($_GET['name']));
+	$data = $query->fetch();
+	
+	if($query->rowCount() < 1) {
+		header("Location: " . ROOT_SITE_URL . "error.php?code=-200");
+	}
+} catch (Exception $e) {
+	die('Error connecting to the database: ' . $e->getMessage());
+}
+
 ?>
 <!DOCTYPE html>
 <html>
 	<?php include_once("includes/header.php"); ?>
 	<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/view-project.css" />
 	<body>
-		<?php 
-		include_once("includes/navbar.php"); 
-
-		try {
-			$db = get_PDO_connection();
-			$query = $db->prepare("SELECT * FROM dev_projects WHERE name_normalized=?");
-			$query->execute(array($_GET['name']));
-			$data = $query->fetch();
-		} catch (Exception $e) {
-			die('Error connecting to the database: ' . $e->getMessage());
-		}
-		?>
+		<?php include_once("includes/navbar.php"); ?>
 		<div class="container">
 			<div class="page-header">
 				<h1><?php echo $data['name']; ?></h1>
