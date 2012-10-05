@@ -48,6 +48,12 @@
 			case 505:
 				return array("HTTP Version not supported", "What browser are you using, Netscape? Haha.");
 				break;
+			//custom error handles
+			case -100:
+				return array("Database failure", "I forgot the keys to the database... :(");
+				break;
+			case -200:
+				return array("Product not found", "Sorry, I haven't invented that yet.");
 		}
 	}
 	
