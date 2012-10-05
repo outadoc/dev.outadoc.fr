@@ -53,7 +53,7 @@
 				return array("Database failure", "I forgot the keys to the database... :(");
 				break;
 			case -200:
-				return array("Product not found", "Sorry, I haven't invented that yet.");
+				return array("Project not found", "Sorry, I haven't invented that yet.");
 		}
 	}
 	
