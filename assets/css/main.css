@@ -135,4 +135,12 @@ footer p a img {
 	.btn {
 		padding: 0;
 	}
+	
+	.navbar .nav li a, .navbar .nav li.nav-separator {
+		padding: 2px 5px;
+	}
+	
+	.navbar .nav li a:hover {
+		margin-top: inherit;
+	}
 }
