@@ -54,6 +54,7 @@
 				break;
 			case -200:
 				return array("Project not found", "Sorry, I haven't invented that yet.");
+				break;
 		}
 	}
 	
