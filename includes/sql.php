@@ -6,7 +6,7 @@ function get_PDO_connection() {
 
 try {
 	$db = get_PDO_connection();
-	$db->query("CREATE TABLE IF NOT EXISTS `projects` (
+	$db->query("CREATE TABLE IF NOT EXISTS `dev_projects` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `name` varchar(60) NOT NULL,
 	  `name_normalized` varchar(30) NOT NULL,
