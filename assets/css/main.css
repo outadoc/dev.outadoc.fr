@@ -174,4 +174,8 @@ footer p a img {
 	.navbar .nav li a:hover {
 		margin-top: inherit;
 	}
+	
+	.page-header {
+		margin-top: 10px;
+	}
 }
