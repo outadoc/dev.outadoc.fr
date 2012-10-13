@@ -114,6 +114,11 @@ html, body {
 			box-shadow: none;
 }
 
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+	background-color: none;
+	box-shadow: none;
+}
+
 .navbar .brand {
 	color: #0b0b0b;
 	font-weight: bold;
