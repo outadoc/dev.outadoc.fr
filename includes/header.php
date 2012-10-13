@@ -1,6 +1,24 @@
 <head>
-	<title>outa[dev] - outadev</title>
+	<?php 
 	
+	$title = "";
+	$page = $_SERVER['PHP_SELF'];
+	
+	if(preg_match('#/index.php#', $page)) {
+		$title = "outadev";
+	} else if(preg_match('#/projects.php#', $page)) {
+		$title = "Projects";
+	} else if(preg_match('#/about.php#', $page)) {
+		$title = "About";
+	} else if(preg_match('#/contact.php#', $page)) {
+		$title = "Contact";
+	} else if(preg_match('#/view-project.php#', $page)) {
+		$title = htmlspecialchars($data['name']);
+	}
+	
+	?>
+	
+	<title>outa[dev] - <?php echo $title; ?></title>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta property="description" content="Web, mobile and desktop amateur development. Download SkinSwitch, FreeStance and many more!" />
