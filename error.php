@@ -97,6 +97,7 @@
 			.links a {
 				text-decoration: none;
 				color: gray;
+				cursor: pointer;
 			}
 			
 			.links {
@@ -126,7 +127,7 @@
 				<div id="carrot">
 					<img src="<?php echo ROOT_SITE_URL; ?>assets/img/carrot.png" alt="" />
 				</div>
-				<div class="links"><a href="<?php echo ROOT_SITE_URL; ?>">HOME</a> | <a href="#" onclick="history.go(0);">PREVIOUS</a></div>
+				<div class="links"><a href="<?php echo ROOT_SITE_URL; ?>">HOME</a> | <a onclick="history.go(-1);">PREVIOUS</a></div>
 			</div>
 		</div>
 	</body>
