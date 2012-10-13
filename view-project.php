@@ -9,10 +9,12 @@ try {
 	$data = $query->fetch();
 	
 	if($query->rowCount() < 1) {
-		header("Location: " . ROOT_SITE_URL . "error.php?code=-200");
+		echo file_get_contents(ROOT_SITE_URL . "error.php?code=-200");
+		exit();
 	}
 } catch (Exception $e) {
-	header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
+	echo file_get_contents(ROOT_SITE_URL . "error.php?code=-100");
+	exit();
 }
 
 ?>

@@ -23,7 +23,8 @@ try {
 	  PRIMARY KEY (`id`)
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0");
 } catch(PDOException $e) {
-	header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
+	echo file_get_contents(ROOT_SITE_URL . "error.php?code=-100");
+	exit();
 }
 
 ?>
