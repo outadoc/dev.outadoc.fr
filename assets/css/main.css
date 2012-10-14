@@ -144,12 +144,12 @@ body, body p {
 
 /*footer*/
 footer {
-	margin-top: 20px;
+	margin-top: 0;
 }
 
 footer p {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 0;
 }
 
 footer p a img {

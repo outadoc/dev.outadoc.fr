@@ -92,3 +92,7 @@
 	display: block;
 	margin: auto;
 }
+
+form {
+	margin: 0;
+}
