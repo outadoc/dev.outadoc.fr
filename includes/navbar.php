@@ -17,7 +17,7 @@
         		<li <?php if(strpos($page, "contact.php")) {echo('class="active"');}?>><a href="<?php echo ROOT_SITE_URL; ?>contact.html">Contact</a></li>
         		<li class="nav-separator">//</li>
         		<li><a href="http://github.com/outadoc">Github</a></li>
-        		<li><a href="http://twitter.com/#!/outadev">Twitter</a></li>
+        		<li><a href="http://twitter.com/outadev">Twitter</a></li>
       		</ul>
     	</div>
   	</div>
