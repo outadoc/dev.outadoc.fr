@@ -19,7 +19,7 @@
 	?>
 	
 	<title>outa[dev] - <?php echo $title; ?></title>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta property="description" content="Web, mobile and desktop amateur development. Download SkinSwitch, FreeStance and many more!" />
 	<meta property="keywords" content="outadev, outadoc, development, freestance, skinswitch, application, iphone, ios, amateur, programming" />
