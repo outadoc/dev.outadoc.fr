@@ -29,7 +29,7 @@ try {
 	    		?>
 	    		<li class="thumbnail other">
 	    			<a href="<?php echo ROOT_SITE_URL; ?>projects.html"><img src="assets/img/other.png" alt="" /></a>
-	    			<h3>Other</h3>
+	    			<h3>More</h3>
 	    		</li>
 	    	</ul>
 	    </div>
