@@ -183,4 +183,8 @@ footer p a img {
 	.page-header {
 		margin-top: 10px;
 	}
+	
+	.navbar .brand {
+		padding-left: 0;
+	}
 }
