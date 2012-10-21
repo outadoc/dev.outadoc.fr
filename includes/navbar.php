@@ -1,7 +1,7 @@
 <!--[if lte IE 10]>
 <div class="ie-warning">
 	<img src="<?php echo ROOT_SITE_URL; ?>assets/img/ie-warning-icon.png" alt="" />
-	<h1>Hum. Are you using Internet Explorer, for real?</h1>
+	<h1>Please, hold your horses. Are you using Internet Explorer, for real?</h1>
 	<h2>This website (and a lot of others) may be really badly displayed in this crappy browser. You should consider using <a href="https://google.com/browser/">Google Chrome</a> or <a href="http://www.mozilla.org/fr/firefox/new/">Mozilla Firefox</a> instead!</h2>
 </div>
 <![endif]-->
