@@ -41,7 +41,7 @@ try {
 	    		</div>
 	    		<div class="span5">
 	    			<h1>Donate!</h1>
-	    			I distribute most of my apps for free, and they are often open-source. If you feel the need to thank me, you can do so by clicking the button below. Thanks!&nbsp;:)
+	    			I distribute most of my apps for free, and they are often open-source. If you feel like paying me a coffee or a croissant, you can do so by clicking the button below. Thanks!&nbsp;:)
 	    			<div class="donate-container">
 	    				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 	    					<input type="hidden" name="cmd" value="_s-xclick">
