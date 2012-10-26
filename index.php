@@ -12,7 +12,7 @@ try {
 <!DOCTYPE html>
 <html>
 	<?php include_once("includes/header.php"); ?>
-	<link rel="stylesheet" href="assets/css/index.css" />
+	<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/index.css" />
 	<body>
 	    <?php include_once("includes/navbar.php"); ?>
 	    <div class="page-header">
