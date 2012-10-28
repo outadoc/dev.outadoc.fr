@@ -5,8 +5,14 @@ html, body {
 
 /*ie alert bar*/
 .ie-warning {
-	background-image: -webkit-gradient(linear, left bottom, left top, from(#feab53), to(#ffd235));
-	background-image: -moz-linear-gradient(90deg, #feab53 0%, #ffd235 100%);
+	background-color: #febe44;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffd235), to(#feab53));
+	background-image: -webkit-linear-gradient(top, #ffd235, #feab53);
+	background-image: -moz-linear-gradient(top, #ffd235, #feab53);
+	background-image: -o-linear-gradient(top, #ffd235, #feab53);
+	background-image: -ms-linear-gradient(top, #ffd235, #feab53);
+	background-image: linear-gradient(top, #ffd235, #feab53);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffd235', EndColorStr='#feab53');
 	top: 0;
 	left: 0;
 	padding: 5px 10px;
