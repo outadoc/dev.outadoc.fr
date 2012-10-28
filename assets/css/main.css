@@ -148,6 +148,13 @@ body, body p {
 	font-size: 24px;
 }
 
+.thumbnails .thumbnail {
+	-webkit-transition: none;
+	   -moz-transition: none;
+		 -o-transition: none;
+		 	transition: none;
+}
+
 /*footer*/
 footer {
 	margin-top: 5px;
