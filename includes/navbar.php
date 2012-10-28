@@ -1,4 +1,4 @@
-<!--[if lte IE 10]>
+<!--[if lt IE 10]>
 <div class="ie-warning">
 	<img src="<?php echo ROOT_SITE_URL; ?>assets/img/ie-warning-icon.png" alt="" />
 	<h1>Please, hold your horses. Are you using Internet Explorer, for real?</h1>
