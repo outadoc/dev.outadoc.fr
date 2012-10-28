@@ -21,7 +21,7 @@ try {
 	    			while($data = $query->fetch()) {
     				?>
     					<li class="thumbnail">
-    						<a href="<?php echo ROOT_SITE_URL; ?>project/<?php echo $data['name_normalized']; ?>/"><img src="assets/img/data/icon/<?php echo $data['name_normalized']; ?>.png" alt="" /></a>
+    						<a href="<?php echo ROOT_SITE_URL; ?>project/<?php echo $data['name_normalized']; ?>/"><img src="<?php echo ROOT_SITE_URL; ?>assets/img/data/icon/<?php echo $data['name_normalized']; ?>.png" alt="" /></a>
     						<h3><?php echo $data['name']; ?></h3>
     					</li>
     				<?php
