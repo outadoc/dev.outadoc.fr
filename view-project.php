@@ -72,11 +72,13 @@ try {
 							?>
 							<h2>
 								<?php 
-								if($data['price'] != null){
-									echo $data['price'] . ' - ';
-								} if($data['download_version'] != null){
-									echo '<span itemprop="softwareVersion">v' . $data['download_version'] . '</span> - ';
-								} if($data['download_size'] != null && $data['download_size'] != 0){
+								if($data['price'] != null) {
+									echo $data['price'];
+								} if($data['download_version'] != null) {
+									if($data['price'] != null) { echo ' - '; }
+									echo '<span itemprop="softwareVersion">v' . $data['download_version'] . '</span>';
+								} if($data['download_size'] != null && $data['download_size'] != 0) {
+									if($data['download_version'] != null) { echo ' - '; }
 									echo '<span itemprop="fileSize">' . $data['download_size'] . 'Mo</span>';
 								} 
 								?>
