@@ -14,7 +14,7 @@ include_once('private/config.php');
 				return "Something went wrong. Please use the form and don't try to be smart.";
 			} else if(empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputMessage'])){
 				return "Looks like you forgot one of the fields.";
-			} else if(stristr($_POST['inputMessage'], '<a href="')) {
+			} else if(stristr($_POST['inputMessage'], '<a href="') != false) {
 				return "You're trying to spam, ain't you?";
 			}
 			
