@@ -12,8 +12,10 @@ include_once('private/config.php');
 		function checkFields() {
 			if(!isset($_POST['inputName']) || !isset($_POST['inputEmail']) || !isset($_POST['inputMessage'])) {
 				return "Something went wrong. Please use the form and don't try to be smart.";
-			} else if (empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputMessage'])){
+			} else if(empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputMessage'])){
 				return "Looks like you forgot one of the fields.";
+			} else if(stristr($_POST['inputMessage'], '<a href="')) {
+				return "You're trying to spam, ain't you?";
 			}
 			
 			return null;
