@@ -44,7 +44,7 @@ include_once('private/config.php');
 				$headers .= 'Sender: outa[dev] <postmaster@outadoc.fr>' . "\r\n";
 				$headers .= "\r\n";
 				
-				$msg = "<html><body><h1 style=\"font-size:25px; font-family: Minecraft\">outa[dev] contact form</h1><hr /><div style=\"font-size:17px; line-height: 1.5;\"><p>" . str_replace("\n", "<br />", stripslashes(htmlspecialchars($_POST['inputMessage']))) . "</p><p>-- " . $_POST['inputName'] . "</p></div></body></html>";
+				$msg = "<html><body><h1 style=\"font-size:25px; font-family:'Helvetica Neue'\">outa[dev] contact form</h1><hr /><div style=\"font-size:17px; line-height: 1.5;\"><p>" . str_replace("\n", "<br />", stripslashes(htmlspecialchars($_POST['inputMessage']))) . "</p><p>-- " . $_POST['inputName'] . "</p></div></body></html>";
 				
 				mail(CONTACT_EMAIL, $subject, $msg, $headers);
 				$success = true;
