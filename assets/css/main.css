@@ -155,6 +155,10 @@ body, body p {
 		 	transition: none;
 }
 
+.btn {
+	background-image: none;
+}
+
 /*footer*/
 footer {
 	margin-top: 5px;
