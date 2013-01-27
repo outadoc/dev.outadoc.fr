@@ -86,7 +86,7 @@ try {
 						</a>
 						<?php 
 						if($data['browse_source'] != null) {
-							echo '<a class="btn btn-source" href="' . $data['browse_source'] . '">Browse source</a>';
+							echo '<a class="btn btn-source" href="' . $data['browse_source'] . '">Fork me on Github</a>';
 						} 
 						?>
 						<a class="btn" href="<?php echo ROOT_SITE_URL; ?>contact.html"><i class="icon-flag"></i>&nbsp;Report a bug</a>
