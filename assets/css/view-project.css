@@ -49,6 +49,7 @@
 }
 
 #screenshots-bg ul {
+	max-height: 152px;
 	position: absolute;
 	top: 0; left: 0;
 	list-style: none;
