@@ -89,6 +89,12 @@
 	}
 }
 
+@media (max-width: 767px) {
+	.btn {
+		padding: 0;
+	}
+}
+
 .btn-source {
 	padding-top: 10px;
 	padding-bottom: 10px;
