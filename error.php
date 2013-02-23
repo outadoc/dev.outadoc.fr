@@ -111,10 +111,35 @@
 			
 			#carrot {
 				width: 100%;
+				margin-top: 10px;
+				animation:fly 3s infinite ease-in-out;
+				-moz-animation:fly 3s infinite ease-in-out; /* Firefox */
+				-webkit-animation:fly 3s infinite ease-in-out; /* Safari and Chrome */
 			}
 			
 			.very-small {
 				font-size: 10px;
+			}
+
+			@keyframes fly
+			{
+			from {-webkit-transform:translate(0, 0px);}
+			65% {-webkit-transform:translate(0, 15px);}
+			to {-webkit-transform: translate(0, -0px);}
+			}
+
+			@-moz-keyframes fly
+			{
+			from {-webkit-transform:translate(0, 0px);}
+			65% {-webkit-transform:translate(0, 15px);}
+			to {-webkit-transform: translate(0, -0px);}
+			}
+
+			@-webkit-keyframes fly
+			{
+			from {-webkit-transform:translate(0, 0px);}
+			65% {-webkit-transform:translate(0, 15px);}
+			to {-webkit-transform: translate(0, -0px);}
 			}
 			
 		</style>
