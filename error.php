@@ -123,16 +123,16 @@
 
 			@keyframes fly
 			{
-			from {-webkit-transform:translate(0, 0px);}
-			65% {-webkit-transform:translate(0, 15px);}
-			to {-webkit-transform: translate(0, -0px);}
+			from {transform:translate(0, 0px);}
+			65% {transform:translate(0, 15px);}
+			to {transform: translate(0, -0px);}
 			}
 
 			@-moz-keyframes fly
 			{
-			from {-webkit-transform:translate(0, 0px);}
-			65% {-webkit-transform:translate(0, 15px);}
-			to {-webkit-transform: translate(0, -0px);}
+			from {-moz-transform:translate(0, 0px);}
+			65% {-moz-transform:translate(0, 15px);}
+			to {-moz-transform: translate(0, -0px);}
 			}
 
 			@-webkit-keyframes fly
