@@ -63,7 +63,7 @@ include_once('private/config.php');
 						?>
 						<form class="form-horizontal" action="contact.html" method="post">
 							<div class="control-group <?php if($error && empty($_POST['inputName'])){echo 'error';} ?>">
-								<label class="control-label" for="inputName">Name</label>
+								<label class="control-label" for="inputName">Your Name</label>
 								<div class="controls">
 									<input type="text" class="span5" name="inputName" placeholder="Chuck Norris" value="<?php echo ($error) ? $_POST['inputName'] : ""; ?>" />
 								</div>
@@ -75,7 +75,7 @@ include_once('private/config.php');
 								</div>
 							</div>
 							<div class="control-group <?php if($error && empty($_POST['inputMessage'])){echo 'error';} ?>">
-								<label class="control-label" for="inputMessage">Message</label>
+								<label class="control-label" for="inputMessage">Your Message</label>
 								<div class="controls">
 									<textarea name="inputMessage" class="span5" placeholder="Your message here"><?php echo ($error) ? $_POST['inputMessage'] : ""; ?></textarea>
 								</div>
