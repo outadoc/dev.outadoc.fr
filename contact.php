@@ -98,6 +98,7 @@ include_once('private/config.php');
 					<div class="span4">
 						<p>A problem, a bug, an idea, an offer for a job, or simply the need to contact me? Fill the form on the side, and I'll try to contact you ASAP!</p>
 						<p>All the fields are required.</p>
+						<p>Please write your message in English or in French.</p>
 					</div>
 				</div>
 				<?php include_once("includes/footer.php"); ?>
