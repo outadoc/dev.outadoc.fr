@@ -11,7 +11,7 @@ define('MYSQL_HOSTNAME', 'localhost');     					//host name of the mysql server
 define('MYSQL_DATABASE', 'outadev');  						//name of the mysql database
 
 /***** ADMIN VARS *****/
-define('CONTACT_EMAIL', 'outadev@outadoc.fr');				//email address where the manager can be contacted (used for forms)
+define('CONTACT_EMAIL', 'contact@dev.outadoc.fr');				//email address where the manager can be contacted (used for forms)
 
 /***** USER TRACKING *****/
 define('GOOGLE_ANALYTICS_KEY', 'UA-XXXXXXXX-X');			//google analytics key, to record statistics
