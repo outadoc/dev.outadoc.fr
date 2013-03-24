@@ -16,6 +16,8 @@ include_once('private/config.php');
 				return "Looks like you forgot one of the fields.";
 			} else if(stristr($_POST['inputMessage'], '<a href=') != false) {
 				return "You're trying to spam, ain't you?";
+			} else if(!preg_match("#[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}#", $_POST['inputEmail'])) {
+				return "Your email address seems invalid.";
 			}
 			
 			return null;
