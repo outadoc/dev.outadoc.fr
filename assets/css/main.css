@@ -157,6 +157,10 @@ body, body p {
 
 .btn {
 	background-image: none;
+	border: 1px solid #D6D6D6;
+	border-radius: 5px;
+	text-shadow: none;
+	box-shadow: none;
 }
 
 /*footer*/
