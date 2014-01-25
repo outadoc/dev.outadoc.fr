@@ -42,16 +42,8 @@ try {
 	    			I'm a young developer who has completed a few projects; you can find them on this website. You can also find most of them on my <a href="http://github.com/outadoc">Github repo</a>, and you can <a href="http://twitter.com/outadoc">follow me</a> on Twitter.
 	    		</div>
 	    		<div class="span5">
-	    			<h1>Donate!</h1>
-	    			I distribute most of my apps for free, and they are often open-source. If you feel like paying me a coffee or a croissant, you can do so by clicking the button below. Thanks!&nbsp;:)
-	    			<div class="donate-container">
-	    				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-	    					<input type="hidden" name="cmd" value="_s-xclick">
-	    					<input type="hidden" name="hosted_button_id" value="RSVCTFJFV7PNW">
-	    					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-	    					<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-	    				</form>
-	    			</div>
+	    			<h1>More Projects</h1>
+	    			Not every project of mine is displayed on this website: if you want more, please visit my <a href="http://github.com/outadoc">Github page</a>, and you'll probably (hopefully) find some interesting stuff!
 	    		</div>
 	    	</div>
 	    </div>
