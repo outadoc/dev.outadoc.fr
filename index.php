@@ -39,7 +39,7 @@ try {
 	    	<div class="row" id="home-info">
 	    		<div class="span5 offset1">
 	    			<h1>Amateur Programming</h1>
-	    			I'm a young developer who has completed a few projects; you can find them on this website. You can also find most of them on my <a href="http://github.com/outadoc">Github repo</a>, and you can <a href="http://twitter.com/outadoc">follow me</a> on Twitter.
+	    			I'm a young developer who has completed a few projects; you can find them on this website. You can also find most of them on Github (links are on their respective page), and you can <a href="http://twitter.com/outadoc">follow me</a> on Twitter.
 	    		</div>
 	    		<div class="span5">
 	    			<h1>More Projects</h1>
