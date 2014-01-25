@@ -4,8 +4,10 @@ include_once('includes/sql.php');
 ?>
 <!DOCTYPE html>
 <html>
-	<?php include_once("includes/header.php"); ?>
-	<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/projects.css" />
+	<head>
+		<?php include_once("includes/header.php"); ?>
+		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/projects.css" />
+	</head>
 	<body>
 	    <?php 
 	    include_once("includes/navbar.php");

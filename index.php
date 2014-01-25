@@ -11,8 +11,10 @@ try {
 ?>
 <!DOCTYPE html>
 <html>
-	<?php include_once("includes/header.php"); ?>
-	<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/index.css" />
+	<head>
+		<?php include_once("includes/header.php"); ?>
+		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/index.css" />
+	</head>
 	<body>
 	    <?php include_once("includes/navbar.php"); ?>
 	    <div class="page-header">
