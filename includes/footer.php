@@ -6,7 +6,7 @@
     	<a href="https://twitter.com/outadev" class="twitter-follow-button" data-show-count="false" data-width="60px" data-show-screen-name="false" data-align="right">Follow @outa[dev]</a>
     	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://dev.outadoc.fr" data-text="Discover FreeStance, SkinSwitch and a lot more!" data-via="outadev" data-lang="en" data-related="outadoc:The Twitter account of the developer." data-width="60px" data-align="left">Tweeter</a>
     </p>
-	<p style="margin-top: -5px;">&copy; Baptiste Candellier 2012-2013</p>
+	<p style="margin-top: -5px;">&copy; Baptiste Candellier 2012-<?php echo date('Y'); ?></p>
 </footer>
 <script type="text/javascript">
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
