@@ -153,7 +153,7 @@ body, body p {
 	-webkit-transition: none;
 	   -moz-transition: none;
 		 -o-transition: none;
-		 	transition: none;
+			transition: none;
 }
 
 .btn {

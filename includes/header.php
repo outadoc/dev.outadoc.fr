@@ -1,19 +1,19 @@
 <?php 
 
-$title = "";
-$page = $_SERVER['PHP_SELF'];
+	$title = "";
+	$page = $_SERVER['PHP_SELF'];
 
-if(preg_match('#/index.php#', $page)) {
-	$title = "outadev";
-} else if(preg_match('#/projects.php#', $page)) {
-	$title = "Projects";
-} else if(preg_match('#/about.php#', $page)) {
-	$title = "About";
-} else if(preg_match('#/contact.php#', $page)) {
-	$title = "Contact";
-} else if(preg_match('#/view-project.php#', $page)) {
-	$title = htmlspecialchars($data['name']);
-}
+	if(preg_match('#/index.php#', $page)) {
+		$title = "outadev";
+	} else if(preg_match('#/projects.php#', $page)) {
+		$title = "Projects";
+	} else if(preg_match('#/about.php#', $page)) {
+		$title = "About";
+	} else if(preg_match('#/contact.php#', $page)) {
+		$title = "Contact";
+	} else if(preg_match('#/view-project.php#', $page)) {
+		$title = htmlspecialchars($data['name']);
+	}
 
 ?>
 

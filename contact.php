@@ -1,6 +1,4 @@
-<?php 
-include_once('private/config.php');
-?>
+<?php include_once('private/config.php'); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -88,9 +86,9 @@ include_once('private/config.php');
 							<div class="control-group">
 								<div class="controls">
 									<?php
-		    						require_once('lib/recaptchalib.php');
-		    						$publickey = "6Lccb80SAAAAAKMYuirEyInGqL27DRDwp-PwvsEH";
-		    						echo recaptcha_get_html($publickey);
+									require_once('lib/recaptchalib.php');
+									$publickey = "6Lccb80SAAAAAKMYuirEyInGqL27DRDwp-PwvsEH";
+									echo recaptcha_get_html($publickey);
 									?>
 								</div>
 							</div>
