@@ -45,7 +45,14 @@ try {
 	    	//center the header vertically... yup, couldn't find anything better than that.
 	    	function adjustHeaderMargin() {
 	    		var winHeight = $(window).height();
-	    		var margin = ((winHeight / 2) - ($(".page-header").height() / 2)) / 2;
+	    		var margin;
+
+	    		if($(window).width() > 760) {
+	    			margin = ((winHeight / 2) - ($(".page-header").height() / 2)) / 2;
+	    		} else {
+	    			margin = 20;
+	    		}
+
 	    		$(".page-header").css("margin-top", margin + "px");
 			}
 
