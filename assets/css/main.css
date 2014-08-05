@@ -45,6 +45,7 @@ html, body {
 .navbar {
 	padding-top: 20px;
 	margin-bottom: 0;
+	height: 60px;
 }
 
 .navbar .navbar-inner {

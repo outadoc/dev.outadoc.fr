@@ -101,3 +101,7 @@
 	padding-bottom: 10px;
 	font-size: 17px;
 }
+
+.container:first-of-type {
+	padding-bottom: 0;
+}
