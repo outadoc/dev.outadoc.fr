@@ -68,7 +68,7 @@ try {
 							while($link = $query_download->fetch()) {
 								?>
 
-								<a class="btn btn-primary btn-dl" itemprop="downloadUrl" href="<?php echo $data['download_url']; ?>">
+								<a class="btn btn-primary btn-dl" itemprop="downloadUrl" href="<?php echo $link['download_url']; ?>">
 								<?php 
 									$dl_title;
 									
@@ -82,9 +82,13 @@ try {
 									?>
 									<h2>
 										<?php
-										
 										$info = Array($link['platform_name'], $link['download_price'], 'v' . $link['download_version']);
-										echo implode(" - ", array_filter($info));
+										
+										echo implode(" - ", array_filter($info, function($item) {
+											//remove items where version was empty and only "v" was appended
+											if($item == null || $item == 'v') return false;
+											else return true;
+										}));
 
 										?>
 									</h2>
