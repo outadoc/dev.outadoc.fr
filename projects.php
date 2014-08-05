@@ -21,7 +21,7 @@ include_once('includes/sql.php');
 	 	}
 	 	
 	    function display_projects($db, $cat_id, $cat_disp_name) {
-	    	$query = $db->prepare("SELECT * FROM dev_projects WHERE category=? ORDER BY name");
+	    	$query = $db->prepare("SELECT * FROM dev_projects WHERE category_id = (SELECT category_id FROM dev_categories WHERE category_name = ?) ORDER BY name");
 	    	$query->execute(array($cat_id));
 	    	
 	    	?>

@@ -4,7 +4,7 @@ include_once('includes/sql.php');
 
 try {
 	$db = get_PDO_connection();
-	$query = $db->prepare("SELECT * FROM dev_projects WHERE name_normalized=?");
+	$query = $db->prepare("SELECT * FROM dev_projects JOIN dev_categories USING(category_id) WHERE name_normalized = ?");
 	$query->execute(array($_GET['name']));
 	$data = $query->fetch();
 	
@@ -60,37 +60,47 @@ try {
 						?>
 					</div>
 					<div class="span3">
-						<a class="btn btn-primary btn-dl" itemprop="downloadUrl" href="<?php echo $data['download_url']; ?>">
-							<?php 
-							$dl_title;
-							
-							if($data['category'] == 'web') {
-								$dl_title = 'Go to';
-							} else {
-								$dl_title = 'Download';
-							} 
-							
-							echo '<h1>' . $dl_title . ' ' . $data['name'] . '</h1>';
-							?>
-							<h2>
-								<?php 
-								if($data['price'] != null) {
-									echo $data['price'];
-								} if($data['download_version'] != null) {
-									if($data['price'] != null) { echo ' - '; }
-									echo '<span itemprop="softwareVersion">v' . $data['download_version'] . '</span>';
-								} if($data['download_size'] != null && $data['download_size'] != 0) {
-									if($data['download_version'] != null) { echo ' - '; }
-									echo '<span itemprop="fileSize">' . $data['download_size'] . ' Mo</span>';
-								} 
+						<?php
+
+							$query_download = $db->prepare("SELECT * FROM dev_download_links JOIN dev_platforms USING(platform_id) WHERE id = ?");
+							$query_download->execute(Array($data['id']));
+
+							while($link = $query_download->fetch()) {
 								?>
-							</h2>
-						</a>
-						<?php 
-						if($data['browse_source'] != null) {
-							echo '<a class="btn btn-source" href="' . $data['browse_source'] . '">Fork me on Github</a>';
-						} 
+
+								<a class="btn btn-primary btn-dl" itemprop="downloadUrl" href="<?php echo $data['download_url']; ?>">
+								<?php 
+									$dl_title;
+									
+									if($data['category_name'] == 'web') {
+										$dl_title = 'Go to';
+									} else {
+										$dl_title = 'Download';
+									}
+									
+									echo '<h1>' . $dl_title . ' ' . $data['name'] . '</h1>';
+									?>
+									<h2>
+										<?php
+										
+										$info = Array($link['platform_name'], $link['download_price'], 'v' . $link['download_version']);
+										echo implode(" - ", array_filter($info));
+
+										?>
+									</h2>
+								</a>
+
+								<?php
+							}
+
 						?>
+						
+						<?php 
+							if($data['browse_source'] != null) {
+								echo '<a class="btn btn-source" href="' . $data['browse_source'] . '">Fork me on Github</a>';
+							} 
+						?>
+
 						<a class="btn" href="<?php echo ROOT_SITE_URL; ?>contact.html"><i class="icon-flag"></i>&nbsp;Report a bug</a>
 						<!-- AddThis Button BEGIN -->
 						<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
