@@ -54,6 +54,7 @@
 		<title>outa[dev] - Edit a Project</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../assets/css/edit-project.css">
+		<link rel="icon" type="image/png" href="<?php echo ROOT_SITE_URL; ?>assets/img/favicon.png">
 	</head>
 	<body>
 		<a href="./">&lt; Back</a>

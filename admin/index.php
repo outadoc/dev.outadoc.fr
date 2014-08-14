@@ -7,6 +7,7 @@
 	<head>
 		<title>outa[dev] - Admin</title>
 		<meta charset="utf-8">
+		<link rel="icon" type="image/png" href="<?php echo ROOT_SITE_URL; ?>assets/img/favicon.png">
 	</head>
 	<body>
 		<h1>Edit an existing app</h1>
