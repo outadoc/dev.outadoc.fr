@@ -210,3 +210,7 @@ footer p a img {
 	padding-bottom: 100px;
 }
 
+iframe {
+	border: none;
+	overflow: hidden;
+}

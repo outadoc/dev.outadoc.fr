@@ -13,7 +13,7 @@
 <html>
 	<head>
 		<?php include_once("includes/header.php"); ?>
-		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/index.css" />
+		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/index.css">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -25,14 +25,14 @@
 							while($data = $query->fetch()) {
 							?>
 								<li class="thumbnail">
-									<a href="<?php echo ROOT_SITE_URL; ?>project/<?php echo $data['name_normalized']; ?>/"><img src="<?php echo ROOT_SITE_URL; ?>assets/img/data/icon/<?php echo $data['name_normalized']; ?>.png" alt="" /></a>
+									<a href="<?php echo ROOT_SITE_URL; ?>project/<?php echo $data['name_normalized']; ?>/"><img src="<?php echo ROOT_SITE_URL; ?>assets/img/data/icon/<?php echo $data['name_normalized']; ?>.png" alt="Project"></a>
 									<h3><?php echo $data['name']; ?></h3>
 								</li>
 							<?php
 							}
 						?>
 						<li class="thumbnail other">
-							<a href="<?php echo ROOT_SITE_URL; ?>projects.html"><img src="assets/img/other.png" alt="" /></a>
+							<a href="<?php echo ROOT_SITE_URL; ?>projects.html"><img src="assets/img/other.png" alt="Others"></a>
 							<h3>More</h3>
 						</li>
 					</ul>

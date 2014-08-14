@@ -153,7 +153,7 @@
 				<p><?php echo $code_string[1]; ?></p>
 				<small class="very-small">Here's a flying carrot to comfort you. &lt;3</small>
 				<div id="carrot">
-					<img src="<?php echo ROOT_SITE_URL; ?>assets/img/carrot.png" alt="" />
+					<img src="<?php echo ROOT_SITE_URL; ?>assets/img/carrot.png" alt="Carrot">
 				</div>
 				<div class="links"><a href="<?php echo ROOT_SITE_URL; ?>">HOME</a> | <a onclick="history.go(-1);">PREVIOUS</a></div>
 			</div>

@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<?php include_once("includes/header.php"); ?>
-		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/projects.css" />
+		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/projects.css">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -19,7 +19,7 @@
 					$language_alert = '<p class=\'language-alert\'>This project is only available in French.</p>';
 				}
 
-				return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'project/' . $data['name_normalized'] . '/" title="' . $data['name'] . '" data-content="' . $data['description_short'] . $language_alert . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="" /><div class="caption">' . $data['name'] . '</div></a></li>';
+				return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'project/' . $data['name_normalized'] . '/" title="' . $data['name'] . '" data-content="' . $data['description_short'] . $language_alert . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="Thumbnail"><div class="caption">' . $data['name'] . '</div></a></li>';
 			}
 			
 			function display_projects($db, $cat_id, $cat_disp_name) {

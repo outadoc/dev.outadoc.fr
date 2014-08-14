@@ -22,7 +22,7 @@
 <html>
 	<head>
 		<?php include_once("includes/header.php"); ?>
-		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/view-project.css" />
+		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/view-project.css">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -39,13 +39,13 @@
 						<?php 
 
 							if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/0.png')) {
-								echo '<li id="one"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/0.png"></li>';
+								echo '<li id="one"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/0.png" alt="Screenshot 1"></li>';
 							} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/1.png')) {
-								echo '<li id="two"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/1.png"></li>';
+								echo '<li id="two"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/1.png" alt="Screenshot 2"></li>';
 							} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/2.png')) {
-								echo '<li id="three"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/2.png"></li>';
+								echo '<li id="three"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/2.png" alt="Screenshot 3"></li>';
 							} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/3.png')) {
-								echo '<li id="four"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/3.png"></li>';
+								echo '<li id="four"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/3.png" alt="Screenshot 4"></li>';
 							}
 
 						?>
@@ -129,7 +129,7 @@
 						</div>
 					</div>
 				</div>
-			</body>
+			</div>
 			<?php include_once("includes/footer.php"); ?>
 		</div>
 		<script type="text/javascript">

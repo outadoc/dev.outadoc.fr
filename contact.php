@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<?php include_once("includes/header.php"); ?>
-		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/contact.css" />
+		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/contact.css">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -61,20 +61,27 @@
 				<div class="row">
 					<div class="span7">
 						<?php 
-						if($error) {echo '<div class="alert alert-error"><strong>Woops!</strong> ' . $error_text . '</div>';} 
-						if($success) {echo '<div class="alert alert-success"><strong>Yay!</strong> Your email was sent successfuly.</div>';} 
+						
+							if($error) {
+								echo '<div class="alert alert-error"><strong>Woops!</strong> ' . $error_text . '</div>';
+							} 
+							
+							if($success) {
+								echo '<div class="alert alert-success"><strong>Yay!</strong> Your email was sent successfuly.</div>';
+							} 
+						
 						?>
 						<form class="form-horizontal" action="contact.html" method="post">
 							<div class="control-group <?php if($error && empty($_POST['inputName'])){echo 'error';} ?>">
 								<label class="control-label" for="inputName">Your Name</label>
 								<div class="controls">
-									<input type="text" class="span5" name="inputName" placeholder="Chuck Norris" value="<?php echo ($error) ? $_POST['inputName'] : ""; ?>" />
+									<input type="text" class="span5" name="inputName" placeholder="Chuck Norris" value="<?php echo ($error) ? $_POST['inputName'] : ""; ?>">
 								</div>
 							</div>
 							<div class="control-group <?php if($error && empty($_POST['inputEmail'])){echo 'error';} ?>">
 								<label class="control-label" for="inputEmail">Your Email</label>
 								<div class="controls">
-									<input type="text" class="span5" name="inputEmail" placeholder="yourname@example.com" value="<?php echo ($error) ? $_POST['inputEmail'] : ""; ?>" />
+									<input type="text" class="span5" name="inputEmail" placeholder="yourname@example.com" value="<?php echo ($error) ? $_POST['inputEmail'] : ""; ?>">
 								</div>
 							</div>
 							<div class="control-group <?php if($error && empty($_POST['inputMessage'])){echo 'error';} ?>">
@@ -86,9 +93,11 @@
 							<div class="control-group">
 								<div class="controls">
 									<?php
+
 									require_once('lib/recaptchalib.php');
 									$publickey = "6Lccb80SAAAAAKMYuirEyInGqL27DRDwp-PwvsEH";
 									echo recaptcha_get_html($publickey);
+
 									?>
 								</div>
 							</div>

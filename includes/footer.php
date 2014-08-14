@@ -1,7 +1,7 @@
 <footer>
 	<p>
 		<a href="https://twitter.com/outadev" class="twitter-follow-button" data-show-count="false" data-width="60px" data-show-screen-name="false" data-align="right">Follow @outa[dev]</a>
-		<iframe src="http://ghbtns.com/github-btn.html?user=outadoc&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe>
+		<iframe src="http://ghbtns.com/github-btn.html?user=outadoc&amp;type=follow" width="120" height="20"></iframe>
 		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://dev.outadoc.fr" data-text="Discover FreeStance, SkinSwitch and a lot more!" data-via="outadev" data-lang="en" data-related="outadoc:The Twitter account of the developer." data-width="60px" data-align="left">Tweeter</a>
 	</p>
 	<p style="margin-top: -5px;">&copy; Baptiste Candellier 2012-<?php echo date('Y'); ?></p>

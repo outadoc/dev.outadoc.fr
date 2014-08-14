@@ -300,7 +300,7 @@
 	function process_uploaded_files($app_info) {
 		for($i = 0; $i < 4; $i++) {
 			if(isset($_FILES['screenshot_' . $i])) {
-				mkdir("../assets/img/data/screen/" . $app_info['name_normalized']);
+				@mkdir("../assets/img/data/screen/" . $app_info['name_normalized']);
 				process_single_file($_FILES['screenshot_' . $i], "../assets/img/data/screen/" . $app_info['name_normalized'] . "/" . $i . ".png", (isset($_POST['delete_screenshot_' . $i]) && $_POST['delete_screenshot_' . $i] == "on"));
 			}
 		}
