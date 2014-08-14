@@ -16,6 +16,7 @@
 		{
 			update_project($_POST['project'], $_POST);
 			$app_info = get_app_info($_POST['project'])->fetch();
+			process_uploaded_files($app_info);
 		} else {
 			//show a prefilled form
 			$app_info = get_app_info($_GET['project'])->fetch();
@@ -36,6 +37,7 @@
 			//actually add the new project to the db
 			add_project($_POST);
 			$app_info = get_app_info(get_last_inserted_id())->fetch();
+			process_uploaded_files($app_info);
 		} else {
 			//show a blank form
 			$app_info = array('id' => -1, 'name' => "", 'name_normalized' => "", 'description_short' => "", 'description' => "", 
@@ -52,10 +54,11 @@
 	<head>
 		<title>outa[dev] - Edit a Project</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../assets/css/edit-project.css">
 	</head>
 	<body>
 		<a href="./">&lt; Back</a>
-		<form action="edit-project.php?action=<?php echo $_GET['action']; ?>" method="post">
+		<form action="edit-project.php?action=<?php echo $_GET['action']; ?>" method="post" enctype="multipart/form-data">
 			<h1>
 			<?php 
 			
@@ -151,6 +154,12 @@
 
 			?>
 
+			<h2>Image Assets</h2>
+			<h3>Screenshots</h3>
+			<?php show_screenshots($app_info); ?>
+			<h3>Icons</h3>
+			<?php show_icons($app_info); ?>
+
 			<input type="hidden" name="project" value="<?php echo $app_info['id']; ?>">
 			<input type="submit">
 		</form>
@@ -245,6 +254,62 @@
 			));
 
 			$count++;
+		}
+	}
+
+	function show_screenshots($app_info) {
+		echo "<table><tr>";
+		
+		for($i = 0; $i < 4; $i++) {
+			show_single_screenshot($app_info, $i);
+		}
+
+		echo "</tr></table>";
+	}
+
+	function show_single_screenshot($app_info, $screnshot_num) {
+		echo "<td>";
+		echo "<img src=\"" . ROOT_SITE_URL . "assets/img/data/screen/" . $app_info['name_normalized'] . "/" . $screnshot_num . ".png\">";
+		echo "<input type=\"file\" name=\"screenshot_" . $screnshot_num . "\" accept=\"image/png\">";
+		echo "<p><input type=\"checkbox\" name=\"delete_screenshot_" . $screnshot_num . "\"><label for=\"delete_screenshot_" . $screnshot_num . "\">Remove this screenshot</label></p>";
+		echo "<p>Screenshot #" . ($screnshot_num + 1) . "</p>";
+		echo "</td>";
+	}
+
+	function show_icons($app_info) {
+		?>
+
+		<table>
+			<tr>
+				<td>
+					<img src="<?php echo ROOT_SITE_URL . "assets/img/data/icon/" . $app_info['name_normalized'] . ".png"; ?>">
+					<input type="file" name="home_icon" accept="image/png">
+					<p>Home Icon</p>
+				</td>
+				<td>
+					<img src="<?php echo ROOT_SITE_URL . "assets/img/data/thumb/" . $app_info['name_normalized'] . ".png"; ?>">
+					<input type="file" name="thumbnail" accept="image/png">
+					<p>Thumbnail</p>
+				</td>
+			</tr>
+		</table>
+
+		<?php
+	}
+
+	function process_uploaded_files($app_info) {
+		for($i = 0; $i < 4; $i++) {
+			if(isset($_FILES['screenshot_' . $i])) {
+				process_single_file($_FILES['screenshot_' . $i], "../assets/img/data/screen/" . $app_info['name_normalized'] . "/" . $i . ".png", (isset($_POST['delete_screenshot_' . $i]) && $_POST['delete_screenshot_' . $i] == "on"));
+			}
+		}
+	}
+
+	function process_single_file($file, $fs_path, $should_delete) {
+		if($should_delete) {
+			@unlink($fs_path);
+		} else if(isset($file) && (!isset($file['error']) || $file['error'] == UPLOAD_ERR_OK)) {
+			move_uploaded_file($file['tmp_name'], $fs_path);
 		}
 	}
 

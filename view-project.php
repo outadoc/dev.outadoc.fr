@@ -39,13 +39,13 @@
 						<?php 
 
 							if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/0.png')) {
-								echo '<li id="one"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/0.png" /></li>';
+								echo '<li id="one"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/0.png"></li>';
 							} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/1.png')) {
-								echo '<li id="two"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/1.png" /></li>';
+								echo '<li id="two"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/1.png"></li>';
 							} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/2.png')) {
-								echo '<li id="three"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/2.png" /></li>';
+								echo '<li id="three"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/2.png"></li>';
 							} if(file_exists('assets/img/data/screen/' . $data['name_normalized'] . '/3.png')) {
-								echo '<li id="four"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/3.png" /></li>';
+								echo '<li id="four"><img itemprop="screenshot" src="' . ROOT_SITE_URL . 'assets/img/data/screen/' . $data['name_normalized'] . '/3.png"></li>';
 							}
 
 						?>
