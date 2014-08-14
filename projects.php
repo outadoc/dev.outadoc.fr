@@ -57,12 +57,12 @@
 
 					try {
 						$db = get_PDO_connection();
-						
-						display_projects($db, 'app', 'Mobile Applications');
-						display_projects($db, 'web', 'Websites');
-						display_projects($db, 'extension', 'Browser Extensions');
-						display_projects($db, 'desktop', 'Desktop Programs');
-						display_projects($db, 'other', 'Other');
+						$query_cat = $db->query("SELECT * FROM dev_categories ORDER BY category_name");
+
+						while($data = $query_cat->fetch()) {
+							display_projects($db, $data['category_name'], $data['category_name_long']);
+						}
+
 					} catch (Exception $e) {
 						header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
 					}
