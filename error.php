@@ -55,10 +55,13 @@
 			case -200:
 				return array("Project not found", "Sorry, I haven't invented that yet.");
 				break;
+			default:
+				return array("Unknown", "Did you seriously break my error page?");
 		}
 	}
 	
-	$code_string = get_message_from_http_error($_GET['code']);
+	$code = (isset($_GET['code'])) ? $_GET['code'] : -1;
+	$code_string = get_message_from_http_error($code);
 
 ?>
 <html>
@@ -146,7 +149,7 @@
 
 		<div id="wrapper">
 			<div id="content">
-				<h1>Error <?php echo htmlspecialchars($_GET['code']); ?> <small><?php echo $code_string[0]; ?></small></h1>
+				<h1>Error <?php echo htmlspecialchars($code); ?> <small><?php echo $code_string[0]; ?></small></h1>
 				<p><?php echo $code_string[1]; ?></p>
 				<small class="very-small">Here's a flying carrot to comfort you. &lt;3</small>
 				<div id="carrot">
