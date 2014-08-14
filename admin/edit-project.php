@@ -24,7 +24,6 @@
 	}
 	else if(isset($_GET['action']) && $_GET['action'] == "add") 
 	{
-		
 		if(isset($_POST['project']) && $_POST['project'] == -1 &&
 			isset($_POST['project']) &&
 			isset($_POST['project_name']) &&
@@ -160,7 +159,7 @@
 			<h3>Icons</h3>
 			<?php show_icons($app_info); ?>
 
-			<input type="hidden" name="project" value="<?php echo $app_info['id']; ?>">
+			<input type="hidden" name="project" value="<?php echo $app_info['id']; ?>"><br>
 			<input type="submit">
 		</form>
 	</body>
@@ -300,9 +299,13 @@
 	function process_uploaded_files($app_info) {
 		for($i = 0; $i < 4; $i++) {
 			if(isset($_FILES['screenshot_' . $i])) {
+				mkdir("../assets/img/data/screen/" . $app_info['name_normalized']);
 				process_single_file($_FILES['screenshot_' . $i], "../assets/img/data/screen/" . $app_info['name_normalized'] . "/" . $i . ".png", (isset($_POST['delete_screenshot_' . $i]) && $_POST['delete_screenshot_' . $i] == "on"));
 			}
 		}
+
+		process_single_file($_FILES['home_icon'], "../assets/img/data/icon/" . $app_info['name_normalized'] . ".png", false);
+		process_single_file($_FILES['thumbnail'], "../assets/img/data/thumb/" . $app_info['name_normalized'] . ".png", false);
 	}
 
 	function process_single_file($file, $fs_path, $should_delete) {
