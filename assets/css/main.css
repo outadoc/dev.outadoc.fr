@@ -7,11 +7,6 @@ html, body {
 /*ie alert bar*/
 .ie-warning {
 	background-color: #febe44;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffd235), to(#feab53));
-	background-image: -webkit-linear-gradient(top, #ffd235, #feab53);
-	background-image: -moz-linear-gradient(top, #ffd235, #feab53);
-	background-image: -o-linear-gradient(top, #ffd235, #feab53);
-	background-image: -ms-linear-gradient(top, #ffd235, #feab53);
 	background-image: linear-gradient(top, #ffd235, #feab53);
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffd235', EndColorStr='#feab53');
 	top: 0;
@@ -84,10 +79,7 @@ html, body {
 	}
 }
 .navbar .nav li a {
-	-webkit-transition: margin-top 0.3s, color 0.3s;
-	   -moz-transition: margin-top 0.3s, color 0.3s;
-		 -o-transition: margin-top 0.3s, color 0.3s;
-			transition: margin-top 0.3s, color 0.3s;
+	transition: margin-top 0.3s, color 0.3s;
 }
 
 .navbar .nav li a, .navbar .nav li.nav-separator {
@@ -117,9 +109,7 @@ html, body {
 }
 
 .navbar .nav li.active > a, .navbar .nav li.active > a:hover {
-	-webkit-box-shadow: none;
-	   -moz-box-shadow: none;
-			box-shadow: none;
+	box-shadow: none;
 }
 
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
@@ -151,10 +141,7 @@ body, body p {
 }
 
 .thumbnails .thumbnail {
-	-webkit-transition: none;
-	   -moz-transition: none;
-		 -o-transition: none;
-			transition: none;
+	transition: none;
 }
 
 .btn {
