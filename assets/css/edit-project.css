@@ -1,0 +1,14 @@
+table img {
+	width: 250px;
+}
+
+table td {
+	overflow: hidden;
+	border: 1px solid gray;
+	text-align: center;
+}
+
+table td input[type="file"] {
+	display: block;
+	margin: 10px;
+}
