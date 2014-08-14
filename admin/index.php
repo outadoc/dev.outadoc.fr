@@ -40,11 +40,15 @@
 	}
 
 	function add_new_category() {
-		
+		echo "<form action=\"add-category.php\" method=\"get\">";
+		echo "<input type=\"text\" name=\"name\" placeholder=\"awesome\"><input type=\"text\" name=\"name_long\" placeholder=\"Awesome Category\"><input type=\"hidden\" name=\"type\" value=\"category\"><input type=\"submit\">";
+		echo "</form>";
 	}
 
 	function add_new_platform() {
-		
+		echo "<form action=\"add-category.php\" method=\"get\">";
+		echo "<input type=\"text\" name=\"name\" placeholder=\"FreeBSD\"><input type=\"hidden\" name=\"type\" value=\"platform\"><input type=\"submit\">";
+		echo "</form>";
 	}
 
 	function handle_query($query_str) {
