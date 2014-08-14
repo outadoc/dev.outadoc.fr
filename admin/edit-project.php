@@ -35,6 +35,7 @@
 		{
 			//actually add the new project to the db
 			add_project($_POST);
+			$app_info = get_app_info(get_last_inserted_id())->fetch();
 		} else {
 			//show a blank form
 			$app_info = array('id' => -1, 'name' => "", 'name_normalized' => "", 'description_short' => "", 'description' => "", 
