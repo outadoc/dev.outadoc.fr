@@ -4,7 +4,7 @@
 
 	try {
 		$db = get_PDO_connection();
-		$query = $db->query("SELECT * FROM dev_projects WHERE show_on_home=1");
+		$query = $db->query("SELECT * FROM dev_projects WHERE show_on_home = 1 AND visible = 1");
 	} catch (Exception $e) {
 		header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
 	}

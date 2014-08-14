@@ -4,7 +4,7 @@
 
 	try {
 		$db = get_PDO_connection();
-		$query = $db->prepare("SELECT * FROM dev_projects JOIN dev_categories USING(category_id) WHERE name_normalized = ?");
+		$query = $db->prepare("SELECT * FROM dev_projects JOIN dev_categories USING(category_id) WHERE name_normalized = ? AND visible = 1");
 		$query->execute(array($_GET['name']));
 		$data = $query->fetch();
 		
