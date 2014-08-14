@@ -1,0 +1,4 @@
+AuthUserFile /home/outadoc/dev/outadev-website/admin/.htpasswd
+AuthType Basic
+AuthName "outa[dev] Administration Console"
+Require valid-user
