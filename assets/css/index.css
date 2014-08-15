@@ -65,7 +65,9 @@
 	text-align: center;
 	font: 18px "Lucida Grande", Lucida, Verdana, sans-serif;
 	text-shadow: 0 0 2px #343434;
-	white-space: nowrap;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .page-header .other {
