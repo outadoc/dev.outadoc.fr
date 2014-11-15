@@ -17,6 +17,6 @@ define('CONTACT_EMAIL', 'contact@dev.outadoc.fr');				//email address where the 
 define('GOOGLE_ANALYTICS_KEY', 'UA-XXXXXXXX-X');			//google analytics key, to record statistics
 
 /***** GLOBAL PHP CONFIG *****/
-define('ROOT_SITE_URL', 'http://localhost/outadev2/');		//the url of the of the website (where index.php is, basically)
+define('ROOT_SITE_URL', 'http://localhost/dev/outadev-website/');		//the url of the of the website (where index.php is, basically)
 
 ?>
