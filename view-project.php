@@ -22,6 +22,7 @@
 <html>
 <head>
 	<?php include_once("includes/header.php"); ?>
+	<meta itemprop="priceCurrency" content="EUR"/>
 	<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/view-project.css">
 </head>
 <body>
@@ -75,43 +76,32 @@
 						$query_download->execute(Array($data['id']));
 
 						while ($link = $query_download->fetch()) {
-							?>
-							<a class="btn btn-primary btn-dl" itemprop="downloadUrl"
-							   href="<?php echo $link['download_url']; ?>">
-								<?php
+							echo '<a class="btn btn-primary btn-dl" itemprop="downloadUrl" href="' . $link['download_url'] . '">';
 
-									if ($data['category_name'] == 'web') {
-										$dl_title = 'Go to';
-									} else {
-										$dl_title = 'Download';
-									}
+							$dl_title = $data['category_name'] == 'web' ? 'Go to' : 'Download';
 
-									echo '<h1>' . $dl_title . ' ' . $data['name'] . '</h1>';
-								?>
-								<h2>
-									<?php
+							echo '<h1>' . $dl_title . ' ' . $data['name'] . '</h1>';
+							echo '<h2>';
 
-										$info = Array(
-											'<span itemprop="operatingSystem">' . $link['platform_name'] . '</span>',
-											$link['download_price'],
-											'v<span itemprop="softwareVersion">' . $link['download_version'] . '</span>');
+							$displayPlatform = $link['platform_name'];
+							$displayVersion  = $link['download_version'] == null ? null : 'v' . $link['download_version'];
 
-										echo implode(" - ", array_filter($info, function ($item) {
-											//remove items where version was empty and only "v" was appended
-											if ($item == null || $item == 'v') return false;
-											else return true;
-										}));
+							if ($link['download_price'] == null) {
+								$displayPrice = '';
+							} else if ($link['download_price'] == 0) {
+								$displayPrice = 'Free';
+							} else {
+								$displayPrice = $link['download_price'] . '€';
+							}
 
-									?>
-								</h2>
-							</a>
+							echo '<span itemprop="operatingSystem">' . $displayPlatform . '</span>';
+							if (!empty($displayPrice) || !empty($displayVersion)) echo ' - ';
+							echo '<span itemprop="price" content="' . $link['download_price'] . '">' . $displayPrice . '</span>';
+							if (!empty($displayVersion)) echo ' - ';
+							echo '<span itemprop="softwareVersion">' . $displayVersion . '</span>';
 
-						<?php
+							echo '</h2></a>';
 						}
-
-					?>
-
-					<?php
 
 						if ($data['browse_source'] != null) {
 							echo '<a class="btn btn-source" href="' . $data['browse_source'] . '">Fork me on Github</a>';
@@ -119,8 +109,9 @@
 
 					?>
 
-					<a class="btn" href="<?php echo ROOT_SITE_URL; ?>contact.html"><i class="icon-flag"></i>&nbsp;Report
-						a bug</a>
+					<a class="btn" href="<?php echo ROOT_SITE_URL; ?>contact.html">
+						<i class="icon-flag"></i>&nbsp;Report a bug
+					</a>
 
 					<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
