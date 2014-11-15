@@ -1,62 +1,62 @@
 .proj-row-header {
-	border-bottom: 1px solid #c7c7c7;
-	height: 25px;
-	font-size: 16px;
-	margin-bottom: 10px;
-	cursor: pointer;
+    border-bottom: 1px solid #c7c7c7;
+    height: 25px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .proj-row-header:before {
-	content: "▼";
-	margin-right: 4px;
+    content: "▼";
+    margin-right: 4px;
 }
 
 .projects-list .thumbnail {
-	border-radius: 20px;
-	padding: 0;
-	width: 200px;
-	overflow: hidden;
-	border: 1px solid #dfdfdf;
+    border-radius: 20px;
+    padding: 0;
+    width: 200px;
+    overflow: hidden;
+    border: 1px solid #dfdfdf;
 }
 
 .projects-list .thumbnail img {
-	width: 100%;
-	height: 120px;
+    width: 100%;
+    height: 120px;
 }
 
 .projects-list .thumbnail .caption {
-	font-size: 12px;
-	text-align: center;
-	color: white;
-	padding: 5px;
-	background-color: rgb(97, 97, 97);
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    background-color: rgb(97, 97, 97);
 }
 
 .projects-list .thumbnail a {
-	display: block;
-	text-decoration: none;
+    display: block;
+    text-decoration: none;
 }
 
 .projects-list p {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 
 .language-alert {
-	color: red;
-	font-size: 10px;
+    color: red;
+    font-size: 10px;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-	.thumbnails > li {
-		float: left;
-		margin-left: 20px;
-	}
+    .thumbnails > li {
+        float: left;
+        margin-left: 20px;
+    }
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	.projects-list .thumbnail {
-		margin-left: auto;
-		margin-right: auto;
-	}
+    .projects-list .thumbnail {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

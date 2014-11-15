@@ -1,8 +1,9 @@
-<?php 
+<?php
 	include_once('private/config.php');
-	
-	function get_message_from_http_error($code) {
-		switch($code) {
+
+	function get_message_from_http_error($code)
+	{
+		switch ($code) {
 			case 400:
 				return array("Bad Request", "This request, man. It's bad");
 				break;
@@ -59,104 +60,122 @@
 				return array("Unknown", "Did you seriously break my error page?");
 		}
 	}
-	
-	$code = (isset($_GET['code'])) ? $_GET['code'] : -1;
+
+	$code        = (isset($_GET['code'])) ? $_GET['code'] : -1;
 	$code_string = get_message_from_http_error($code);
 
 ?>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
-		<title>Err... woops.</title>
-	</head>
-	<body>
-		<style type="text/css">
-		
-			body {
-				text-align: center;
-				font-family: Helvetica, Arial, serif;
-			}
+<head>
+	<meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+	<title>Err... woops.</title>
+</head>
+<body>
+<style type="text/css">
 
-			#wrapper {
-				position: absolute;
-				top: 50%;
-				height: 350px;
-				margin-top: -200px;
-				width: 99%;
-			}
+	body {
+		text-align: center;
+		font-family: Helvetica, Arial, serif;
+	}
 
-			#content {
-				margin: auto;
-			}
-			
-			#content h1, h1 small {
-				font-size: 28px;
-			}
-			
-			h1 small {
-				color: lightgray;
-			}
-			
-			.links a {
-				text-decoration: none;
-				color: gray;
-				cursor: pointer;
-			}
-			
-			.links {
-				margin-top: 30px;
-			}
-			
-			#carrot img {
-				width: 500px;
-				height: auto;
-			}
-			
-			#carrot {
-				width: 100%;
-				margin-top: 10px;
-				animation:fly 3s infinite ease-in-out;
-				-moz-animation:fly 3s infinite ease-in-out; /* Firefox */
-				-webkit-animation:fly 3s infinite ease-in-out; /* Safari and Chrome */
-			}
-			
-			.very-small {
-				font-size: 10px;
-			}
+	#wrapper {
+		position: absolute;
+		top: 50%;
+		height: 350px;
+		margin-top: -200px;
+		width: 99%;
+	}
 
-			@keyframes fly
-			{
-			from {transform:translate(0, 0px);}
-			65% {transform:translate(0, 15px);}
-			to {transform: translate(0, -0px);}
-			}
+	#content {
+		margin: auto;
+	}
 
-			@-moz-keyframes fly
-			{
-			from {-moz-transform:translate(0, 0px);}
-			65% {-moz-transform:translate(0, 15px);}
-			to {-moz-transform: translate(0, -0px);}
-			}
+	#content h1, h1 small {
+		font-size: 28px;
+	}
 
-			@-webkit-keyframes fly
-			{
-			from {-webkit-transform:translate(0, 0px);}
-			65% {-webkit-transform:translate(0, 15px);}
-			to {-webkit-transform: translate(0, -0px);}
-			}
-			
-		</style>
+	h1 small {
+		color: lightgray;
+	}
 
-		<div id="wrapper">
-			<div id="content">
-				<h1>Error <?php echo htmlspecialchars($code); ?> <small><?php echo $code_string[0]; ?></small></h1>
-				<p><?php echo $code_string[1]; ?></p>
-				<small class="very-small">Here's a flying carrot to comfort you. &lt;3</small>
-				<div id="carrot">
-					<img src="<?php echo ROOT_SITE_URL; ?>assets/img/carrot.png" alt="Carrot">
-				</div>
-				<div class="links"><a href="<?php echo ROOT_SITE_URL; ?>">HOME</a> | <a onclick="history.go(-1);">PREVIOUS</a></div>
-			</div>
+	.links a {
+		text-decoration: none;
+		color: gray;
+		cursor: pointer;
+	}
+
+	.links {
+		margin-top: 30px;
+	}
+
+	#carrot img {
+		width: 500px;
+		height: auto;
+	}
+
+	#carrot {
+		width: 100%;
+		margin-top: 10px;
+		animation: fly 3s infinite ease-in-out;
+		-moz-animation: fly 3s infinite ease-in-out; /* Firefox */
+		-webkit-animation: fly 3s infinite ease-in-out; /* Safari and Chrome */
+	}
+
+	.very-small {
+		font-size: 10px;
+	}
+
+	@keyframes fly {
+		from {
+			transform: translate(0, 0px);
+		}
+		65% {
+			transform: translate(0, 15px);
+		}
+		to {
+			transform: translate(0, -0px);
+		}
+	}
+
+	@-moz-keyframes fly {
+		from {
+			-moz-transform: translate(0, 0px);
+		}
+		65% {
+			-moz-transform: translate(0, 15px);
+		}
+		to {
+			-moz-transform: translate(0, -0px);
+		}
+	}
+
+	@-webkit-keyframes fly {
+		from {
+			-webkit-transform: translate(0, 0px);
+		}
+		65% {
+			-webkit-transform: translate(0, 15px);
+		}
+		to {
+			-webkit-transform: translate(0, -0px);
+		}
+	}
+
+</style>
+
+<div id="wrapper">
+	<div id="content">
+		<h1>Error <?php echo htmlspecialchars($code); ?>
+			<small><?php echo $code_string[0]; ?></small>
+		</h1>
+		<p><?php echo $code_string[1]; ?></p>
+		<small class="very-small">Here's a flying carrot to comfort you. &lt;3</small>
+		<div id="carrot">
+			<img src="<?php echo ROOT_SITE_URL; ?>assets/img/carrot.png" alt="Carrot">
 		</div>
-	</body>
+		<div class="links"><a href="<?php echo ROOT_SITE_URL; ?>">HOME</a> | <a onclick="history.go(-1);">PREVIOUS</a>
+		</div>
+	</div>
+</div>
+</body>
 </html>

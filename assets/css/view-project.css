@@ -1,104 +1,105 @@
 .page-header {
-	margin: 0;
-	margin-left: 4%;
-	margin-top: 20px;
-	padding: 0;
-	border: none;
+    margin: 0;
+    margin-left: 4%;
+    margin-top: 20px;
+    padding: 0;
+    border: none;
 }
 
 .page-header h1, .page-header h2 {
-	font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, serif;
-	color: #1f1f1f;
+    font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, serif;
+    color: #1f1f1f;
 }
 
 .page-header h1 {
-	font-size: 30px;
-	font-weight: 400;
-	margin-bottom: 0;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 0;
 }
 
 .page-header h2 {
-	font-size: 21px;
-	font-weight: 300;
-	line-height: 120%;
-	margin: 0;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 120%;
+    margin: 0;
 }
 
 .span3 .btn {
-	width: 100%;
-	margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .span3 .btn h1 {
-	font-size: 20px;
-	line-height: 100%;
-	font-weight: 300;
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 300;
 }
 
 .span3 .btn h2 {
-	font-size: 13px;
-	line-height: 100%;
+    font-size: 13px;
+    line-height: 100%;
 }
 
-#screenshots-bg { 
-	position: relative;
-	height: 150px;
-	margin-top: 20px;
-	margin-bottom: 30px;
-	margin-left: -1px;
+#screenshots-bg {
+    position: relative;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: -1px;
 }
 
 #screenshots-bg ul {
-	max-height: 152px;
-	position: absolute;
-	top: 0; left: 0;
-	list-style: none;
-	margin: 0;
+    max-height: 152px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    margin: 0;
 }
 
 #screenshots-bg ul li {
-	float: left;
-	width: 300px;
-	height: 150px;
-	overflow: hidden;
-	border: 1px solid #eaeaea;
-	transition: height .3s;
+    float: left;
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+    border: 1px solid #eaeaea;
+    transition: height .3s;
 }
 
 #screenshots-bg img {
-	width: 100%;
+    width: 100%;
 }
 
 @media (max-width: 650px) {
-	#two, #three, #four {
-		visibility: hidden;
-	}
+    #two, #three, #four {
+        visibility: hidden;
+    }
 }
- 
+
 @media (max-width: 910px) {
-	#three, #four {
-		visibility: hidden;
-	}
+    #three, #four {
+        visibility: hidden;
+    }
 }
- 
+
 @media (min-width: 910px) and (max-width: 1210px) {
-	#four {
-		visibility: hidden;
-	}
+    #four {
+        visibility: hidden;
+    }
 }
 
 @media (max-width: 767px) {
-	.btn {
-		padding: 0;
-	}
+    .btn {
+        padding: 0;
+    }
 }
 
 .btn-source {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 17px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
 }
 
 .container:first-of-type {
-	padding-bottom: 0;
+    padding-bottom: 0;
 }

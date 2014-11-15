@@ -1,19 +1,19 @@
 .span4 {
-	text-align: justify;
-	margin-left: 40px;
-	border-left: 1px solid #eee;
-	padding-left: 10px;
+    text-align: justify;
+    margin-left: 40px;
+    border-left: 1px solid #eee;
+    padding-left: 10px;
 }
 
 .span6 {
-	margin-left: 0;
+    margin-left: 0;
 }
 
 .content .span12 {
-	margin-top: 0;
-	width: 828px;
+    margin-top: 0;
+    width: 828px;
 }
 
 form textarea {
-	height: 180px;
+    height: 180px;
 }

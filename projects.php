@@ -1,85 +1,92 @@
-<?php 
+<?php
 	include_once('private/config.php');
 	include_once('includes/sql.php');
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<?php include_once("includes/header.php"); ?>
-		<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/projects.css">
-	</head>
-	<body>
-		<div class="wrapper">
-			<?php include_once("includes/navbar.php");
-			
-			function get_thumbnail($data) {
-				$language_alert='';
-				
-				if($data['french_only']) {
-					$language_alert = '<p class=\'language-alert\'>This project is only available in French.</p>';
+<head>
+	<?php include_once("includes/header.php"); ?>
+	<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/projects.css">
+</head>
+<body>
+<div class="wrapper">
+	<?php include_once("includes/navbar.php");
+
+		function get_thumbnail($data)
+		{
+			$language_alert = '';
+
+			if ($data['french_only']) {
+				$language_alert = '<p class=\'language-alert\'>This project is only available in French.</p>';
+			}
+
+			return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'project/' . $data['name_normalized'] . '/" title="' . $data['name'] . '" data-content="' . $data['description_short'] . $language_alert . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="Thumbnail"><div class="caption">' . $data['name'] . '</div></a></li>';
+		}
+
+		function display_projects($db, $cat_id, $cat_disp_name)
+		{
+			$query = $db->prepare("SELECT * FROM dev_projects WHERE category_id = (SELECT category_id FROM dev_categories WHERE category_name = ?) AND visible = 1 ORDER BY name");
+			$query->execute(array($cat_id));
+
+			?>
+			<div class="row">
+				<div class="span12 proj-row-header" data-toggle="collapse"
+				     data-target="#<?php echo $cat_id; ?>"><?php echo $cat_disp_name; ?></div>
+				<div id="<?php echo $cat_id; ?>"
+				     class="span12 projects-list collapse <?php if ($query->rowCount() != 0) {
+					     echo 'in';
+				     } ?>">
+					<ul class="span12 projects-list thumbnails">
+						<?php
+
+							while ($data = $query->fetch()) {
+								echo get_thumbnail($data);
+							}
+
+							if ($query->rowCount() == 0) {
+								echo '<p>There are no projects in this section.</p>';
+							}
+
+						?>
+					</ul>
+				</div>
+			</div>
+		<?php
+		}
+
+	?>
+
+	<div class="container">
+		<div class="page-header">
+			<h1>Projects</h1>
+		</div>
+		<?php
+
+			try {
+				$db        = get_PDO_connection();
+				$query_cat = $db->query("SELECT * FROM dev_categories ORDER BY category_name");
+
+				while ($data = $query_cat->fetch()) {
+					display_projects($db, $data['category_name'], $data['category_name_long']);
 				}
 
-				return '<li class="thumbnail"><a href="' . ROOT_SITE_URL . 'project/' . $data['name_normalized'] . '/" title="' . $data['name'] . '" data-content="' . $data['description_short'] . $language_alert . '"><img src="' . ROOT_SITE_URL . 'assets/img/data/thumb/' . $data['name_normalized'] . '.png" alt="Thumbnail"><div class="caption">' . $data['name'] . '</div></a></li>';
+			} catch (Exception $e) {
+				header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
 			}
-			
-			function display_projects($db, $cat_id, $cat_disp_name) {
-				$query = $db->prepare("SELECT * FROM dev_projects WHERE category_id = (SELECT category_id FROM dev_categories WHERE category_name = ?) AND visible = 1 ORDER BY name");
-				$query->execute(array($cat_id));
-				
-				?>
-				<div class="row">
-					<div class="span12 proj-row-header" data-toggle="collapse" data-target="#<?php echo $cat_id; ?>"><?php echo $cat_disp_name; ?></div>
-					<div id="<?php echo $cat_id; ?>" class="span12 projects-list collapse <?php if($query->rowCount() != 0){echo 'in';} ?>">
-						<ul class="span12 projects-list thumbnails">
-							<?php 
-							
-								while($data = $query->fetch()) {
-									echo get_thumbnail($data);
-								}
-								
-								if($query->rowCount() == 0) {
-									echo '<p>There are no projects in this section.</p>';
-								}
 
-							?>
-						</ul>
-					</div>
-				</div>
-				<?php
-			}
-			?>
-			
-			<div class="container">
-				<div class="page-header">
-					<h1>Projects</h1>
-				</div>
-				<?php 
+		?>
+	</div>
+	<?php include_once("includes/footer.php"); ?>
+</div>
+<script type="text/javascript">
 
-					try {
-						$db = get_PDO_connection();
-						$query_cat = $db->query("SELECT * FROM dev_categories ORDER BY category_name");
+	$('.thumbnail a').popover({
+		html: true,
+		trigger: 'hover',
+		placement: 'top',
+		delay: 50
+	});
 
-						while($data = $query_cat->fetch()) {
-							display_projects($db, $data['category_name'], $data['category_name_long']);
-						}
-
-					} catch (Exception $e) {
-						header("Location: " . ROOT_SITE_URL . "error.php?code=-100");
-					}
-
-				?>
-			</div>
-			<?php include_once("includes/footer.php"); ?>
-		</div>
-		<script type="text/javascript">
-
-			$('.thumbnail a').popover({
-				html: true,
-				trigger: 'hover',
-				placement: 'top',
-				delay: 50
-			});
-			
-		</script>
-	</body>
+</script>
+</body>
 </html>
