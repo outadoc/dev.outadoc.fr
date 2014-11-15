@@ -91,7 +91,7 @@
 							} else if ($link['download_price'] == 0) {
 								$displayPrice = 'Free';
 							} else {
-								$displayPrice = $link['download_price'] . '€';
+								$displayPrice = $link['download_price'] . ' €';
 							}
 
 							echo '<span itemprop="operatingSystem">' . $displayPlatform . '</span>';
