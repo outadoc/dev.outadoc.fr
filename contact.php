@@ -13,13 +13,13 @@
 		function checkFields()
 		{
 			if (!isset($_POST['inputName']) || !isset($_POST['inputEmail']) || !isset($_POST['inputMessage'])) {
-				return "Something went wrong. Please use the form and don't try to be smart.";
+				return "Something messed with the form. <em>Don't try to fool me.</em>";
 			} else if (empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputMessage'])) {
-				return "Looks like you forgot one of the fields.";
+				return "Looks like you forgot one of the fields, try again!";
 			} else if (stristr($_POST['inputMessage'], '<a href=') != false) {
-				return "You're trying to spam, ain't you?";
+				return "Bots are not welcome in this place.";
 			} else if (!filter_var($_POST['inputEmail'], FILTER_VALIDATE_EMAIL)) {
-				return "Your email address seems invalid.";
+				return "Your email address looks invalid.";
 			}
 
 			return null;
@@ -39,7 +39,7 @@
 			} else if (strpos($recaptcha_response, '"success": true') === false) {
 				//the captcha was invalid
 				$error      = true;
-				$error_text = "The captcha you entered is incorrect.";
+				$error_text = "Couldn't confirm that you <em>are</em> human. Sorry, robot.";
 			} else {
 				//everything's supposedly okay, send the mail
 				$subject = 'Message from ' . $_POST['inputName'];
