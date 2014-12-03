@@ -4,6 +4,7 @@
 <head>
 	<?php include_once("includes/header.php"); ?>
 	<link rel="stylesheet" href="<?php echo ROOT_SITE_URL; ?>assets/css/contact.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <div class="wrapper">
@@ -26,19 +27,21 @@
 
 		$error   = false;
 		$success = false;
-		$error_text;
 
 		if (isset($_POST['inputName']) || isset($_POST['inputEmail']) || isset($_POST['inputMessage'])) {
-			require_once('lib/recaptchalib.php');
-			$privatekey = "6Lccb80SAAAAAIkqLR_k7p_DLxkU5VICUqjslKSr";
-			$resp       = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
+			//check if the captcha was okay
+			$recaptcha_response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='
+				. RECAPTCHA_PRIVATE_KEY . '&response=' . $_POST['g-recaptcha-response']);
 
 			if (($error_text = checkFields()) != null) {
+				//there was an error in the form
 				$error = true;
-			} else if (!$resp->is_valid) {
+			} else if (strpos($recaptcha_response, '"success": true') === false) {
+				//the captcha was invalid
 				$error      = true;
 				$error_text = "The captcha you entered is incorrect.";
 			} else {
+				//everything's supposedly okay, send the mail
 				$subject = 'Message from ' . $_POST['inputName'];
 
 				$headers = 'Mime-Version: 1.0' . "\r\n";
@@ -105,13 +108,7 @@
 					</div>
 					<div class="control-group">
 						<div class="controls">
-							<?php
-
-								require_once('lib/recaptchalib.php');
-								$publickey = "6Lccb80SAAAAAKMYuirEyInGqL27DRDwp-PwvsEH";
-								echo recaptcha_get_html($publickey);
-
-							?>
+							<div class="g-recaptcha" data-sitekey="6LeNsP4SAAAAAGaq5BnDPhqvBBd0Y4E-HQ5tMKe3"></div>
 						</div>
 					</div>
 					<div class="form-actions">
