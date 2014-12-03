@@ -19,3 +19,6 @@
 	/***** ANALYTICS & CAPTCHA *****/
 	define('GOOGLE_ANALYTICS_KEY', 'UA-XXXXXXXX-X');                //google analytics key, to record statistics
 	define('RECAPTCHA_PRIVATE_KEY', 'xxxxxxxxxxxxxxxxxxxxxxxx');    //recaptcha private key
+
+	/***** DISABLE/ENABLE PHP ERRORS ****/
+	error_reporting(0);
