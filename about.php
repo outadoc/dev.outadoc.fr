@@ -17,27 +17,24 @@
 					<div class="span12">
 						<img src="<?php echo ROOT_SITE_URL; ?>assets/img/avatar_wondercraft.png" alt="Avatar">
 
-						<p>Hello there! I am a French <?php echo getAgeFromBithdate(805845600); ?> years-old indie
-							developer. I have created a few mobile, desktop and web projects in different languages. I
-							don't have a preferred language; I mostly use JavaScript, HTML/CSS, PHP, C and Java in my
-							projects.</p>
+						<p>Hello there! I'm a French <?php echo getAgeFromBithdate(805845600); ?> years old indie
+							developer. I have created a few mobile, web and mobile projects in different languages. I
+							don't have a preferred language; I mostly use Java, HTML/CSS, PHP, Javascript in my
+							projects, and basically everything I'm intrigued by. I'm not scared of learning and
+							discovering new stuff, especially if they're useful.</p>
 
-						<p>I'm also using and enjoy version control tools; Git, more precisely. I know how to use
-							development tools like <a
-								href="http://www.appcelerator.com/products/titanium-mobile-application-development/">Appcelerator
-								Titanium</a>, for iOS development, as well as a bit of Java here and there for Android
-							development. I'm mostly at ease with web projects though, HTML5, and other newer
-							technologies in that domain.</p>
+						<p>I'm also using and enjoying version control tools, like git. I'm getting pretty good at
+							Android development, and also have a couple of iOS apps in my track record, but they're a
+							bit left out right now since I'm quite a busy student.</p>
 
-						<p>My native language is French, even though I've got a B1 level in English, if that means
-							anything. I already participated to the translation of projects like <a
-								href="http://hyperdock.bahoom.com">HyperDock</a> or <a href="http://minecraft.net">Minecraft</a>,
-							and am using Crowdin to manage the strings of my most successful projet, <a
-								href="<?php echo ROOT_SITE_URL; ?>project/skinswitch/">SkinSwitch</a>.</p>
+						<p>French is my mother tongue, but I'm fluent in English and have no problem conversing in
+							either language. I practice daily, thanks to movies, series and other videos, as well as
+							news articles and acquaintances. The web is amazing for things like that.</p>
 
 						<p>I'm not really available to participate in projects for now, because of my studies and my own
-							personal projects. But don't be afraid to <a
-								href="<?php echo ROOT_SITE_URL; ?>contact.html">contact me</a>!</p>
+							personal projects. But don't be afraid to
+							<a href="<?php echo ROOT_SITE_URL; ?>contact.html">contact me</a> anyway, that's what the
+							form is here for!</p>
 					</div>
 				</div>
 			</div>
@@ -47,6 +44,7 @@
 	</body>
 	</html>
 <?php
+
 	function getAgeFromBithdate($birthdate)
 	{
 		return floor((time() - $birthdate) / 60 / 60 / 24 / 365);
