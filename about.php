@@ -18,10 +18,10 @@
 						<img src="<?php echo ROOT_SITE_URL; ?>assets/img/avatar_wondercraft.png" alt="Avatar">
 
 						<p>Hello there! I'm a French <?php echo getAgeFromBithdate(805845600); ?> years old indie
-							developer. I have created a few mobile, web and mobile projects in different languages. I
-							don't have a preferred language; I mostly use Java, HTML/CSS, PHP, Javascript in my
-							projects, and basically everything I'm intrigued by. I'm not scared of learning and
-							discovering new stuff, especially if they're useful.</p>
+							developer who loves milkshakes. I have created a few mobile, web and mobile projects in
+							different languages. I don't have a preferred language; I mostly use Java, HTML/CSS, PHP,
+							Javascript in my projects, and basically anything I'm intrigued by. I'm not scared of
+							learning and discovering new stuff, especially if they're useful.</p>
 
 						<p>I'm also using and enjoying version control tools, like git. I'm getting pretty good at
 							Android development, and also have a couple of iOS apps in my track record, but they're a
