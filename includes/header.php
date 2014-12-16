@@ -4,7 +4,7 @@
 	$page  = $_SERVER['PHP_SELF'];
 
 	if (preg_match('#/index.php#', $page)) {
-		$title = "outadev";
+		$title = "Home";
 	} else if (preg_match('#/projects.php#', $page)) {
 		$title = "Projects";
 	} else if (preg_match('#/about.php#', $page)) {
