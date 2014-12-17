@@ -1,9 +1,21 @@
-SetEnv PHP_VER 5_4
-Options -Indexes
+# BEGIN Enable HTTPS for ever and always
+Header always set Strict-Transport-Security "max-age=7889231; includeSubDomains"
 
-RewriteEngine on
-RewriteRule ^project/([^/\.]+)/?$ view-project.php?name=$1 [L]
-RewriteRule ^(.*)\.html$ $1.php [nc]
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+	RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L]
+</IfModule>
+
+# END HTTPS
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^project/([a-zA-Z0-9\-_]+)/?$ view-project.php?name=$1 [L]
+	RewriteRule ^([^/]*)\.html$ $1.php [nc]
+</IfModule>
+
+Options -Indexes
 
 ErrorDocument 400 /error.php?code=400
 ErrorDocument 401 /error.php?code=401
