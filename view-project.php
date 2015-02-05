@@ -94,7 +94,7 @@
 								$displayPrice = $link['download_price'] . ' €';
 							}
 
-							echo '<span itemprop="operatingSystem">' . $displayPlatform . '</span>';
+							echo '<span itemprop="operatingSystems">' . $displayPlatform . '</span>';
 							if (!empty($displayPrice) || !empty($displayVersion)) echo ' - ';
 							echo '<span itemprop="price" content="' . $link['download_price'] . '">' . $displayPrice . '</span>';
 							if (!empty($displayVersion)) echo ' - ';
