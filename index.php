@@ -35,9 +35,9 @@
 					}
 				?>
 				<li class="thumbnail other">
-					<a href="<?php echo ROOT_SITE_URL; ?>projects.html"><img src="assets/img/other.png"
-					                                                         alt="Others"></a>
-
+					<a href="<?php echo ROOT_SITE_URL; ?>projects.html">
+						<img src="assets/img/other.png" alt="Others">
+					</a>
 					<h3>More</h3>
 				</li>
 			</ul>
@@ -45,7 +45,7 @@
 		<?php include_once("includes/footer.php"); ?>
 	</div>
 </div>
-<script type="text/javascript">
+<script data-cfasync="false" type="text/javascript">
 
 	//center the header vertically... yup, couldn't find anything better than that.
 	function adjustHeaderMargin() {
