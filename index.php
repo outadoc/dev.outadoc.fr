@@ -45,7 +45,7 @@
 		<?php include_once("includes/footer.php"); ?>
 	</div>
 </div>
-<script data-cfasync="false" type="text/javascript">
+<script type="text/javascript">
 
 	//center the header vertically... yup, couldn't find anything better than that.
 	function adjustHeaderMargin() {
