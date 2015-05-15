@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Projects
+{% endblock %}
+
+{% block body %}
+    {% for category in categories %}
+        <h1>{{ category.getNameLong() }}</h1>
+        <div class="row well">
+            {% for project in category.getProjects() %}
+                {% include('fragments/thumbnail.html.twig') %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}
