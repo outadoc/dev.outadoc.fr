@@ -20,7 +20,7 @@
 				->getRepository('AppBundle:Project')
 				->findAll();
 
-			$nb_rand_items = 3;
+			$nb_rand_items = 4;
 			$random        = array();
 
 			// Get $nb_rand_items random projects and put them in $random

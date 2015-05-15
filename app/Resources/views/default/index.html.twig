@@ -5,30 +5,13 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Featured projects</h1>
-    <div class="row well">
+    <h2 class="header">Featured projects</h2>
+    <div class="row">
         {% for project in featured %}
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="{{ asset('assets/img/data/icon/' ~ project.getNameNormalized() ~ '.png') }}"
-                         alt="{{ project.getName() }}">
-
-                    <div class="caption">
-                        <h3>{{ project.getName() }}
-                            <br>
-                            <small>for {{ project.getPlatforms()|join(', ') }}</small>
-                        </h3>
-                    </div>
-                </div>
-            </div>
+            {% include('fragments/thumbnail.html.twig') %}
         {% endfor %}
     </div>
-    <div class="row jumbotron">
-        <h1>Hey there!</h1>
-
-        <p>Some description about my work here, and possibly other interesting stuff.</p>
-    </div>
-    <h1>Some other random stuff</h1>
+    <h2 class="header">Some other random stuff</h2>
     <div class="row well">
         {% for project in random %}
             {% include('fragments/thumbnail.html.twig') %}

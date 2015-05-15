@@ -6,8 +6,8 @@
 
 {% block body %}
     {% for category in categories %}
-        <h1>{{ category.getNameLong() }}</h1>
-        <div class="row well">
+        <h3 class="header">{{ category.getNameLong() }}</h3>
+        <div class="row">
             {% for project in category.getProjects() %}
                 {% include('fragments/thumbnail.html.twig') %}
             {% endfor %}

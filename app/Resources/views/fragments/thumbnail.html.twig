@@ -1,10 +1,11 @@
-<div class="col-sm-5 col-md-3">
-    <div class="thumbnail">
-        <img src="{{ asset('assets/img/data/thumb/' ~ project.getNameNormalized() ~ '.png') }}"
-             alt="{{ project.getName() }}">
-
-        <div class="caption">
-            <h3>{{ project.getName() }}</h3>
+<div class="col s12 m3">
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ asset('https://dev.outadoc.fr/assets/img/data/thumb/' ~ project.getNameNormalized() ~ '.png') }}"
+                 alt="{{ project.getName() }}">
+        </div>
+        <div class="card-action">
+            <a href="#">{{ project.getName() }}</a>
         </div>
     </div>
 </div>
