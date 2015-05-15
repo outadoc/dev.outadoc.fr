@@ -14,11 +14,16 @@
 		{
 			$featured = $this->getDoctrine()
 				->getRepository('AppBundle:Project')
-				->findByFeatured(1);
+				->findBy(array(
+					"visible"  => 1,
+					"featured" => 1
+				));
 
 			$all = $this->getDoctrine()
 				->getRepository('AppBundle:Project')
-				->findAll();
+				->findBy(array(
+					"visible" => 1
+				));
 
 			$nb_rand_items = 4;
 			$random        = array();

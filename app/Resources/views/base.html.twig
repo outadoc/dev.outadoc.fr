@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>outa[dev] - {% block title %}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ asset('assets/css/global.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/css/materialize.min.css') }}" rel="stylesheet" type="text/css"
-          media="screen,projection">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        <link href="{{ asset('assets/css/global.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/materialize.min.css') }}" rel="stylesheet" type="text/css"
+              media="screen,projection">
+    {% endblock %}
 </head>
 <body>
 <header>
-    <nav class="blue lighten-1">
+    <nav class="top-nav blue lighten-1">
         <div class="container">
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
             <div class="nav-wrapper">
-                <a class="brand-logo">{{ block('title') }}</a>
+                <a class="brand-logo page-title">{{ block('title') }}</a>
             </div>
         </div>
     </nav>
@@ -38,15 +38,16 @@
         {% block body %}{% endblock %}
     </div>
 </main>
-<script type="text/javascript" src="{{ asset('assets/js/jquery-2.1.4.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/materialize.min.js') }}"></script>
-<script type="text/javascript">
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('assets/js/jquery-2.1.4.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/materialize.min.js') }}"></script>
+    <script type="text/javascript">
 
-    $(document).ready(function () {
-        $(".button-collapse").sideNav();
-    })
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        })
 
-</script>
-{% block javascripts %}{% endblock %}
+    </script>
+{% endblock %}
 </body>
 </html>

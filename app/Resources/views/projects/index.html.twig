@@ -9,7 +9,9 @@
         <h3 class="header">{{ category.getNameLong() }}</h3>
         <div class="row">
             {% for project in category.getProjects() %}
-                {% include('fragments/thumbnail.html.twig') %}
+                {% if project.getVisible() %}
+                    {% include('fragments/thumbnail.html.twig') %}
+                {% endif %}
             {% endfor %}
         </div>
     {% endfor %}
