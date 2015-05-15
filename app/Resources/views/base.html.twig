@@ -12,20 +12,18 @@
 </head>
 <body>
 <header>
-    <nav>
+    <nav class="blue lighten-1">
         <div class="container">
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
             <div class="nav-wrapper">
-                <a class="page-title">{{ block('title') }}</a>
+                <a class="brand-logo">{{ block('title') }}</a>
             </div>
         </div>
     </nav>
-    <div class="container">
-    </div>
     <ul id="slide-out" class="side-nav fixed">
         <li class="logo">
-            <a id="logo-container" href="http://materializecss.com/" class="brand-logo">
+            <a id="logo-container" href="{{ url('home') }}" class="brand-logo">
                 outa[dev]
             </a>
         </li>
