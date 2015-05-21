@@ -5,16 +5,5 @@
 {% endblock %}
 
 {% block body %}
-    <h3 class="header">Featured projects</h3>
-    <div class="row">
-        {% for project in featured %}
-            {% include('fragments/thumbnail.html.twig') %}
-        {% endfor %}
-    </div>
-    <h3 class="header">Some other random stuff</h3>
-    <div class="row well">
-        {% for project in random %}
-            {% include('fragments/thumbnail.html.twig') %}
-        {% endfor %}
-    </div>
+
 {% endblock %}

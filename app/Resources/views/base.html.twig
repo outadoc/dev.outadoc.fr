@@ -14,13 +14,23 @@
 <header>
     <nav class="top-nav blue lighten-1">
         <div class="container">
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-
             <div class="nav-wrapper">
-                <a class="brand-logo page-title">{{ block('title') }}</a>
+                <a class="brand-logo page-title">
+                    {% block header_title %}
+                        {{ block('title') }}
+                    {% endblock %}
+                </a>
             </div>
         </div>
     </nav>
+    <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full">
+            <i class="mdi-navigation-menu"></i>
+        </a>
+    </div>
+    <div class="top-extra blue lighten-1">
+        {% block top_extra %}{% endblock %}
+    </div>
     <ul id="slide-out" class="side-nav fixed">
         <li class="logo">
             <a id="logo-container" href="{{ url('home') }}" class="brand-logo">

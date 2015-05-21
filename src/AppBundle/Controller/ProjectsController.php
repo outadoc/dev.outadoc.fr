@@ -12,12 +12,20 @@
 		 */
 		public function indexAction()
 		{
+			$featured = $this->getDoctrine()
+				->getRepository('AppBundle:Project')
+				->findBy(array(
+					"visible"  => 1,
+					"featured" => 1
+				));
+
 			$categories = $this->getDoctrine()
 				->getRepository('AppBundle:Category')
 				->findAll();
 
 			return $this->render('projects/index.html.twig', array(
-				"categories" => $categories
+				"categories" => $categories,
+				"featured"   => $featured
 			));
 		}
 	}

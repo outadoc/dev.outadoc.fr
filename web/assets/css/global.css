@@ -32,3 +32,25 @@ nav.top-nav a.page-title {
     margin-right: 8px;
     vertical-align: -3px;
 }
+
+a.button-collapse.top-nav.full {
+    line-height: 122px;
+}
+
+a.button-collapse.top-nav {
+    left: 5%;
+}
+
+a.button-collapse.top-nav {
+    position: absolute;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    left: -2%;
+    top: 0;
+    float: none;
+    margin-left: 1.5rem;
+    color: #FFF;
+    font-size: 32px;
+    z-index: 2;
+}
