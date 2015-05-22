@@ -25,6 +25,8 @@ nav.top-nav {
 nav.top-nav a.page-title {
     line-height: 122px;
     font-size: 48px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .side-nav [class^="mdi-"] {
@@ -53,4 +55,12 @@ a.button-collapse.top-nav {
     color: #FFF;
     font-size: 32px;
     z-index: 2;
+}
+
+.card-project .card-action a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin-right: 0 !important;
 }
