@@ -4,12 +4,15 @@
     Projects
 {% endblock %}
 
-{% block top_extra %}
-    <div class="container">
-        <div class="row">
-            {% for project in featured %}
-                {% include('fragments/thumbnail.html.twig') %}
-            {% endfor %}
+{% block header %}
+    {{ parent() }}
+    <div class="top-extra blue lighten-1">
+        <div class="container">
+            <div class="row">
+                {% for project in featured %}
+                    {% include('fragments/thumbnail.html.twig') %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

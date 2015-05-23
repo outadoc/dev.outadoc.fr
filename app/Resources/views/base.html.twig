@@ -12,43 +12,53 @@
 </head>
 <body>
 <header>
-    <nav class="top-nav blue lighten-1">
+    {% block header %}
+        {% block navbar %}
+            <nav class="top-nav blue lighten-1">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a class="brand-logo page-title">
+                            {% block header_title %}
+                                {{ block('title') }}
+                            {% endblock %}
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        {% endblock %}
         <div class="container">
-            <div class="nav-wrapper">
-                <a class="brand-logo page-title">
-                    {% block header_title %}
-                        {{ block('title') }}
-                    {% endblock %}
-                </a>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <a href="#" data-activates="slide-out" class="button-collapse top-nav full">
-            <i class="mdi-navigation-menu"></i>
-        </a>
-    </div>
-    <div class="top-extra blue lighten-1">
-        {% block top_extra %}{% endblock %}
-    </div>
-    <ul id="slide-out" class="side-nav fixed">
-        <li class="logo">
-            <a id="logo-container" href="{{ url('home') }}" class="brand-logo">
-                outa[dev]
+            <a href="#" data-activates="slide-out" class="button-collapse top-nav full">
+                <i class="mdi-navigation-menu"></i>
             </a>
-        </li>
-        <li>
-            <a href="{{ path('home') }}" class="waves-effect"><i class="mdi-action-home"></i> Home</a>
-        </li>
-        <li>
-            <a href="{{ path('projects') }}" class="waves-effect"><i class="mdi-action-shop-two"></i> Projects</a></li>
-        <li>
-            <a href="{{ path('about') }}" class="waves-effect"><i class="mdi-action-account-circle"></i> Who I am</a>
-        </li>
-        <li>
-            <a href="{{ path('contact') }}" class="waves-effect"><i class="mdi-communication-email"></i> Contact</a>
-        </li>
-    </ul>
+        </div>
+        <ul id="slide-out" class="side-nav fixed">
+            <li class="logo">
+                <a id="logo-container" href="{{ url('home') }}" class="brand-logo">
+                    outa[dev]
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('home') }}" class="waves-effect">
+                    <i class="mdi-action-home"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('projects') }}" class="waves-effect">
+                    <i class="mdi-action-shop-two"></i> Projects
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('about') }}" class="waves-effect">
+                    <i class="mdi-action-account-circle"></i> About me
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('contact') }}" class="waves-effect">
+                    <i class="mdi-communication-email"></i> Contact
+                </a>
+            </li>
+        </ul>
+    {% endblock %}
 </header>
 <main>
     {% block body %}{% endblock %}
