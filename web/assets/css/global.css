@@ -94,6 +94,7 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 100%;
 }
 
 #hello h2 {
@@ -104,7 +105,8 @@ form {
 }
 
 #hello h3 {
-    font-size: 1rem;
+    font-size: 18px;
     line-height: normal;
     margin: 0;
+    font-weight: 900;
 }
