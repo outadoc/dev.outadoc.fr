@@ -1,0 +1,9 @@
+{% block form_errors %}
+    {%- if errors|length > 0 -%}
+        {%- for error in errors -%}
+            <div class="card-panel red">
+                <span class="white-text">{{ error.message }}</span>
+            </div>
+        {%- endfor -%}
+    {%- endif -%}
+{% endblock %}

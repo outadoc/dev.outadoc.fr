@@ -14,11 +14,7 @@
 				->add('name', 'text')
 				->add('email', 'email')
 				->add('message', 'textarea')
-				->add('recaptcha', 'ewz_recaptcha', array(
-					'constraints' => array(
-						new IsTrue()
-					)
-				))
+				->add('recaptcha', 'ewz_recaptcha')
 				->add('send', 'submit');
 		}
 

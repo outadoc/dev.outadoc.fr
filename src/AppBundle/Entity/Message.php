@@ -14,6 +14,7 @@
 
 		/**
 		 * @Assert\NotBlank()
+		 * @Assert\Email(checkMX = true)
 		 */
 		protected $email;
 

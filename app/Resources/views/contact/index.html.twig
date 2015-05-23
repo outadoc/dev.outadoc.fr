@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'form/fields.html.twig' %}
 
 {% block title %}
     Contact
@@ -10,33 +11,45 @@
             {{ form_start(form) }}
             {{ form_errors(form) }}
 
-            <div class="input-field col s12 m10">
+            <div class="input-field col s12 m8">
                 <i class="mdi-action-account-circle prefix"></i>
                 {{ form_label(form.name) }}
-                {{ form_errors(form.name) }}
                 {{ form_widget(form.name) }}
             </div>
 
-            <div class="input-field col s12 m10">
+            <div class="col s12 m4">
+                {{ form_errors(form.name) }}
+            </div>
+
+            <div class="input-field col s12 m8">
                 <i class="mdi-communication-email prefix"></i>
                 {{ form_label(form.email) }}
-                {{ form_errors(form.email) }}
                 {{ form_widget(form.email) }}
             </div>
 
-            <div class="input-field col s12 m10">
+            <div class="col s12 m4">
+                {{ form_errors(form.email) }}
+            </div>
+
+            <div class="input-field col s12 m8">
                 <i class="mdi-editor-mode-edit prefix"></i>
                 {{ form_label(form.message) }}
-                {{ form_errors(form.message) }}
                 {{ form_widget(form.message, {'attr': {'class': 'materialize-textarea'}}) }}
             </div>
 
-            <div class="input-field col s12 m10">
+            <div class="col s12 m4">
                 {{ form_errors(form.message) }}
+            </div>
+
+            <div class="input-field col s12 m8">
                 {{ form_widget(form.recaptcha) }}
             </div>
 
-            <div class="input-field col s12 m10">
+            <div class="col s12 m4">
+                {{ form_errors(form.recaptcha) }}
+            </div>
+
+            <div class="input-field col s12 m8">
                 {{ form_label(form.send) }}
                 {{ form_widget(form.send, {'attr': {'class': 'btn waves-effect waves-light'}}) }}
             </div>
