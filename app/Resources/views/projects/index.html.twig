@@ -16,13 +16,19 @@
 
 {% block body %}
     {% for category in categories %}
-        <h3 class="header">{{ category.getNameLong() }}</h3>
-        <div class="row">
-            {% for project in category.getProjects() %}
-                {% if project.getVisible() %}
-                    {% include('fragments/thumbnail.html.twig') %}
-                {% endif %}
-            {% endfor %}
+        <div class="section">
+            <h5>{{ category.getNameLong() }}</h5>
+
+            <div class="row">
+                {% for project in category.getProjects() %}
+                    {% if project.getVisible() %}
+                        {% include('fragments/thumbnail.html.twig') %}
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
+        {% if not loop.last %}
+            <div class="divider"></div>
+        {% endif %}
     {% endfor %}
 {% endblock %}
