@@ -28,4 +28,13 @@
 				"featured"   => $featured
 			));
 		}
+
+		/**
+		 * @deprecated
+		 * @Route("/projects.html")
+		 */
+		public function oldIndexAction()
+		{
+			return $this->redirectToRoute('projects');
+		}
 	}

@@ -45,4 +45,13 @@
 			));
 		}
 
+		/**
+		 * @deprecated
+		 * @Route("/contact.html")
+		 */
+		public function oldIndexAction()
+		{
+			return $this->redirectToRoute('contact');
+		}
+
 	}
