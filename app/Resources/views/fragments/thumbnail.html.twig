@@ -1,12 +1,12 @@
 <div class="card card-project">
-    <div class="card-image">
+    <div class="card-image waves-effect">
         <a href="{{ path('project', {"project": project.getSimpleName()}) }}">
             <img src="{{ asset('assets/img/data/thumb/' ~ project.getSimpleName() ~ '.png') }}"
                  alt="{{ project.getName() }}">
         </a>
     </div>
     <div class="card-content">
-        <p class="center">
+        <p class="center truncate">
             <a class="grey-text text-darken-2" href="{{ path('project', {"project": project.getSimpleName()}) }}">
                 {{ project.getName() }}
             </a>
