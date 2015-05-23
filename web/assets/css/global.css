@@ -64,3 +64,7 @@ a.button-collapse.top-nav {
     display: block;
     margin-right: 0 !important;
 }
+
+form {
+    margin-top: 20px;
+}
