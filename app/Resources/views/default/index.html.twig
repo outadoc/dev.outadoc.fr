@@ -1,10 +1,16 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('assets/css/index.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
 {% block title %}
     Home
 {% endblock %}
 
 {% block navbar %}
+    {# Empty, no navbar wanted here #}
 {% endblock %}
 
 {% block body %}

@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 {% form_theme form 'form/fields.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('assets/css/form.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
 {% block title %}
     Contact
 {% endblock %}
@@ -62,7 +67,7 @@
 
             <div class="input-field col s12 m8">
                 {{ form_label(form.send) }}
-                {{ form_widget(form.send, {'attr': {'class': 'btn waves-effect waves-light'}}) }}
+                {{ form_widget(form.send, {'attr': {'class': 'btn blue waves-effect waves-light'}}) }}
             </div>
 
             {{ form_end(form) }}

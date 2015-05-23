@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>outa[dev] - {% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1C8DE8">
     {% block stylesheets %}
         <link href="{{ asset('assets/css/global.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/materialize.min.css') }}" rel="stylesheet" type="text/css"
@@ -81,7 +82,7 @@
 
         $(document).ready(function () {
             $(".button-collapse").sideNav();
-        })
+        });
 
     </script>
 {% endblock %}
