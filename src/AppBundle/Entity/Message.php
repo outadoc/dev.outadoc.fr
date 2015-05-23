@@ -3,6 +3,7 @@
 	namespace AppBundle\Entity;
 
 	use Symfony\Component\Validator\Constraints as Assert;
+	use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
 
 	class Message
 	{
@@ -20,6 +21,11 @@
 		 * @Assert\NotBlank()
 		 */
 		protected $message;
+
+		/**
+		 * @Recaptcha\IsTrue
+		 */
+		public $recaptcha;
 
 		/**
 		 * @return string

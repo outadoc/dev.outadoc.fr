@@ -4,6 +4,7 @@
 
 	use Symfony\Component\Form\AbstractType;
 	use Symfony\Component\Form\FormBuilderInterface;
+	use EWZ\Bundle\RecaptchaBundle\Validator\Constraints\IsTrue;
 
 	class MessageType extends AbstractType
 	{
@@ -13,6 +14,11 @@
 				->add('name', 'text')
 				->add('email', 'email')
 				->add('message', 'textarea')
+				->add('recaptcha', 'ewz_recaptcha', array(
+					'constraints' => array(
+						new IsTrue()
+					)
+				))
 				->add('send', 'submit');
 		}
 
