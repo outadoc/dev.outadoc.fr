@@ -31,9 +31,9 @@
 		/**
 		 * @var string
 		 *
-		 * @ORM\Column(name="project_name_normalized", type="string", length=30)
+		 * @ORM\Column(name="project_simple_name", type="string", length=30)
 		 */
-		private $nameNormalized;
+		private $simpleName;
 
 		/**
 		 * @var string
@@ -137,12 +137,12 @@
 		/**
 		 * Set nameNormalized
 		 *
-		 * @param string $nameNormalized
+		 * @param string $simpleName
 		 * @return Project
 		 */
-		public function setNameNormalized($nameNormalized)
+		public function setSimpleName($simpleName)
 		{
-			$this->nameNormalized = $nameNormalized;
+			$this->simpleName = $simpleName;
 
 			return $this;
 		}
@@ -152,9 +152,9 @@
 		 *
 		 * @return string
 		 */
-		public function getNameNormalized()
+		public function getSimpleName()
 		{
-			return $this->nameNormalized;
+			return $this->simpleName;
 		}
 
 		/**

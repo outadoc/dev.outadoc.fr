@@ -30,6 +30,20 @@
 		}
 
 		/**
+		 * @Route("/projects/{project}", name="project")
+		 */
+		public function viewAction($project)
+		{
+			$_project = $this->getDoctrine()
+				->getRepository('AppBundle:Project')
+				->findOneBySimpleName($project);
+
+			return $this->render('projects/single.html.twig', array(
+				"project" => $_project
+			));
+		}
+
+		/**
 		 * @deprecated
 		 * @Route("/projects.html")
 		 */

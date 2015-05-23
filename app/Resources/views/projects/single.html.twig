@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ project.getName() }}
+{% endblock %}
+
+{% block header_title %}
+    {{ parent() }}
+    {% if project.getPlatforms() is not empty %}
+        <small class="hide-on-small-and-down">for
+            {% for platform in project.getPlatforms() %}
+                {% if loop.last %}
+                    {{ platform }}
+                {% else %}
+                    {{ platform }},
+                {% endif %}
+            {% endfor %}
+        </small>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l5">
+                {# <img class="materialboxed" width="300" src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/0.png') }}"> #}
+            </div>
+            <div class="col s12 m12 l7">
+                {{ project.getDescription()|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
