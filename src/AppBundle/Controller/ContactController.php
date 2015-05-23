@@ -23,12 +23,25 @@
 			$form->handleRequest($request);
 
 			if ($form->isValid()) {
-				// perform some action, such as saving the task to the database
-				print "valid";
+				// Send an email with the message
+				$message = \Swift_Message::newInstance()
+					->setSubject('Message from ' . $message->getName())
+					->setFrom($message->getEmail())
+					->setTo('outadoc+dev@gmail.com')
+					->setBody(
+						$this->renderView(
+							'contact/email.html.twig',
+							array('message' => $message)
+						),
+						'text/html'
+					);
+
+				$this->get('mailer')->send($message);
 			}
 
 			return $this->render('contact/index.html.twig', array(
-				'form' => $form->createView()
+				'form'  => $form->createView(),
+				'valid' => $form->isValid()
 			));
 		}
 
