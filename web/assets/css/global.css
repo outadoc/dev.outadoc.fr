@@ -3,18 +3,34 @@
     src: url('/assets/font/I-pixel-u.ttf');
 }
 
+@media only screen and (max-width: 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #hello {
+        margin-left: 90px;
+    }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 .header {
     font-weight: 300;
 }
 
 header, main, footer {
     padding-left: 150px;
-}
-
-@media only screen and (max-width: 992px) {
-    header, main, footer {
-        padding-left: 0;
-    }
 }
 
 .side-nav .brand-logo {
@@ -111,10 +127,6 @@ form {
     font-weight: 900;
 }
 
-@media only screen and (min-width: 992px) {
-
-    #hello {
-        margin-left: 90px;
-    }
-
+footer.page-footer {
+    padding-top: 0 !important;
 }
