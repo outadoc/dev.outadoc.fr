@@ -12,6 +12,8 @@
 
 		/**
 		 * @Route("/contact", name="contact")
+		 * @param Request $request
+		 * @return \Symfony\Component\HttpFoundation\Response
 		 */
 		public function indexAction(Request $request)
 		{

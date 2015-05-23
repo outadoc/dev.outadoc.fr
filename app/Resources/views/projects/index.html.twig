@@ -15,20 +15,22 @@
 {% endblock %}
 
 {% block body %}
-    {% for category in categories %}
-        <div class="section">
-            <h5>{{ category.getNameLong() }}</h5>
+    <div class="container">
+        {% for category in categories %}
+            <div class="section">
+                <h5>{{ category.getNameLong() }}</h5>
 
-            <div class="row">
-                {% for project in category.getProjects() %}
-                    {% if project.getVisible() %}
-                        {% include('fragments/thumbnail.html.twig') %}
-                    {% endif %}
-                {% endfor %}
+                <div class="row">
+                    {% for project in category.getProjects() %}
+                        {% if project.getVisible() %}
+                            {% include('fragments/thumbnail.html.twig') %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        {% if not loop.last %}
-            <div class="divider"></div>
-        {% endif %}
-    {% endfor %}
+            {% if not loop.last %}
+                <div class="divider"></div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}

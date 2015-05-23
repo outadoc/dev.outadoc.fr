@@ -37,16 +37,21 @@
                 outa[dev]
             </a>
         </li>
-        <li><a href="{{ path('home') }}"><i class="mdi-action-home"></i> Home</a></li>
-        <li><a href="{{ path('projects') }}"><i class="mdi-action-shop-two"></i> Projects</a></li>
-        <li><a href="{{ path('about') }}"><i class="mdi-action-account-circle"></i> Who I am</a></li>
-        <li><a href="{{ path('contact') }}"><i class="mdi-communication-email"></i> Contact</a></li>
+        <li>
+            <a href="{{ path('home') }}" class="waves-effect"><i class="mdi-action-home"></i> Home</a>
+        </li>
+        <li>
+            <a href="{{ path('projects') }}" class="waves-effect"><i class="mdi-action-shop-two"></i> Projects</a></li>
+        <li>
+            <a href="{{ path('about') }}" class="waves-effect"><i class="mdi-action-account-circle"></i> Who I am</a>
+        </li>
+        <li>
+            <a href="{{ path('contact') }}" class="waves-effect"><i class="mdi-communication-email"></i> Contact</a>
+        </li>
     </ul>
 </header>
 <main>
-    <div class="container">
-        {% block body %}{% endblock %}
-    </div>
+    {% block body %}{% endblock %}
 </main>
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('assets/js/jquery-2.1.4.min.js') }}"></script>
