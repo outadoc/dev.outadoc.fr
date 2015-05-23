@@ -1,11 +1,15 @@
-<div class="col s6 m3">
-    <div class="card card-project">
-        <div class="card-image">
-            <img src="{{ asset('assets/img/data/thumb/' ~ project.getNameNormalized() ~ '.png') }}"
+<div class="card card-project">
+    <div class="card-image">
+        <a href="{{ path('project', {"project": project.getSimpleName()}) }}">
+            <img src="{{ asset('assets/img/data/thumb/' ~ project.getSimpleName() ~ '.png') }}"
                  alt="{{ project.getName() }}">
-        </div>
-        <div class="card-action">
-            <a href="#" class="truncate">{{ project.getName() }}</a>
-        </div>
+        </a>
+    </div>
+    <div class="card-content">
+        <p class="center">
+            <a class="grey-text text-darken-2" href="{{ path('project', {"project": project.getSimpleName()}) }}">
+                {{ project.getName() }}
+            </a>
+        </p>
     </div>
 </div>

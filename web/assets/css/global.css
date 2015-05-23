@@ -66,15 +66,12 @@ a.button-collapse.top-nav {
     z-index: 2;
 }
 
-.card-project .card-action a {
-    display: block;
-    margin-right: 0 !important;
+.card.card-project .card-content {
+    padding: 15px;
 }
 
-.promo i {
-    color: #42A5F5;
-    font-size: 7rem;
-    display: block;
+.card-project .card-content a {
+    font-size: 16px;
 }
 
 footer.page-footer {

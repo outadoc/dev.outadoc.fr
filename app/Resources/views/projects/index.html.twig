@@ -10,7 +10,9 @@
         <div class="container">
             <div class="row">
                 {% for project in featured %}
-                    {% include('fragments/thumbnail.html.twig') %}
+                    <div class="col s6 m3">
+                        {% include('fragments/thumbnail.html.twig') %}
+                    </div>
                 {% endfor %}
             </div>
         </div>
@@ -26,7 +28,9 @@
                 <div class="row">
                     {% for project in category.getProjects() %}
                         {% if project.getVisible() %}
-                            {% include('fragments/thumbnail.html.twig') %}
+                            <div class="col s6 m3">
+                                {% include('fragments/thumbnail.html.twig') %}
+                            </div>
                         {% endif %}
                     {% endfor %}
                 </div>

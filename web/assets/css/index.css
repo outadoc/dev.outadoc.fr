@@ -36,3 +36,9 @@
         margin-left: 90px;
     }
 }
+
+.promo i {
+    color: #42A5F5;
+    font-size: 7rem;
+    display: block;
+}
