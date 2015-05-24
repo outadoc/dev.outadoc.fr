@@ -4,6 +4,7 @@
 
 	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+	use Symfony\Component\Finder\Finder;
 
 	class ProjectsController extends Controller
 	{
@@ -38,8 +39,26 @@
 				->getRepository('AppBundle:Project')
 				->findOneBySimpleName($project);
 
+			// List all screenshots available to display on the homepage
+			$finder = new Finder();
+			$finder->files()
+				->in("../web/assets/img/data/screen/" . $project)
+				->name("*.png")
+				->depth("== 0");
+
+			// Get the screenshot file names in an array
+			$screenshots = array();
+
+			foreach ($finder as $file) {
+				$screenshots[] = $file->getRelativePathname();
+			}
+
+			// Remove the first item
+			array_shift($screenshots);
+
 			return $this->render('projects/single.html.twig', array(
-				"project" => $_project
+				"project"     => $_project,
+				"screenshots" => $screenshots
 			));
 		}
 

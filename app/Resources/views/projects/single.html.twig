@@ -81,22 +81,12 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s3 m3">
-                            <img class="materialboxed screenshot z-depth-1"
-                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/1.png') }}">
-                        </div>
-                        <div class="col s3 m3">
-                            <img class="materialboxed screenshot z-depth-1"
-                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/2.png') }}">
-                        </div>
-                        <div class="col s3 m3">
-                            <img class="materialboxed screenshot z-depth-1"
-                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/3.png') }}">
-                        </div>
-                        <div class="col s3 m3">
-                            <img class="materialboxed screenshot z-depth-1"
-                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/4.png') }}">
-                        </div>
+                        {% for screenshot in screenshots %}
+                            <div class="col s3 m3">
+                                <img class="materialboxed screenshot z-depth-1"
+                                     src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/' ~ screenshot) }}">
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
 
