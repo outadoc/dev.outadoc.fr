@@ -71,6 +71,17 @@
         <div class="row">
             <div class="col s12 m12 l7 project-description">
                 {{ project.getDescription()|raw }}
+                <p class="source-code-links">
+                    <em class="grey-text">
+                        Check out the source code:
+                        {% for download in project.getDownloads() %}
+                            {%- if download.getSourceUrl() != null -%}
+                                {% if not loop.first %},{% endif %}
+                                <a href="{{ download.getSourceUrl() }}">{{ download.getPlatform().getName() }}</a>
+                            {%- endif -%}
+                        {% endfor %}
+                    </em>
+                </p>
             </div>
             <div class="col s12 m12 l5">
                 <div class="container screenshots">
@@ -89,18 +100,6 @@
                         {% endfor %}
                     </div>
                 </div>
-
-            </div>
-            <div class="col l12 hide-on-med-and-down">
-                <em class="grey-text">
-                    Check out the source code:
-                    {% for download in project.getDownloads() %}
-                        {%- if download.getSourceUrl() != null -%}
-                            {% if not loop.first %},{% endif %}
-                            <a href="{{ download.getSourceUrl() }}">{{ download.getPlatform().getName() }}</a>
-                        {%- endif -%}
-                    {% endfor %}
-                </em>
             </div>
         </div>
     </div>
