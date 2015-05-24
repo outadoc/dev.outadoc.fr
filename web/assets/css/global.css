@@ -91,6 +91,11 @@ footer.page-footer {
 
 .btn.download {
     top: 35px;
+    padding-right: 12px;
+}
+
+.btn.download i {
+    line-height: inherit;
 }
 
 .collection a p {
@@ -104,4 +109,14 @@ footer.page-footer {
 
 .collection .collection-item.avatar .circle {
     margin-top: 7px;
+}
+
+#download-fab {
+    position: absolute;
+    right: 0;
+    top: 92px;
+}
+
+.project-description {
+    margin-top: 20px;
 }

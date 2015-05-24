@@ -26,22 +26,22 @@
         </small>
     {% endif %}
 
-    {% set mobile_classes = "btn btn-large download yellow darken-1 grey-text text-darken-3 waves-effect hide-on-med-and-down right" %}
-    {% set desktop_classes = "btn-floating btn-large waves-effect waves-light yellow darken-1 modal-trigger hide-on-large-only" %}
+    {% set large_classes = "btn btn-large download yellow darken-1 grey-text text-darken-3 waves-effect hide-on-med-and-down right" %}
+    {% set medium_classes = "btn-floating btn-large waves-effect waves-light yellow darken-1 modal-trigger hide-on-large-only" %}
 
     {# Download links #}
     {% if project.getDownloads()[0].getPlatform().getName() == 'Web' %}
         {# Website: only show a "go to" link #}
-        <a class='{{ mobile_classes }}' href='{{ project.getDownloads()[0].getDownloadUrl() }}'>
+        <a class='{{ large_classes }}' href='{{ project.getDownloads()[0].getDownloadUrl() }}'>
             Go to the website
         </a>
-        <a data-target="modal-download" class="{{ desktop_classes }} download-fab">
+        <a id="download-fab" class="{{ medium_classes }}" href="{{ project.getDownloads()[0].getDownloadUrl() }}">
             <i class="mdi-action-open-in-new"></i>
         </a>
     {% else %}
         {# Otherwise, display a dropdown with all the downloads #}
-        <a class="dropdown-button {{ mobile_classes }}" href="#"
-           data-activates="dropdown-downloads">Download</a>
+        <a class="dropdown-button {{ large_classes }}" href="#"
+           data-activates="dropdown-downloads">Download <i class="mdi-navigation-arrow-drop-down right"></i></a>
 
         <ul id="dropdown-downloads" class="dropdown-content">
             {% for download in project.getDownloads() %}
@@ -54,8 +54,9 @@
             {% endfor %}
         </ul>
 
-        <a data-target="modal-download" class="{{ desktop_classes }} download-fab"><i
-                    class="mdi-action-get-app"></i></a>
+        <a data-target="modal-download" id="download-fab" class="{{ medium_classes }}">
+            <i class="mdi-action-get-app"></i>
+        </a>
     {% endif %}
 {% endblock %}
 
@@ -65,7 +66,7 @@
             <div class="col s12 m12 l5">
                 {# <img class="materialboxed" width="300" src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/0.png') }}"> #}
             </div>
-            <div class="col s12 m12 l7">
+            <div class="col s12 m12 l7 project-description">
                 {{ project.getDescription()|raw }}
             </div>
         </div>
