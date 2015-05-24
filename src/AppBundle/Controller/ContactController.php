@@ -51,7 +51,7 @@
 		 */
 		public function oldIndexAction()
 		{
-			return $this->redirectToRoute('contact');
+			return $this->redirectToRoute('contact', array(), 301);
 		}
 
 	}

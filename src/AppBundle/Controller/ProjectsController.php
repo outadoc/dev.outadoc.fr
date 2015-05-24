@@ -68,6 +68,15 @@
 		 */
 		public function oldIndexAction()
 		{
-			return $this->redirectToRoute('projects');
+			return $this->redirectToRoute('projects', array(), 301);
+		}
+
+		/**
+		 * @deprecated
+		 * @Route("/project/{project}")
+		 */
+		public function oldProjectsAction($project)
+		{
+			return $this->redirectToRoute('project', array("project" => $project), 301);
 		}
 	}

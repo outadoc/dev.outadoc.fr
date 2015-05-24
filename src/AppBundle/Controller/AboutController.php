@@ -22,7 +22,7 @@
 		 */
 		public function oldIndexAction()
 		{
-			return $this->redirectToRoute('about');
+			return $this->redirectToRoute('about', array(), 301);
 		}
 
 	}
