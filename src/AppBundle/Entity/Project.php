@@ -45,9 +45,23 @@
 		/**
 		 * @var string
 		 *
+		 * @ORM\Column(name="project_description_short_fr", type="string", length=500)
+		 */
+		private $frenchShortDescription;
+
+		/**
+		 * @var string
+		 *
 		 * @ORM\Column(name="project_description", type="text")
 		 */
 		private $description;
+
+		/**
+		 * @var string
+		 *
+		 * @ORM\Column(name="project_description_fr", type="text")
+		 */
+		private $frenchDescription;
 
 		/**
 		 * @var integer
@@ -62,13 +76,6 @@
 		 * @ORM\Column(name="project_featured", type="smallint")
 		 */
 		private $featured;
-
-		/**
-		 * @var integer
-		 *
-		 * @ORM\Column(name="project_french_only", type="smallint")
-		 */
-		private $frenchOnly;
 
 		/**
 		 * @var integer
@@ -164,6 +171,29 @@
 		}
 
 		/**
+		 * Get frenchShortDescription
+		 *
+		 * @return string
+		 */
+		public function getFrenchShortDescription()
+		{
+			return $this->frenchShortDescription;
+		}
+
+		/**
+		 * Set frenchShortDescription
+		 *
+		 * @param string $frenchShortDescription
+		 * @return Project
+		 */
+		public function setFrenchShortDescription($frenchShortDescription)
+		{
+			$this->frenchShortDescription = $frenchShortDescription;
+
+			return $this;
+		}
+
+		/**
 		 * Get shortDescription
 		 *
 		 * @return string
@@ -194,6 +224,29 @@
 		public function getDescription()
 		{
 			return $this->description;
+		}
+
+		/**
+		 * Set frenchDescription
+		 *
+		 * @param string $frenchDescription
+		 * @return Project
+		 */
+		public function setFrenchDescription($frenchDescription)
+		{
+			$this->frenchDescription = $frenchDescription;
+
+			return $this;
+		}
+
+		/**
+		 * Get frenchDescription
+		 *
+		 * @return string
+		 */
+		public function getFrenchDescription()
+		{
+			return $this->frenchDescription;
 		}
 
 		/**
@@ -240,29 +293,6 @@
 		public function getFeatured()
 		{
 			return $this->featured;
-		}
-
-		/**
-		 * Set frenchOnly
-		 *
-		 * @param integer $frenchOnly
-		 * @return Project
-		 */
-		public function setFrenchOnly($frenchOnly)
-		{
-			$this->frenchOnly = $frenchOnly;
-
-			return $this;
-		}
-
-		/**
-		 * Get frenchOnly
-		 *
-		 * @return integer
-		 */
-		public function getFrenchOnly()
-		{
-			return $this->frenchOnly;
 		}
 
 		/**
