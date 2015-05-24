@@ -88,3 +88,20 @@ footer.page-footer {
 .card-image.waves-effect {
     display: block;
 }
+
+.btn.download {
+    top: 35px;
+}
+
+.collection a p {
+    color: rgba(0, 0, 0, 0.71);
+}
+
+.collection a .title {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.collection .collection-item.avatar .circle {
+    margin-top: 7px;
+}
