@@ -57,13 +57,6 @@
 		private $categoryId;
 
 		/**
-		 * @var string
-		 *
-		 * @ORM\Column(name="project_source_url", type="string", length=512)
-		 */
-		private $sourceUrl;
-
-		/**
 		 * @var integer
 		 *
 		 * @ORM\Column(name="project_featured", type="smallint")
@@ -224,29 +217,6 @@
 		public function getCategoryId()
 		{
 			return $this->categoryId;
-		}
-
-		/**
-		 * Set browseSource
-		 *
-		 * @param string $sourceUrl
-		 * @return Project
-		 */
-		public function setSourceUrl($sourceUrl)
-		{
-			$this->sourceUrl = $sourceUrl;
-
-			return $this;
-		}
-
-		/**
-		 * Get browseSource
-		 *
-		 * @return string
-		 */
-		public function getSourceUrl()
-		{
-			return $this->sourceUrl;
 		}
 
 		/**

@@ -28,6 +28,13 @@
 		private $downloadUrl;
 
 		/**
+		 * @var string
+		 *
+		 * @ORM\Column(name="download_source_url", type="string", length=512)
+		 */
+		private $sourceUrl;
+
+		/**
 		 * @var integer
 		 *
 		 * @ORM\Id
@@ -94,6 +101,29 @@
 		public function getDownloadUrl()
 		{
 			return $this->downloadUrl;
+		}
+
+		/**
+		 * Set sourceUrl
+		 *
+		 * @param string $sourceUrl
+		 * @return Download
+		 */
+		public function setSourceUrl($sourceUrl)
+		{
+			$this->sourceUrl = $sourceUrl;
+
+			return $this;
+		}
+
+		/**
+		 * Get sourceUrl
+		 *
+		 * @return string
+		 */
+		public function getSouceUrl()
+		{
+			return $this->sourceUrl;
 		}
 
 		/**
