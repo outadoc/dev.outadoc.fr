@@ -66,6 +66,17 @@ a.button-collapse.top-nav {
     margin-top: 20px;
 }
 
+/* Cute centering hack for screenshot thumbnails */
+.row-centered {
+    text-align: center !important;
+}
+
+.col-centered {
+    display: inline-block !important;
+    float: none !important;
+    text-align: left !important;
+}
+
 @media only screen and (max-width: 600px) {
     main .section {
         padding-top: 37px;

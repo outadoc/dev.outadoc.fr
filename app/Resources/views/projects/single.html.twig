@@ -34,7 +34,8 @@
                     {# Download links #}
                     {% if project.getDownloads()[0].getPlatform().getName() == 'Web' %}
                         {# Website: only show a "go to" link #}
-                        <a class="{{ large_classes }}" href="{{ project.getDownloads()[0].getDownloadUrl() }}">
+                        <a class="{{ large_classes }} website-link"
+                           href="{{ project.getDownloads()[0].getDownloadUrl() }}">
                             Go to the website
                         </a>
                         <a id="download-fab" class="{{ medium_classes }}"
@@ -91,11 +92,12 @@
                                  src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/0.png') }}">
                         </div>
                     </div>
-                    <div class="row">
-                        {% for screenshot in screenshots %}
-                            <div class="col s3 m3">
+                    <div class="row row-centered">
+                        {# Display every secondary screenshot under the main one #}
+                        {% for i in 1..screen_count - 1 %}
+                            <div class="col s3 m3 col-centered">
                                 <img class="materialboxed screenshot z-depth-1"
-                                     src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/' ~ screenshot) }}">
+                                     src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/' ~ i ~ '.png') }}">
                             </div>
                         {% endfor %}
                     </div>

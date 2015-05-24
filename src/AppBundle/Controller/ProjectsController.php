@@ -46,19 +46,11 @@
 				->name("*.png")
 				->depth("== 0");
 
-			// Get the screenshot file names in an array
-			$screenshots = array();
-
-			foreach ($finder as $file) {
-				$screenshots[] = $file->getRelativePathname();
-			}
-
-			// Remove the first item
-			array_shift($screenshots);
+			$screenshot_count = iterator_count($finder);
 
 			return $this->render('projects/single.html.twig', array(
 				"project"     => $_project,
-				"screenshots" => $screenshots
+				"screen_count" => $screenshot_count
 			));
 		}
 
