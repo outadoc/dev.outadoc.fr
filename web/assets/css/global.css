@@ -124,3 +124,8 @@ footer.page-footer {
 #dropdown-downloads {
     width: auto !important;
 }
+
+.collection .secondary-content i {
+    top: 15px;
+    position: relative;
+}

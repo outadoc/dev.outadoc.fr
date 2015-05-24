@@ -74,18 +74,26 @@
     </div>
     <div id="modal-download" class="modal bottom-sheet">
         <div class="modal-content">
-            <h4>Download {{ project.getName() }}</h4>
+            <div class="collection-header"><h4>Download {{ project.getName() }}</h4></div>
 
             <div class="collection">
                 {% for download in project.getDownloads() %}
-                    <a href="{{ download.getDownloadUrl() }}" class="collection-item avatar">
-                        <i class="mdi-file-file-download circle green"></i>
-                        <span class="title">{{ download.getPlatform().getName() }}</span>
+                    <div class="row collection-item avatar">
+                        <div class="col s11">
+                            <a href="{{ download.getDownloadUrl() }}">
+                                <i class="mdi-file-file-download circle light-blue lighten-1"></i>
+                                <span class="title">{{ download.getPlatform().getName() }}</span>
 
-                        <p>Version {{ download.getVersion() }}<br>
-                            {{- _self.format_price(download.getPrice()) -}}
-                        </p>
-                    </a>
+                                <p>Version {{ download.getVersion() }}<br>
+                                    {{- _self.format_price(download.getPrice()) -}}
+                                </p>
+                            </a>
+                        </div>
+                        <div class="col s1">
+                            <a href="{{ download.getSourceUrl() }}" class="secondary-content"><i
+                                        class="small mdi-action-book light-green-text"></i></a>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>

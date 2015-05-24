@@ -121,7 +121,7 @@
 		 *
 		 * @return string
 		 */
-		public function getSouceUrl()
+		public function getSourceUrl()
 		{
 			return $this->sourceUrl;
 		}
