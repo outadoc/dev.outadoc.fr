@@ -12,13 +12,15 @@
 
 {% block body %}
     <div class="container">
-        <div class="row">
-            {{ form_start(form) }}
+        {{ form_start(form) }}
 
+        <div class="row">
             <div class="col s12 m12">
                 {{ form_errors(form) }}
             </div>
+        </div>
 
+        <div class="row">
             <div class="col s12 m12">
                 {% if valid %}
                     <div class="card-panel green">
@@ -26,7 +28,9 @@
                     </div>
                 {% endif %}
             </div>
+        </div>
 
+        <div class="row">
             <div class="input-field col s12 m8">
                 <i class="mdi-action-account-circle prefix"></i>
                 {{ form_label(form.name) }}
@@ -36,7 +40,9 @@
             <div class="col s12 m4">
                 {{ form_errors(form.name) }}
             </div>
+        </div>
 
+        <div class="row">
             <div class="input-field col s12 m8">
                 <i class="mdi-communication-email prefix"></i>
                 {{ form_label(form.email) }}
@@ -46,7 +52,9 @@
             <div class="col s12 m4">
                 {{ form_errors(form.email) }}
             </div>
+        </div>
 
+        <div class="row">
             <div class="input-field col s12 m8">
                 <i class="mdi-editor-mode-edit prefix"></i>
                 {{ form_label(form.message) }}
@@ -56,7 +64,9 @@
             <div class="col s12 m4">
                 {{ form_errors(form.message) }}
             </div>
+        </div>
 
+        <div class="row">
             <div class="input-field col s12 m8">
                 {{ form_widget(form.recaptcha) }}
             </div>
@@ -64,13 +74,15 @@
             <div class="col s12 m4">
                 {{ form_errors(form.recaptcha) }}
             </div>
+        </div>
 
+        <div class="row">
             <div class="input-field col s12 m8">
                 {{ form_label(form.send) }}
                 {{ form_widget(form.send, {'attr': {'class': 'btn blue lighten-1 waves-effect waves-light'}}) }}
             </div>
-
-            {{ form_end(form) }}
         </div>
+
+        {{ form_end(form) }}
     </div>
 {% endblock %}
