@@ -1,0 +1,64 @@
+.card-image.waves-effect {
+    display: block;
+}
+
+.btn.download {
+    padding-right: 12px;
+    top: 10px;
+}
+
+.btn.download i {
+    line-height: inherit;
+}
+
+.collection a p {
+    color: rgba(0, 0, 0, 0.71);
+}
+
+.collection a .title {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.collection .collection-item.avatar .circle {
+    margin-top: 7px;
+}
+
+#download-fab {
+    position: absolute;
+    right: 28px;
+}
+
+.project-single {
+    margin-top: 20px !important;
+}
+
+#dropdown-downloads {
+    width: auto !important;
+}
+
+.collection .secondary-content i {
+    top: 15px;
+    position: relative;
+}
+
+.project-description {
+    font-size: 16px;
+}
+
+.screenshot {
+    max-height: 460px;
+    max-width: 100%;
+    width: auto;
+}
+
+a.button-collapse.top-nav {
+    top: -37px;
+    left: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+    main .section {
+        padding-top: 37px;
+    }
+}

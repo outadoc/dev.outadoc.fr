@@ -40,7 +40,7 @@
 		 *
 		 * @ORM\Column(name="project_description_short", type="string", length=500)
 		 */
-		private $descriptionShort;
+		private $shortDescription;
 
 		/**
 		 * @var string
@@ -151,26 +151,26 @@
 		}
 
 		/**
-		 * Set descriptionShort
+		 * Set shortDescription
 		 *
-		 * @param string $descriptionShort
+		 * @param string $shortDescription
 		 * @return Project
 		 */
-		public function setDescriptionShort($descriptionShort)
+		public function setShortDescription($shortDescription)
 		{
-			$this->descriptionShort = $descriptionShort;
+			$this->shortDescription = $shortDescription;
 
 			return $this;
 		}
 
 		/**
-		 * Get descriptionShort
+		 * Get shortDescription
 		 *
 		 * @return string
 		 */
-		public function getDescriptionShort()
+		public function getShortDescription()
 		{
-			return $this->descriptionShort;
+			return $this->shortDescription;
 		}
 
 		/**
