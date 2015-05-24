@@ -70,6 +70,17 @@
                 <img class="materialboxed z-depth-1" width="100%"
                      src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/0.png') }}">
             </div>
+            <div class="col l12 hide-on-med-and-down">
+                <em>
+                    Check out the source code:
+                    {% for download in project.getDownloads() %}
+                        {%- if download.getSourceUrl() != null -%}
+                            {% if not loop.first %},{% endif %}
+                            <a href="{{ download.getSourceUrl() }}">{{ download.getPlatform().getName() }}</a>
+                        {%- endif -%}
+                    {% endfor %}
+                </em>
+            </div>
         </div>
     </div>
     <div id="modal-download" class="modal bottom-sheet">
