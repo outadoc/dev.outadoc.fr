@@ -65,6 +65,10 @@ a.button-collapse.top-nav {
     padding: 15px;
 }
 
+.card-project .card-image {
+    width: 100%;
+}
+
 .card-project .card-content a {
     font-size: 16px;
 }
