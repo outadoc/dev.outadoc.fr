@@ -74,8 +74,7 @@ a.button-collapse.top-nav {
     }
 
     .screenshots.container {
-        top: -75px;
-        position: relative;
+        margin-top: -75px;
     }
 
     header, main, footer {
