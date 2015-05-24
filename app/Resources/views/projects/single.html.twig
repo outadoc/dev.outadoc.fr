@@ -72,9 +72,34 @@
             <div class="col s12 m12 l7 project-description">
                 {{ project.getDescription()|raw }}
             </div>
-            <div class="col s12 m5">
-                <img class="materialboxed screenshot z-depth-1"
-                     src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/0.png') }}">
+            <div class="col s12 m12 l5">
+                <div class="container screenshots">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <img class="materialboxed screenshot z-depth-1"
+                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/0.png') }}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s3 m3">
+                            <img class="materialboxed screenshot z-depth-1"
+                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/1.png') }}">
+                        </div>
+                        <div class="col s3 m3">
+                            <img class="materialboxed screenshot z-depth-1"
+                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/2.png') }}">
+                        </div>
+                        <div class="col s3 m3">
+                            <img class="materialboxed screenshot z-depth-1"
+                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/3.png') }}">
+                        </div>
+                        <div class="col s3 m3">
+                            <img class="materialboxed screenshot z-depth-1"
+                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/4.png') }}">
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="col l12 hide-on-med-and-down">
                 <em class="grey-text">
