@@ -18,6 +18,9 @@ header, main, footer {
 
 .side-nav .brand-logo {
     font-size: 25px;
+}
+
+.side-nav .separator {
     border-bottom: 1px solid #DDD;
 }
 
@@ -83,3 +86,7 @@ footer.page-footer {
     }
 }
 
+ul.side-nav.fixed li a {
+    line-height: 56px;
+    height: 56px;
+}

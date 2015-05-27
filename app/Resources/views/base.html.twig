@@ -47,6 +47,7 @@
                     outa[dev]
                 </a>
             </li>
+            <li class="separator"></li>
             <li class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
                 <a href="{{ path('home') }}" class="waves-effect">
                     <i class="mdi-action-home"></i> Home
@@ -66,6 +67,22 @@
                 <a href="{{ path('contact') }}" class="waves-effect">
                     <i class="mdi-communication-email"></i> Contact
                 </a>
+            </li>
+            <li class="separator"></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">Find Me<i class="mdi-social-group"></i></a>
+
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="https://github.com/outadoc">Github</a></li>
+                                <li><a href="https://twitter.com/outadev">Twitter</a></li>
+                                <li><a href="https://www.linkedin.com/profile/view?id=422529124">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </li>
         </ul>
     {% endblock %}
