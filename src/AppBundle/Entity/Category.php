@@ -38,6 +38,7 @@
 
 		/**
 		 * @ORM\OneToMany(targetEntity="Project", mappedBy="category")
+		 * @ORM\OrderBy({"startYear" = "DESC", "name" = "ASC"})
 		 */
 		private $projects;
 
