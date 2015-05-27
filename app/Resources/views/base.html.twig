@@ -58,6 +58,7 @@
                     <i class="mdi-action-shop-two"></i> Projects
                 </a>
             </li>
+            <li class="separator"></li>
             <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
                 <a href="{{ path('about') }}" class="waves-effect">
                     <i class="mdi-action-account-circle"></i> About me
@@ -68,17 +69,21 @@
                     <i class="mdi-communication-email"></i> Contact
                 </a>
             </li>
-            <li class="separator"></li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
                     <li>
-                        <a class="collapsible-header">Find Me<i class="mdi-social-group"></i></a>
+                        <a class="collapsible-header waves-effect">
+                            Let's be Social<i class="mdi-social-group"></i>
+                        </a>
 
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="https://github.com/outadoc">Github</a></li>
-                                <li><a href="https://twitter.com/outadev">Twitter</a></li>
-                                <li><a href="https://www.linkedin.com/profile/view?id=422529124">LinkedIn</a></li>
+                                <li><a href="https://github.com/outadoc" target="_blank">
+                                        Github</a></li>
+                                <li><a href="https://twitter.com/outadev" target="_blank">
+                                        Twitter</a></li>
+                                <li><a href="https://www.linkedin.com/profile/view?id=422529124" target="_blank">
+                                        LinkedIn</a></li>
                             </ul>
                         </div>
                     </li>
