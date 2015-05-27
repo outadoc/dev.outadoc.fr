@@ -44,11 +44,11 @@
                     {# Download links #}
                     {% if project.getDownloads()[0].getPlatform().getName() == 'Web' %}
                         {# Website: only show a "go to" link #}
-                        <a class="{{ large_classes }} website-link"
+                        <a class="{{ large_classes }} website-link" target="_blank"
                            href="{{ project.getDownloads()[0].getDownloadUrl() }}">
                             Go to the website
                         </a>
-                        <a id="download-fab" class="{{ medium_classes }}"
+                        <a id="download-fab" class="{{ medium_classes }}" target="_blank"
                            href="{{ project.getDownloads()[0].getDownloadUrl() }}">
                             <i class="mdi-action-open-in-new"></i>
                         </a>
@@ -133,7 +133,7 @@
                             </a>
                         </div>
                         <div class="col s1">
-                            <a href="{{ download.getSourceUrl() }}" class="secondary-content">
+                            <a href="{{ download.getSourceUrl() }}" target="_blank" class="secondary-content">
                                 <span class="mega-octicon octicon-mark-github grey-text darken-2"></span>
                             </a>
                         </div>
