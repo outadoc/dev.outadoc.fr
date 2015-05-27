@@ -15,6 +15,7 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('assets/css/single-project.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/css/octicons.css') }}" type="text/css">
 {% endblock %}
 
 {% block navbar %}
@@ -132,8 +133,9 @@
                             </a>
                         </div>
                         <div class="col s1">
-                            <a href="{{ download.getSourceUrl() }}" class="secondary-content"><i
-                                        class="small mdi-action-book light-green-text"></i></a>
+                            <a href="{{ download.getSourceUrl() }}" class="secondary-content">
+                                <span class="mega-octicon octicon-mark-github grey-text darken-2"></span>
+                            </a>
                         </div>
                     </div>
                 {% endfor %}

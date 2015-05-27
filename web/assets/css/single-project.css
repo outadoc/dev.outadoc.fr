@@ -83,6 +83,10 @@ a.button-collapse.top-nav {
     text-align: left !important;
 }
 
+#modal-download .collection .secondary-content {
+    top: 26px;
+}
+
 @media only screen and (max-width: 600px) {
     main .section {
         padding-top: 37px;
