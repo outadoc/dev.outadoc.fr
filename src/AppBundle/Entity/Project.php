@@ -66,6 +66,20 @@
 		/**
 		 * @var integer
 		 *
+		 * @ORM\Column(name="project_start_year", type="integer")
+		 */
+		private $startYear;
+
+		/**
+		 * @var integer
+		 *
+		 * @ORM\Column(name="project_end_year", type="integer")
+		 */
+		private $endYear;
+
+		/**
+		 * @var integer
+		 *
 		 * @ORM\Column(name="category_id", type="integer")
 		 */
 		private $categoryId;
@@ -247,6 +261,52 @@
 		public function getFrenchDescription()
 		{
 			return $this->frenchDescription;
+		}
+
+		/**
+		 * Set startYear
+		 *
+		 * @param integer $startYear
+		 * @return Project
+		 */
+		public function setStartYear($startYear)
+		{
+			$this->startYear = $startYear;
+
+			return $this;
+		}
+
+		/**
+		 * Get startYear
+		 *
+		 * @return integer
+		 */
+		public function getStartYear()
+		{
+			return $this->startYear;
+		}
+
+		/**
+		 * Set endYear
+		 *
+		 * @param integer $endYear
+		 * @return Project
+		 */
+		public function setEndYear($endYear)
+		{
+			$this->endYear = $endYear;
+
+			return $this;
+		}
+
+		/**
+		 * Get endYear
+		 *
+		 * @return integer
+		 */
+		public function getEndYear()
+		{
+			return $this->endYear;
 		}
 
 		/**

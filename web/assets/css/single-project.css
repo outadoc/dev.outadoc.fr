@@ -68,6 +68,10 @@ a.button-collapse.top-nav {
     margin-top: 20px;
 }
 
+.project-date {
+    font-size: 28px;
+}
+
 /* Cute centering hack for screenshot thumbnails */
 .row-centered {
     text-align: center !important;
