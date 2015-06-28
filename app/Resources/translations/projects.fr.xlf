@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Mobile Applications</source>
+                <target>Applications mobiles</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Desktop Programs</source>
+                <target>Programmes bureau</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Websites</source>
+                <target>Sites web</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Browser Extensions</source>
+                <target>Extensions navigateur</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Free</source>
+                <target>Gratuit</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Today</source>
+                <target>Aujourd'hui</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Go to the website</source>
+                <target>Aller sur le site</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Download</source>
+                <target>Télécharger</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Check out the source code for</source>
+                <target>Accéder au code source pour</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

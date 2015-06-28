@@ -2,7 +2,7 @@
 
 {% macro format_price(price) %}
     {%- if price == 0 -%}
-        Free
+        {% trans from "projects" %}Free{% endtrans %}
     {%- else -%}
         {{- price -}}€
     {%- endif -%}
@@ -26,11 +26,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m9">
+                    {# Header: project name, description and dates #}
                     <h1 class="header center-on-small-only white-text">{{ project.getName() }}</h1>
                     <h4 class="light text-lighten-4 center-on-small-only light-blue-text">{{ project.getShortDescription() }}</h4>
                     <h4 class="light text-lighten-3 center-on-small-only light-blue-text project-date">
                         {% if project.getEndYear() is null %}
-                            {{ project.getStartYear() }}&ndash;Today
+                            {{ project.getStartYear() }}&ndash;{% trans from "projects" %}Today{% endtrans %}
                         {% elseif project.getStartYear() == project.getEndYear() %}
                             {{ project.getStartYear() }}
                         {% else %}
@@ -46,7 +47,7 @@
                         {# Website: only show a "go to" link #}
                         <a class="{{ large_classes }} website-link" target="_blank"
                            href="{{ project.getDownloads()[0].getDownloadUrl() }}">
-                            Go to the website
+                            {% trans from "projects" %}Go to the website{% endtrans %}
                         </a>
                         <a id="download-fab" class="{{ medium_classes }}" target="_blank"
                            href="{{ project.getDownloads()[0].getDownloadUrl() }}">
@@ -54,9 +55,9 @@
                         </a>
                     {% else %}
                         {# Otherwise, display a dropdown with all the downloads #}
-                        <a class="dropdown-button {{ large_classes }}" href="#"
-                           data-activates="dropdown-downloads">Download <i
-                                    class="mdi-navigation-arrow-drop-down right"></i></a>
+                        <a class="dropdown-button {{ large_classes }}" href data-activates="dropdown-downloads">
+                            {% trans from "projects" %}Download{% endtrans %} <i class="mdi-navigation-arrow-drop-down right"></i>
+                        </a>
 
                         <ul id="dropdown-downloads" class="dropdown-content">
                             {% for download in project.getDownloads() %}
@@ -84,7 +85,7 @@
                 {{ project.getDescription()|raw }}
                 <p class="source-code-links">
                     <em class="grey-text">
-                        Check out the source code for:
+                        {% trans from "projects" %}Check out the source code for{% endtrans %}
                         {% for download in project.getDownloads() %}
                             {%- if download.getSourceUrl() != null -%}
                                 {% if not loop.first %},{% endif %}
@@ -118,7 +119,6 @@
     <div id="modal-download" class="modal bottom-sheet">
         <div class="modal-content">
             <div class="collection-header"><h4>Download {{ project.getName() }}</h4></div>
-
             <div class="collection">
                 {% for download in project.getDownloads() %}
                     <div class="row collection-item avatar">
