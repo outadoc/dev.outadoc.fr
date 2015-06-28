@@ -17,7 +17,7 @@
     <div class="col m12 z-depth-1" id="hello"
          style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ asset('assets/img/hello/' ~ screenshot) }}')">
         <div class="title">
-            <h2>Welcome, stranger!</h2>
+            <h2>{% trans %}Welcome, stranger!{% endtrans %}</h2>
 
             <h3>outa[dev] is a place for fun open-source projects made by me, Baptiste Candellier.</h3>
         </div>
@@ -63,4 +63,3 @@
                 style="position:fixed;bottom:0;right:10px;z-index:100" frameBorder="0"></iframe>
     {% endif %}
 {% endblock %}
-

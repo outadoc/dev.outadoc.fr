@@ -17,7 +17,9 @@
 				new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
 				new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 				new EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
-				new AppBundle\AppBundle(),
+				new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
+    		new JMS\TranslationBundle\JMSTranslationBundle(),
+				new AppBundle\AppBundle()
 			);
 
 			if (in_array($this->getEnvironment(), array('dev', 'test'))) {
