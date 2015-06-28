@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block title %}
-    Home
+    {% trans from "global" %}Home{% endtrans %}
 {% endblock %}
 
 {% block navbar %}
@@ -17,9 +17,8 @@
     <div class="col m12 z-depth-1" id="hello"
          style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ asset('assets/img/hello/' ~ screenshot) }}')">
         <div class="title">
-            <h2>{% trans %}Welcome, stranger!{% endtrans %}</h2>
-
-            <h3>outa[dev] is a place for fun open-source projects made by me, Baptiste Candellier.</h3>
+            <h2>{% trans from "home" %}Welcome, stranger!{% endtrans %}</h2>
+            <h3>{% trans from "home" %}outa[dev], fun open-source projects by Baptiste Candellier, aka outadoc{% endtrans %}</h3>
         </div>
     </div>
     <div class="container">
@@ -27,31 +26,22 @@
             <div class="col m4 s12">
                 <div class="center promo">
                     <i class="mdi-social-school"></i>
-
-                    <p class="promo-caption">Amateur Programming</p>
-
-                    <p class="light center">I'm a student in computer science making programs for my fun and everybody
-                        else's.</p>
+                    <p class="promo-caption">{% trans from "home" %}Amateur Programming{% endtrans %}</p>
+                    <p class="light center">{% trans from "home" %}I'm a student in computer science making programs for my fun and everybody else's.{% endtrans %}</p>
                 </div>
             </div>
             <div class="col m4 s12">
                 <div class="center promo">
                     <i class="mdi-social-share"></i>
-
-                    <p class="promo-caption">Open-Source Software</p>
-
-                    <p class="light center">By making most of my projects free and open-source, I hope to give back to
-                        the community what it has given to me.</p>
+                    <p class="promo-caption">{% trans from "home" %}Open-Source Software{% endtrans %}</p>
+                    <p class="light center">{% trans from "home" %}By making most of my projects free and open-source, I hope to give back the community what it has given to me.{% endtrans %}</p>
                 </div>
             </div>
             <div class="col m4 s12">
                 <div class="center promo">
                     <i class="mdi-action-favorite"></i>
-
-                    <p class="promo-caption">Fun Everywhere</p>
-
-                    <p class="light center">I like to keep discovering new technologies and having fun with them by
-                        making stuff, useful or not. Have fun too!</p>
+                    <p class="promo-caption">{% trans from "home" %}Fun Everywhere{% endtrans %}</p>
+                    <p class="light center">{% trans from "home" %}I like to keep discovering new technologies and having fun with them making stuff, useful or not. Have fun too!{% endtrans %}</p>
                 </div>
             </div>
         </div>

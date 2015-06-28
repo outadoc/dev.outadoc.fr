@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Welcome, stranger!</source>
+                <target>Bienvenue, visiteur !</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>outa[dev], fun open-source projects by Baptiste Candellier, aka outadoc</source>
+                <target>outa[dev], projets open-source fun par Baptiste Candellier, aka outadoc</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Amateur Programming</source>
+                <target>Développement amateur</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>I'm a student in computer science making programs for my fun and everybody else's.</source>
+                <target>Je suis un étudiant en informatique qui fait des programmes pour son plaisir et celui des autres.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Open-Source Software</source>
+                <target>Logiciels open-source</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>By making most of my projects free and open-source, I hope to give back the community what it has given to me.</source>
+                <target>En rendant la plupart de mes projets libres et open-source, j'espère rendre la communauté ce qu'elle m'a apporté.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Fun Everywhere</source>
+                <target>Fun, fun, fun !</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>I like to keep discovering new technologies and having fun with them making stuff, useful or not. Have fun too!</source>
+                <target>J'aime découvrir de nouvelles technologies et m'amuser avec en faisant des bidules, utiles ou pas. Amusez-vous autant que moi !</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

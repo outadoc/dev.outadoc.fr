@@ -50,30 +50,30 @@
             <li class="separator"></li>
             <li class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
                 <a href="{{ path('home') }}" class="waves-effect">
-                    <i class="mdi-action-home"></i> Home
+                    <i class="mdi-action-home"></i> {% trans from "global" %}Home{% endtrans %}
                 </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'projects' %}active{% endif %}">
                 <a href="{{ path('projects') }}" class="waves-effect">
-                    <i class="mdi-action-shop-two"></i> Projects
+                    <i class="mdi-action-shop-two"></i> {% trans from "global" %}Projects{% endtrans %}
                 </a>
             </li>
             <li class="separator"></li>
             <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
                 <a href="{{ path('about') }}" class="waves-effect">
-                    <i class="mdi-action-account-circle"></i> About me
+                    <i class="mdi-action-account-circle"></i> {% trans from "global" %}About me{% endtrans %}
                 </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
                 <a href="{{ path('contact') }}" class="waves-effect">
-                    <i class="mdi-communication-email"></i> Contact
+                    <i class="mdi-communication-email"></i> {% trans from "global" %}Contact{% endtrans %}
                 </a>
             </li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
                     <li>
                         <a class="collapsible-header waves-effect">
-                            <i class="mdi-social-group"></i> Social
+                            <i class="mdi-social-group"></i> {% trans from "global" %}Social{% endtrans %}
                         </a>
 
                         <div class="collapsible-body">
