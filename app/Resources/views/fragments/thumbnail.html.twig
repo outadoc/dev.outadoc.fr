@@ -1,4 +1,4 @@
-<div class="card card-project tooltipped" data-tooltip="{{ app.request.getLocale() == "fr" ? project.getFrenchShortDescription()|raw : project.getShortDescription()|raw }}">
+<div class="card card-project tooltipped" data-tooltip="{{ app.request.getLocale() == "fr" ? project.getFrenchShortDescription() : project.getShortDescription() }}">
     <div class="card-image waves-effect">
         <a href="{{ path('project', {"project": project.getSimpleName()}) }}">
             <img src="{{ asset('assets/img/data/thumb/' ~ project.getSimpleName() ~ '.png') }}"
