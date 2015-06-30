@@ -58,7 +58,6 @@
                     <i class="mdi-action-shop-two"></i> {% trans from "global" %}Projects{% endtrans %}
                 </a>
             </li>
-            <li class="separator"></li>
             <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
                 <a href="{{ path('about') }}" class="waves-effect">
                     <i class="mdi-action-account-circle"></i> {% trans from "global" %}About me{% endtrans %}
@@ -69,6 +68,7 @@
                     <i class="mdi-communication-email"></i> {% trans from "global" %}Contact{% endtrans %}
                 </a>
             </li>
+            <li class="separator"></li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
                     <li>
