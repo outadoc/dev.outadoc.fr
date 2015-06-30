@@ -116,12 +116,14 @@
                     </div>
                     <div class="row row-centered">
                         {# Display every secondary screenshot under the main one #}
-                        {% for i in 1..screen_count - 1 %}
-                            <div class="col s3 m3 col-centered">
-                                <img class="materialboxed screenshot z-depth-1"
-                                     src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/' ~ i ~ '.png') }}">
-                            </div>
-                        {% endfor %}
+                        {% if screen_count > 1 %}
+                            {% for i in 1..screen_count - 1 %}
+                                <div class="col s3 m3 col-centered">
+                                    <img class="materialboxed screenshot z-depth-1"
+                                         src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/' ~ i ~ '.png') }}">
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
