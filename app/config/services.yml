@@ -11,3 +11,9 @@ services:
         class: AppBundle\Form\Type\MessageType
         tags:
             - { name: form.type, alias: message }
+
+    app.twig_extension:
+        class: AppBundle\Twig\PortfolioExtension
+        public: false
+        tags:
+            - { name: twig.extension }

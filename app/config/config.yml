@@ -75,7 +75,6 @@ swiftmailer:
 ewz_recaptcha:
     public_key:  %recaptcha_public_key%
     private_key: %recaptcha_private_key%
-    locale_key:  %kernel.default_locale%
 
 jms_i18n_routing:
     default_locale: en
