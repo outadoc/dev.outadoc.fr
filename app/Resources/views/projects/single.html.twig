@@ -28,7 +28,13 @@
                 <div class="col s12 m9">
                     {# Header: project name, description and dates #}
                     <h1 class="header center-on-small-only white-text">{{ project.getName() }}</h1>
-                    <h4 class="light text-lighten-4 center-on-small-only light-blue-text">{{ project.getShortDescription() }}</h4>
+                    <h4 class="light text-lighten-4 center-on-small-only light-blue-text">
+                        {% if app.request.getLocale() == "fr" %}
+                            {{ project.getFrenchShortDescription() }}
+                        {% else %}
+                            {{ project.getShortDescription() }}
+                        {% endif %}
+                    </h4>
                     <h4 class="light text-lighten-3 center-on-small-only light-blue-text project-date">
                         {% if project.getEndYear() is null %}
                             {{ project.getStartYear() }}&ndash;{% trans from "projects" %}Today{% endtrans %}
@@ -82,7 +88,12 @@
     <div class="container project-single">
         <div class="row">
             <div class="col s12 m12 l7 project-description">
-                {{ project.getDescription()|raw }}
+                {% if app.request.getLocale() == "fr" %}
+                    {{ project.getFrenchDescription()|raw }}
+                {% else %}
+                    {{ project.getDescription()|raw }}
+                {% endif %}
+
                 <p class="source-code-links">
                     <em class="grey-text">
                         {% trans from "projects" %}Check out the source code for{% endtrans %}
