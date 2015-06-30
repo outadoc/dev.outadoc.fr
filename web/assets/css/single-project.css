@@ -72,6 +72,14 @@ a.button-collapse.top-nav {
     font-size: 28px;
 }
 
+.project-description ul {
+    padding-left: 25px;
+}
+
+.project-description ul li {
+    list-style-type: disc;
+}
+
 /* Cute centering hack for screenshot thumbnails */
 .row-centered {
     text-align: center !important;
