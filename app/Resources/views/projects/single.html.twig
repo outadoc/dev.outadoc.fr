@@ -45,41 +45,43 @@
                         {% endif %}
                     </h4>
 
-                    {% set large_classes = "btn btn-large download yellow darken-1 grey-text text-darken-3 waves-effect hide-on-med-and-down" %}
-                    {% set medium_classes = "btn-floating btn-large waves-effect waves-light yellow darken-1 modal-trigger hide-on-large-only" %}
+                    {% if project.getDownloads()|length > 0 %}
+                        {% set large_classes = "btn btn-large download yellow darken-1 grey-text text-darken-3 waves-effect hide-on-med-and-down" %}
+                        {% set medium_classes = "btn-floating btn-large waves-effect waves-light yellow darken-1 modal-trigger hide-on-large-only" %}
 
-                    {# Download links #}
-                    {% if project.getDownloads()[0].getPlatform().getName() == 'Web' %}
-                        {# Website: only show a "go to" link #}
-                        <a class="{{ large_classes }} website-link" target="_blank"
-                           href="{{ project.getDownloads()[0].getDownloadUrl() }}">
-                            {% trans from "projects" %}Go to the website{% endtrans %}
-                        </a>
-                        <a id="download-fab" class="{{ medium_classes }}" target="_blank"
-                           href="{{ project.getDownloads()[0].getDownloadUrl() }}">
-                            <i class="mdi-action-open-in-new"></i>
-                        </a>
-                    {% else %}
-                        {# Otherwise, display a dropdown with all the downloads #}
-                        <a class="dropdown-button {{ large_classes }}" href data-activates="dropdown-downloads">
-                            {% trans from "projects" %}Download{% endtrans %} <i class="mdi-navigation-arrow-drop-down right"></i>
-                        </a>
+                        {# Download links #}
+                        {% if project.getDownloads()[0].getPlatform().getName() == 'Web' %}
+                            {# Website: only show a "go to" link #}
+                            <a class="{{ large_classes }} website-link" target="_blank"
+                               href="{{ project.getDownloads()[0].getDownloadUrl() }}">
+                                {% trans from "projects" %}Go to the website{% endtrans %}
+                            </a>
+                            <a id="download-fab" class="{{ medium_classes }}" target="_blank"
+                               href="{{ project.getDownloads()[0].getDownloadUrl() }}">
+                                <i class="mdi-action-open-in-new"></i>
+                            </a>
+                        {% else %}
+                            {# Otherwise, display a dropdown with all the downloads #}
+                            <a class="dropdown-button {{ large_classes }}" href data-activates="dropdown-downloads">
+                                {% trans from "projects" %}Download{% endtrans %} <i class="mdi-navigation-arrow-drop-down right"></i>
+                            </a>
 
-                        <ul id="dropdown-downloads" class="dropdown-content">
-                            {% for download in project.getDownloads() %}
-                                <li>
-                                    <a href="{{ download.getDownloadUrl() }}" class="grey-text text-darken-3">
-                                        {{ download.getPlatform().getName() }}
-                                        ({{- _self.format_price(download.getPrice()) -}},
-                                        v{{ download.getVersion() }})
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                            <ul id="dropdown-downloads" class="dropdown-content">
+                                {% for download in project.getDownloads() %}
+                                    <li>
+                                        <a href="{{ download.getDownloadUrl() }}" class="grey-text text-darken-3">
+                                            {{ download.getPlatform().getName() }}
+                                            ({{- _self.format_price(download.getPrice()) -}},
+                                            v{{ download.getVersion() }})
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
 
-                        <a data-target="modal-download" id="download-fab" class="{{ medium_classes }}">
-                            <i class="mdi-action-get-app"></i>
-                        </a>
+                            <a data-target="modal-download" id="download-fab" class="{{ medium_classes }}">
+                                <i class="mdi-action-get-app"></i>
+                            </a>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>
