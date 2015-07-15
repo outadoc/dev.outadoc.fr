@@ -1,0 +1,151 @@
+{% macro error_message(code) %}
+    {% if code == 400 %}
+        This request, man. It's bad.
+    {% elseif code == 401 %}
+        Hey, I don't know you. Could you please authenticate first?
+    {% elseif code == 403 %}
+        INTRUDER ALERT INTRUDER ALERT WE CALLED THE POLICE oh maybe not.
+    {% elseif code == 404 %}
+        Where did I leave that page? I can't find it anymore.
+    {% elseif code == 405 %}
+        Don't try any of that fancy stuff, GET is cool.
+    {% elseif code == 406 %}
+        I won't listen to you. Don't even try- NO, I SAID DON'T.
+    {% elseif code == 407 %}
+        I hope it's not Slenderman.
+    {% elseif code == 408 %}
+        My hosting is so bad I couldn't answer you in time.
+    {% elseif code == 410 %}
+        Looks like someone gave you a wrong number.
+    {% elseif code == 500 %}
+        Something went wrong with the server. Most likely my fault, to be honest.
+    {% elseif code == 501 %}
+        We don't support strange stuff, sorry.
+    {% elseif code == 502 %}
+        MY HEAD HIT THE DOOR FRAME, AOUCH.
+    {% elseif code == 503 %}
+        I'm out to eat ice cream, come back later.
+    {% elseif code == 504 %}
+        Your postman is so slow I stopped waiting for him.
+    {% elseif code == 505 %}
+        What browser are you using, Netscape? Knew it.
+    {% else %}
+        {{ status_text }}
+    {% endif %}
+{% endmacro %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+    <title>Err... woops.</title>
+</head>
+<body>
+<style type="text/css">
+
+    body {
+        text-align: center;
+        font-family: Helvetica, Arial, serif;
+    }
+
+    #wrapper {
+        position: absolute;
+        top: 50%;
+        height: 350px;
+        margin-top: -200px;
+        width: 99%;
+    }
+
+    #content {
+        margin: auto;
+    }
+
+    #content h1, h1 small {
+        font-size: 28px;
+    }
+
+    h1 small {
+        color: lightgray;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: gray;
+        cursor: pointer;
+    }
+
+    .links {
+        margin-top: 30px;
+    }
+
+    #carrot img {
+        width: 500px;
+        height: auto;
+    }
+
+    #carrot {
+        width: 100%;
+        margin-top: 10px;
+        animation: fly 3s infinite ease-in-out;
+        -moz-animation: fly 3s infinite ease-in-out; /* Firefox */
+        -webkit-animation: fly 3s infinite ease-in-out; /* Safari and Chrome */
+    }
+
+    .very-small {
+        font-size: 10px;
+    }
+
+    @keyframes fly {
+        from {
+            transform: translate(0, 0px);
+        }
+        65% {
+            transform: translate(0, 15px);
+        }
+        to {
+            transform: translate(0, -0px);
+        }
+    }
+
+    @-moz-keyframes fly {
+        from {
+            -moz-transform: translate(0, 0px);
+        }
+        65% {
+            -moz-transform: translate(0, 15px);
+        }
+        to {
+            -moz-transform: translate(0, -0px);
+        }
+    }
+
+    @-webkit-keyframes fly {
+        from {
+            -webkit-transform: translate(0, 0px);
+        }
+        65% {
+            -webkit-transform: translate(0, 15px);
+        }
+        to {
+            -webkit-transform: translate(0, -0px);
+        }
+    }
+
+</style>
+
+<div id="wrapper">
+    <div id="content">
+        <h1>Error {{ status_code }}
+            <small>{{ status_text }}</small>
+        </h1>
+        <p>{{ _self.error_message(status_code) }}</p>
+        <small class="very-small">Here's a flying carrot to comfort you. &lt;3</small>
+        <div id="carrot">
+            <img src="{{ asset('carrot.png') }}" alt="Carrot? Carrot.">
+        </div>
+        <div class="links"><a href="{{ path('home') }}">HOME</a> | <a onclick="history.go(-1);">PREVIOUS</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
