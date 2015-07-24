@@ -12,6 +12,7 @@
 
         /**
          * @Route("/about", name="about")
+         * @Route("/about/")
          */
         public function indexAction()
         {

@@ -10,6 +10,7 @@
     {
         /**
          * @Route("/projects", name="projects")
+         * @Route("/projects/")
          */
         public function indexAction()
         {
@@ -32,6 +33,7 @@
 
         /**
          * @Route("/projects/{project}", name="project")
+         * @Route("/projects/{project}/")
          */
         public function viewAction($project)
         {
@@ -74,6 +76,7 @@
         /**
          * @deprecated
          * @Route("/project/{project}")
+         * @Route("/project/{project}/")
          */
         public function oldProjectsAction($project)
         {

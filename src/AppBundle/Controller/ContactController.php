@@ -12,6 +12,7 @@
 
         /**
          * @Route("/contact", name="contact")
+         * @Route("/contact/")
          * @param Request $request
          * @return \Symfony\Component\HttpFoundation\Response
          */
