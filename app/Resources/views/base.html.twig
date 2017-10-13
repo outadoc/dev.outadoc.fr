@@ -11,9 +11,11 @@
         <style type="text/css">
             @font-face {
                 font-family: "I pixel u";
-                src: url('{{ asset("/assets/font/I-pixel-u.ttf") }}');
+                src: url('{{ asset("/assets/fonts/I-pixel-u.ttf") }}');
             }
         </style>
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <link href="{{ asset('assets/css/global.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/materialize.min.css') }}" rel="stylesheet" type="text/css"
@@ -50,22 +52,22 @@
             <li class="separator"></li>
             <li class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
                 <a href="{{ path('home') }}" class="waves-effect">
-                    <i class="mdi-action-home"></i> {% trans from "global" %}Home{% endtrans %}
+                    <i class="material-icons">home</i> {% trans from "global" %}Home{% endtrans %}
                 </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'projects' %}active{% endif %}">
                 <a href="{{ path('projects') }}" class="waves-effect">
-                    <i class="mdi-action-shop-two"></i> {% trans from "global" %}Projects{% endtrans %}
+                    <i class="material-icons">shop_two</i> {% trans from "global" %}Projects{% endtrans %}
                 </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
                 <a href="{{ path('about') }}" class="waves-effect">
-                    <i class="mdi-action-account-circle"></i> {% trans from "global" %}About me{% endtrans %}
+                    <i class="material-icons">account_circle</i> {% trans from "global" %}About me{% endtrans %}
                 </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
                 <a href="{{ path('contact') }}" class="waves-effect">
-                    <i class="mdi-communication-email"></i> {% trans from "global" %}Contact{% endtrans %}
+                    <i class="material-icons">email</i> {% trans from "global" %}Contact{% endtrans %}
                 </a>
             </li>
             <li class="separator"></li>
@@ -73,7 +75,7 @@
                 <ul class="collapsible collapsible-accordion">
                     <li>
                         <a class="collapsible-header waves-effect">
-                            <i class="mdi-social-group"></i> {% trans from "global" %}Social{% endtrans %}
+                            <i class="material-icons">social_group</i> {% trans from "global" %}Social{% endtrans %}
                         </a>
 
                         <div class="collapsible-body">
