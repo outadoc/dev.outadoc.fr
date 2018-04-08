@@ -9,35 +9,27 @@
         <div class="row">
             <div class="col s12 m12">
                 {% if app.request.getLocale() == "fr" %}
-                    <h5>Mais qui voilà !</h5>
-                    <p>Je m'appelle Baptiste Candellier, et je suis un développeur de {{ age_from_birthday("1995-07-16") }} ans.
-                        Vous me connaissez peut-être sous les pseudonymes outadoc ou outa[dev] sur Internet.
-                        Je vis actuellement à Caen, en Normandie, et je suis un apprenti depuis septembre 2015. J'étudie à l'ENSICAEN pour devenir ingénieur en informatique,
-                        tout en travaillant à Natixis. Je parle anglais couramment, même si ma langue maternelle reste le français.</p>
-                    <p>Je suis passioné par la technologie, nouvelle ou ancienne. La plupart de ce que vous pouvez voir sur ce site web est le résultat d'années passées
-                        à apprendre la programmation sur Internet, à essayer de découvrir de nouvelles choses et réaliser des projets que j'estime excitants.</p>
-                    <p>Pour la plupart de mes projets développés sur mon temps libre, j'utilise des langages tels que Java et PHP, même si mes compétences ne s'arrêtent
-                        pas là. J'essaie continuellement de découvrir de nouveaux langages et outils qui me semblent intéressants, et je les applique éventuellement
-                        lors qu'une idée de projet adaptée me vient à l'esprit.</p>
-                    <p>Mes projets passés sont disponibles sur leur <a href="{{ path('projects') }}">page dédiée</a>, et vous pourrez en découvrir bien d'autres
-                        sur mon profil Github, si vous êtes intéressé(e). J'aime vraiment l'idée que n'importe qui puisse contribuer à mon travail et construire de nouvelles
-                        choses en l'utilisant comme fondation, donc si vous trouvez quelque-chose qui vous intéresse et souhaitez le réutiliser, ne soyez pas timide
-                        et <a href="{{ path('contact') }}">contactez-moi</a>.</p>
-                    <p>C'est à-peu-près tout pour moi ! Le reste devrait être éparpillé sur ce site web. Amusez-vous bien avec tout ça ! 😊</p>
+                    <h5>Hey there!</h5>
+                    <p>Je m'appelle Baptiste Candellier. Je serai diplômé en septembre 2018 de <a href="https://www.ensicaen.fr/formations/ingenieur-informatique-par-apprentissage/">l'ENSICAEN</a> comme ingénieur en informatique, avec une spécialisation en monétique et sécurité. 
+                        Je suis parle couramment l'anglais et le français est ma langue maternelle.</p>
+                    <p>J'adore les nouvelles et anciennes technologies avec passion. La plupart de ce que vous trouverez sur ce site web est le résultat d'années de vadrouillage sur Internet,
+                        à essayer d'apprendre de nouvelles choses et de lancer des projets à partir de ce que je trouve intriguant.</p>
+                    <p>Je suis actuellement <strong>en recherche d'un emploi en tant qu'ingénieur en informatique</strong> pour travailler sur des produits relevant de l'Internet des objets (IoT), du <em>wearable computing</em>, ou autres projets mobiles pouvant être innovants.
+                        Je suis spécialisé en monétique, mais je suis ouvert à toutes industries. Si vous êtes intéressé(e), contactez moi sur <a href="https://www.linkedin.com/in/candellierba">LinkedIn</a> 
+                        ou, mieux encore, ma <a href="{{ path('contact') }}">page de contact</a>.</p>
+                    <p>Mes projets personnels passés sont disponibles sur la <a href="{{ path('projects') }}">page projets</a>, et vous trouverez bien plus sur ma page Github, si cela vous intéresse.
+                        Pour tout ce qui est plus professionnel, rendez-vous sur <a href="https://www.linkedin.com/in/candellierba">LinkedIn</a>.</p>
                 {% else %}
                     <h5>Hey there!</h5>
-                    <p>My name is Baptiste Candellier, and I'm a {{ age_from_birthday("1995-07-16") }} years old French developer.
-                        You may also know me as outadoc or outa[dev] from the Internet.
-                        I currently live in Caen, Normandy, and am an apprentice as of September 2015. I study computer science engineering at ENSICAEN while working at
-                        Natixis. I'm mostly fluent in English, even though French is my mother tongue.</p>
+                    <p>My name is Baptiste Candellier. I will be graduating in September 2018 from <a href="https://www.ensicaen.fr/formations/ingenieur-informatique-par-apprentissage/">ENSICAEN</a> as a software engineer, with a specialty in electronic transactions and security. 
+                        I'm professionaly fluent in English, and French is my mother tongue.</p>
                     <p>I love new and old technology with a passion. Most of what you'll see on this website is the result of years of wandering around on the Internet,
-                        trying to learn new things and making projets which excited me.</p>
-                    <p>Most of my time spent developing nowadays is with languages such as Java or PHP, although my skills include many more. I'm continuously trying
-                        to learn new languages that seem interesting whenever I stumble upon the idea that fits them.</p>
-                    <p>My past projets are available on the <a href="{{ path('projects') }}">Projects page</a>, and you can find much more on my Github profile, if you're
-                        interested. I really like the idea of people being able to contribute and build upon my work, so if you find something I made that you'd like to
-                        re-use, don't be shy and <a href="{{ path('contact') }}">contact me</a>.</p>
-                    <p>Well, that's about it! Everything else should be laying around on this website. Enjoy, and have a nice one! 😊</p>
+                        trying to learn new things and making projets out of what I find intriguing.</p>
+                    <p>I'm currently <strong>looking for a job as a software engineer</strong> to work on Internet of Things products, wearable computing solutions, or any mobile projects that might prove to be innovating.
+                        I'm specialized in electronic transactions, but I'm open to all industries. If you're interested, hit me up on <a href="https://www.linkedin.com/in/candellierba">LinkedIn</a> 
+                        or, better, my <a href="{{ path('contact') }}">contact page</a>.</p>
+                    <p>My past personal projets are available on the <a href="{{ path('projects') }}">Projects page</a>, and you can find much more on my Github profile, if you're
+                        interested. For more professional stuff, do check my past experience on <a href="https://www.linkedin.com/in/candellierba">LinkedIn</a>.</p>
                 {% endif %}
             </div>
         </div>
