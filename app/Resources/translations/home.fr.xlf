@@ -31,8 +31,8 @@
                 <target>Fun, fun, fun !</target>
             </trans-unit>
             <trans-unit id="8">
-                <source>I like to keep discovering new technologies and having fun with them making stuff, useful or not. Have fun too!</source>
-                <target>J'aime découvrir de nouvelles technologies et m'amuser avec en faisant des bidules, utiles ou pas. Amusez-vous autant que moi !</target>
+                <source>I like to experiment with new technologies and having fun with them making stuff, useful or not. Have fun too!</source>
+                <target>J'aime expérimenter avec de nouvelles technologies et m'amuser en créant, utile ou pas. Amusez-vous autant que moi !</target>
             </trans-unit>
         </body>
     </file>

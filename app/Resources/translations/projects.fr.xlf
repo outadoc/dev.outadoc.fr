@@ -38,6 +38,14 @@
                 <source>Check out the source code for</source>
                 <target>Accéder au code source pour</target>
             </trans-unit>
+            <trans-unit id="10">
+                <source>Other</source>
+                <target>Autres</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Hardware</source>
+                <target>Matériel</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
