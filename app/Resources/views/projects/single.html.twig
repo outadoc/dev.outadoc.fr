@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% import _self as formatMacro %}
+
 {% macro format_price(price) %}
     {%- if price == 0 -%}
         {% trans from "projects" %}Free{% endtrans %}
@@ -15,7 +17,6 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('assets/css/single-project.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('assets/css/octicons.css') }}" type="text/css">
 {% endblock %}
 
 {% block navbar %}
@@ -58,12 +59,12 @@
                             </a>
                             <a id="download-fab" class="{{ medium_classes }}" target="_blank"
                                href="{{ project.getDownloads()[0].getDownloadUrl() }}">
-                                <i class="mdi-action-open-in-new"></i>
+                                <i class="fas fa-external-link-alt"></i>
                             </a>
                         {% else %}
                             {# Otherwise, display a dropdown with all the downloads #}
                             <a class="dropdown-button {{ large_classes }}" href data-activates="dropdown-downloads">
-                                {% trans from "projects" %}Download{% endtrans %} <i class="mdi-navigation-arrow-drop-down right"></i>
+                                {% trans from "projects" %}Download{% endtrans %} <i class="fas fa-caret-down right"></i>
                             </a>
 
                             <ul id="dropdown-downloads" class="dropdown-content">
@@ -71,7 +72,7 @@
                                     <li>
                                         <a href="{{ download.getDownloadUrl() }}" class="grey-text text-darken-3">
                                             {{ download.getPlatform().getName() }}
-                                            ({{- _self.format_price(download.getPrice()) -}},
+                                            ({{- formatMacro.format_price(download.getPrice()) -}},
                                             v{{ download.getVersion() }})
                                         </a>
                                     </li>
@@ -79,7 +80,7 @@
                             </ul>
 
                             <a data-target="modal-download" id="download-fab" class="{{ medium_classes }}">
-                                <i class="mdi-action-get-app"></i>
+                                <i class="fas fa-download"></i>
                             </a>
                         {% endif %}
                     {% endif %}
@@ -141,17 +142,17 @@
                     <div class="row collection-item avatar">
                         <div class="col s11">
                             <a href="{{ download.getDownloadUrl() }}">
-                                <i class="mdi-file-file-download circle blue lighten-1"></i>
+                                <i class="fas fa-download circle blue lighten-1"></i>
                                 <span class="title">{{ download.getPlatform().getName() }}</span>
 
                                 <p>Version {{ download.getVersion() }}<br>
-                                    {{- _self.format_price(download.getPrice()) -}}
+                                    {{- formatMacro.format_price(download.getPrice()) -}}
                                 </p>
                             </a>
                         </div>
                         <div class="col s1">
                             <a href="{{ download.getSourceUrl() }}" target="_blank" class="secondary-content">
-                                <span class="mega-octicon octicon-mark-github grey-text darken-2"></span>
+                                <span class="fab fa-github grey-text darken-2"></span>
                             </a>
                         </div>
                     </div>
@@ -173,7 +174,7 @@
 
         $(document).ready(function () {
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-            $('.modal-trigger').leanModal();
+            $('.modal').modal();
         });
 
         $(document).ready(function () {
