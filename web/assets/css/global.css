@@ -28,6 +28,11 @@ header, main, footer {
     border-bottom: 1px solid #DDD;
 }
 
+.side-nav a i.fas, .side-nav a i.fab {
+    font-size: 20px;
+    line-height: 51px;
+}
+
 nav.top-nav {
     height: 122px;
     box-shadow: none;

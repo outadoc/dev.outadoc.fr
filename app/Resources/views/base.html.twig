@@ -15,7 +15,7 @@
             }
         </style>
         
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
         <link href="{{ asset('assets/css/global.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/materialize.min.css') }}" rel="stylesheet" type="text/css"
@@ -52,45 +52,34 @@
             <li class="separator"></li>
             <li class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
                 <a href="{{ path('home') }}" class="waves-effect">
-                    <i class="material-icons">home</i> {% trans from "global" %}Home{% endtrans %}
+                    <i class="fas fa-home"></i> {% trans from "global" %}Home{% endtrans %}
                 </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'projects' %}active{% endif %}">
                 <a href="{{ path('projects') }}" class="waves-effect">
-                    <i class="material-icons">shop_two</i> {% trans from "global" %}Projects{% endtrans %}
+                    <i class="fab fa-app-store-ios"></i> {% trans from "global" %}Projects{% endtrans %}
                 </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
                 <a href="{{ path('about') }}" class="waves-effect">
-                    <i class="material-icons">account_circle</i> {% trans from "global" %}About me{% endtrans %}
+                    <i class="fas fa-user-circle"></i> {% trans from "global" %}About me{% endtrans %}
                 </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
                 <a href="{{ path('contact') }}" class="waves-effect">
-                    <i class="material-icons">email</i> {% trans from "global" %}Contact{% endtrans %}
+                    <i class="fas fa-envelope"></i> {% trans from "global" %}Contact{% endtrans %}
                 </a>
             </li>
             <li class="separator"></li>
-            <li class="no-padding">
-                <ul class="collapsible collapsible-accordion">
-                    <li>
-                        <a class="collapsible-header waves-effect">
-                            <i class="material-icons">social_group</i> {% trans from "global" %}Social{% endtrans %}
-                        </a>
-
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="https://github.com/outadoc" target="_blank">
-                                        Github</a></li>
-                                <li><a href="https://twitter.com/outadev" target="_blank">
-                                        Twitter</a></li>
-                                <li><a href="https://www.linkedin.com/in/baptiste-candellier-204607b9" target="_blank">
-                                        LinkedIn</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+            <li>
+                <a class="subheader">{% trans from "global" %}Social{% endtrans %}</a>
             </li>
+            <li><a href="https://github.com/outadoc" target="_blank">
+                    <i class="fab fa-github"></i> Github</a></li>
+            <li><a href="https://twitter.com/outadev" target="_blank">
+                    <i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/baptiste-candellier-204607b9" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn</a></li>
         </ul>
     {% endblock %}
 </header>
@@ -100,9 +89,9 @@
 <footer class="page-footer blue lighten-1">
     <div class="footer-copyright">
         <div class="container">
-            © 2012 - 2015 Baptiste Candellier (outadoc)
+            © 2012 - 2018 Baptiste Candellier (outadoc)
             <div class="right">
-                <a class="grey-text text-lighten-4" href="https://github.com/outadoc">{% trans from "global" %}Moar on Github{% endtrans %}</a> -
+                <a class="grey-text text-lighten-4" href="https://github.com/outadoc">{% trans from "global" %}More on Github{% endtrans %}</a> -
                 <a class="grey-text text-lighten-4" href="https://twitter.com/outadev">Twitter</a>
             </div>
         </div>

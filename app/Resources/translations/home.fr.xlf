@@ -3,20 +3,20 @@
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
             <trans-unit id="1">
-                <source>Welcome, stranger!</source>
-                <target>Bienvenue, visiteur !</target>
+                <source>Welcome!</source>
+                <target>Bienvenue !</target>
             </trans-unit>
             <trans-unit id="2">
-                <source>outa[dev], fun open-source projects by Baptiste Candellier, aka outadoc</source>
-                <target>outa[dev], projets open-source fun par Baptiste Candellier, aka outadoc</target>
+                <source>You have successfully reached Baptiste Candellier's software projects portfolio.</source>
+                <target>Vous êtes bien sur le portfolio de projets logiciels de Baptiste Candellier.</target>
             </trans-unit>
             <trans-unit id="3">
-                <source>Amateur Programming</source>
-                <target>Développement amateur</target>
+                <source>Experimentation</source>
+                <target>Expérimentation</target>
             </trans-unit>
             <trans-unit id="4">
-                <source>I'm a student in computer science making programs for my fun and everybody else's.</source>
-                <target>Je suis un étudiant en informatique qui fait des programmes pour son plaisir et celui des autres.</target>
+                <source>I'm a soon-to-be software engineer making programs for my fun and everybody else's in my free time.</source>
+                <target>Je suis futur ingénieur en informatique qui fait des programmes pour son plaisir et celui des autres.</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>Open-Source Software</source>
