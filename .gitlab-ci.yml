@@ -1,0 +1,30 @@
+before_script:
+  - composer install --no-dev --optimize-autoloader
+  - php app/console cache:clear --env=prod --no-debug
+
+stages:
+  - check
+  - deploy
+
+check:
+    stage: check
+    script:
+    - php app/check.php
+    tags: 
+    - php
+
+deploy:
+  stage: deploy
+  script:
+  - cp /var/www/vhosts/dev.outadoc.fr/parameters.yml app/config/parameters.yml
+  - php app/console doctrine:database:drop --env=prod --no-debug
+  - php app/console doctrine:database:create --env=prod --no-debug
+  - php app/console doctrine:schema:create --env=prod --no-debug
+  - php app/console doctrine:database:import database_data.sql --env=prod --no-debug
+  - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/*
+  - cp -R public/* /var/www/dev.vhosts/outadoc.fr/htdocs/
+  tags: 
+  - php
+  - mysql
+  only:
+  - master
