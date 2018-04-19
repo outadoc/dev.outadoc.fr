@@ -1,5 +1,8 @@
+variables:
+  - SYMFONY_ENV: prod
+
 before_script:
-  - composer install --no-dev --optimize-autoloader
+  - composer install --no-progress --no-dev --optimize-autoloader
   - php app/console cache:clear --env=prod --no-debug
 
 stages:
