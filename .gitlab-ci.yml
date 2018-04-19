@@ -2,6 +2,7 @@ variables:
   SYMFONY_ENV: prod
 
 before_script:
+  - cp /var/www/vhosts/dev.outadoc.fr/parameters.yml app/config/parameters.yml
   - composer install --no-progress --no-dev --optimize-autoloader
   - php app/console cache:clear --env=prod --no-debug
 
@@ -19,7 +20,6 @@ check:
 deploy:
   stage: deploy
   script:
-  - cp /var/www/vhosts/dev.outadoc.fr/parameters.yml app/config/parameters.yml
   - php app/console doctrine:database:drop --env=prod --no-debug
   - php app/console doctrine:database:create --env=prod --no-debug
   - php app/console doctrine:schema:create --env=prod --no-debug
