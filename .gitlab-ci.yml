@@ -1,5 +1,5 @@
 variables:
-  - SYMFONY_ENV: prod
+  SYMFONY_ENV: prod
 
 before_script:
   - composer install --no-progress --no-dev --optimize-autoloader
