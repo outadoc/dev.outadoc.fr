@@ -20,8 +20,8 @@ check:
 deploy:
   stage: deploy
   script:
-  - php app/console doctrine:database:create --env=prod --no-debug
-  - php app/console doctrine:schema:create --env=prod --no-debug
+  - php app/console doctrine:database:create --env=prod --no-debug || true
+  - php app/console doctrine:schema:create --env=prod --no-debug || true
   - php app/console doctrine:schema:update --env=prod --no-debug
   - php app/console doctrine:database:import database_data.sql --env=prod --no-debug
   - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/*
