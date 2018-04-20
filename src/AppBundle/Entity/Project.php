@@ -73,9 +73,9 @@
 		/**
 		 * @var integer
 		 *
-		 * @ORM\Column(name="project_end_year", type="integer")
+		 * @ORM\Column(name="project_end_year", type="integer", nullable=true)
 		 */
-		private $endYear;
+		private $endYear = null;
 
 		/**
 		 * @var integer
