@@ -35,43 +35,6 @@ INSERT INTO `Category` (`category_id`, `category_name`, `category_name_long`) VA
 (6, 'hardware', 'Hardware');
 
 --
--- Déchargement des données de la table `Download`
---
-
-INSERT INTO `Download` (`project_id`, `platform_id`, `download_url`, `download_source_url`, `download_price`, `download_version`) VALUES
-(2, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.skinswitch', 'https://github.com/outadoc/SkinSwitch-Android', 0.00, '1.0'),
-(2, 5, 'http://itunes.apple.com/en/app/skinswitch-for-minecraft/id524911308', NULL, 0.00, '2.3'),
-(4, 5, 'https://itunes.apple.com/fr/app/freestance-telecommande-pour/id527012176?l=fr&ls=1&mt=8', 'https://github.com/outadoc/FreeStance-iOS', 0.99, '3.4'),
-(5, 6, 'http://borguerie.outadoc.fr', NULL, 0.00, ''),
-(6, 6, 'https://github.com/outadoc/CallMeBack', 'https://github.com/outadoc/CallMeBack', 0.00, '0.1'),
-(7, 11, 'http://forum.fantabobshow.com/index.php?threads/mod-fantabobshow.4976/', 'https://github.com/outadoc/FantaBobMod', 0.00, '1.3.2'),
-(8, 1, 'http://files.outadoc.fr/dev/FreeStance/FreeStance_2.0.1-win.exe', 'https://github.com/outadoc/FreeStance-desktop', 0.00, '2.0.1'),
-(8, 2, 'http://files.outadoc.fr/dev/FreeStance/FreeStance_2.0.1-osx.dmg', 'https://github.com/outadoc/FreeStance-desktop', 0.00, '2.0.1'),
-(8, 3, 'http://files.outadoc.fr/dev/FreeStance/FreeStance_2.0.1-linux.deb', 'https://github.com/outadoc/FreeStance-desktop', 0.00, '2.0.1'),
-(9, 7, 'https://chrome.google.com/webstore/detail/cpchednnjdladkifnhcohdhkjpkabmjf', 'https://github.com/outadoc/FreeStance-GoogleChrome', 0.00, '2.0'),
-(10, 7, 'https://chrome.google.com/webstore/detail/mhhkgpgpmehojoocnfmijjcnjakhaefh', 'https://github.com/outadoc/TabQuote', 0.00, '0.2'),
-(11, 7, 'https://chrome.google.com/webstore/detail/geeajbgckfihkppadccdljcnhalgcdeo', 'https://github.com/outadoc/youtube-videos-hider', 0.00, '0.1'),
-(12, 7, 'https://chrome.google.com/webstore/detail/pkfckoaeaiccpacjdngfkcgkfbcpikbf', 'https://github.com/outadoc/InverseLook', 0.00, '1.2'),
-(13, 7, 'https://chrome.google.com/webstore/detail/nbjhchagojgjonffingapkcbekglkknm', NULL, 0.00, '1.1'),
-(14, 7, 'https://chrome.google.com/webstore/detail/eoemkhcgjlkoplmgdboielpeoomhppca', 'https://github.com/outadoc/CapsLockDay', 0.00, '1.337'),
-(15, 6, 'http://latrouvaille.fr', NULL, 0.00, ''),
-(16, 6, 'http://ff.outadoc.fr', 'https://github.com/outadoc/CuteFF', 0.00, ''),
-(17, 0, 'https://github.com/outadoc/twitter-archive-parser/zipball/master', 'https://github.com/outadoc/twitter-archive-parser/', 0.00, '1.0'),
-(18, 5, 'https://itunes.apple.com/en/app/server-list-for-minecraft/id568969472', NULL, 0.00, '1.4'),
-(19, 7, 'https://chrome.google.com/webstore/detail/play2twitter/ifpficnhaeboljcjfaoabpgbiomajefp', 'https://github.com/outadoc/Play2Twitter', 0.00, '0.2'),
-(20, 0, 'https://github.com/outadoc/outabot-random-node/zipball/master', 'https://github.com/outadoc/outabot-random-node', 0.00, ''),
-(21, 0, 'http://twitter.com/Rand0matic/', 'https://github.com/outadoc/randomatic-twitter-node', 0.00, ''),
-(22, 0, 'https://github.com/outadoc/Twisto-API/zipball/master', 'https://github.com/outadoc/Twisto-API', 0.00, ''),
-(23, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.twistoast', 'https://github.com/outadoc/Twistoast-android', 0.00, '2.5'),
-(23, 10, 'https://chrome.google.com/webstore/detail/twistoast/olecaebebjbkmcnmobbdhgeicjfhidll?hl=fr', 'https://github.com/outadoc/Twistoast-android/tree/chromium', 0.00, '2.5'),
-(24, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.dmc12speedo', 'https://github.com/outadoc/DeLorean-Speedometer', 0.00, '1.1'),
-(25, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.lastfm.scrobb', 'https://github.com/outadoc/scrobb-android', 0.00, '1.0.3'),
-(26, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.splatcompanion', 'https://github.com/outadoc/SplatCompanion', 0.00, '1.1.5'),
-(27, 12, 'https://github.com/outadoc/linkindle/archive/master.zip', 'http://github.com/outadoc/linkindle', 0.00, '1.0'),
-(28, 13, 'https://github.com/outadoc/bttf-speedometer-arduino', NULL, 0.00, '1.0'),
-(29, 6, 'https://www.echosciences-normandie.fr/articles/vers-une-ville-sans-smartphone-borne-2-be', 'https://gitlab.ecole.ensicaen.fr/borne2be/', 0.00, '1');
-
---
 -- Déchargement des données de la table `Platform`
 --
 
@@ -122,6 +85,43 @@ INSERT INTO `Project` (`project_id`, `project_name`, `project_simple_name`, `pro
 (28, 'DeLorean Digital Speedometer Replica', 'obd-speedometer-arduino', 'Functioning replica of the DeLorean\'s digital speedometer from Back to the Future.', 'Réplique fonctionnelle du compteur de vitesse numérique de la DeLorean de Retour vers le Futur.', 'This project consisted in the making of a functional replica of the speedometer seen in the cult science-fiction film Back to the Future.\r\n\r\nThe finished product relies on a Freematics OBD-II UART adapter, connected directly to the car\'s ECU *via* the standard OBD-II port.\r\n\r\nThe circuit is controlled by an Arduino Nano board, wired to a switch (for mph/OFF/kmh functionality), the adapter, and two 7-segment displays.', 'Ce projet a consisté en la conception d\'une réplique fonctionnelle du compteur de vitesse vu dans le film culte de science-fiction Retour vers le Futur.\r\n\r\nLe produit fini repose sur un adaptateur UART OBD-II Freematics, connecté directement à l\'ordinateur de bord de la voiture par le port OBD-II standard.\r\n\r\nLe circuit est contrôlé par un Arduino Nano, connecté à un interrupteur (pour le mph/OFF/kmh), l\'adaptateur, et deux afficheurs sept segments.', 2017, 2017, 6, 0, 1),
 (29, 'Borne 2 Be', 'borne2be', 'A collaborative kiosk for your community.', 'Une borne collaborative pour votre communauté.', 'The Borne 2 Be project was born in the framework of Semaine Intensive 2018, organized by ENSICAEN, Normandie Aménagement, Caen la Mer Habitation and OuiShare.\r\n\r\nBorne 2 Be is a community-driven kiosk that allows the people of a neighborhood to exchange local ads, news, to consult an interactive map, or the bus schedule.\r\n\r\nThe users can authenticate to post content thanks to their smart bracelet or contactless badge. \r\n\r\nI mostly worked on the project\'s hardware: setting up a Raspberry Pi with Android Things, creating an Apache Cordova wrapper for the kiosk\'s website, communication with the fab lab in general, and mostly the setup, configuration and integration of an NFC reader for user authentication.', 'Le projet Borne 2 Be est né dans le cadre de la Semaine Intensive 2018, organisée par l\'ENSICAEN, Normandie Aménagement, Caen la Mer Habitation et OuiShare. Durant une semaine, notre équipe a tout donné pour développer une projet sur le thème de Normandie Aménagement : \"vers une ville sans smartphone\".\r\n\r\nBorne 2 Be est une borne communautaire qui permet aux habitants d\'un quartier d\'échanger petites annonces, nouvelles, de consulter un plan interactif, ou encore les horaires des prochains bus.\r\n\r\nLes utilisateurs peuvent s\'authentifier pour poster du contenu grâce à leur bracelet ou badge connecté.\r\n\r\nJ\'ai principalement travaillé sur le hardware du projet : préparation d\'un Raspberry Pi avec Android Things, création d\'un wrapper Apache Cordova pour le site web de la borne, communication avec le fab lab en général, et surtout mise en place et intégration d\'un lecteur NFC pour l\'authentification des utilisateurs.', 2018, 2018, 6, 0, 1);
 COMMIT;
+
+--
+-- Déchargement des données de la table `Download`
+--
+
+INSERT INTO `Download` (`project_id`, `platform_id`, `download_url`, `download_source_url`, `download_price`, `download_version`) VALUES
+(2, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.skinswitch', 'https://github.com/outadoc/SkinSwitch-Android', 0.00, '1.0'),
+(2, 5, 'https://itunes.apple.com/en/app/skinswitch-for-minecraft/id524911308', NULL, 0.00, '2.3'),
+(4, 5, 'https://itunes.apple.com/fr/app/freestance-telecommande-pour/id527012176?l=fr&ls=1&mt=8', 'https://github.com/outadoc/FreeStance-iOS', 0.99, '3.4'),
+(5, 6, 'http://borguerie.outadoc.fr', NULL, 0.00, ''),
+(6, 6, 'https://github.com/outadoc/CallMeBack', 'https://github.com/outadoc/CallMeBack', 0.00, '0.1'),
+(7, 11, 'http://forum.fantabobshow.com/index.php?threads/mod-fantabobshow.4976/', 'https://github.com/outadoc/FantaBobMod', 0.00, '1.3.2'),
+(8, 1, 'https://files.outadoc.fr/dev/FreeStance/FreeStance_2.0.1-win.exe', 'https://github.com/outadoc/FreeStance-desktop', 0.00, '2.0.1'),
+(8, 2, 'https://files.outadoc.fr/dev/FreeStance/FreeStance_2.0.1-osx.dmg', 'https://github.com/outadoc/FreeStance-desktop', 0.00, '2.0.1'),
+(8, 3, 'https://files.outadoc.fr/dev/FreeStance/FreeStance_2.0.1-linux.deb', 'https://github.com/outadoc/FreeStance-desktop', 0.00, '2.0.1'),
+(9, 7, 'https://chrome.google.com/webstore/detail/cpchednnjdladkifnhcohdhkjpkabmjf', 'https://github.com/outadoc/FreeStance-GoogleChrome', 0.00, '2.0'),
+(10, 7, 'https://chrome.google.com/webstore/detail/mhhkgpgpmehojoocnfmijjcnjakhaefh', 'https://github.com/outadoc/TabQuote', 0.00, '0.2'),
+(11, 7, 'https://chrome.google.com/webstore/detail/geeajbgckfihkppadccdljcnhalgcdeo', 'https://github.com/outadoc/youtube-videos-hider', 0.00, '0.1'),
+(12, 7, 'https://chrome.google.com/webstore/detail/pkfckoaeaiccpacjdngfkcgkfbcpikbf', 'https://github.com/outadoc/InverseLook', 0.00, '1.2'),
+(13, 7, 'https://chrome.google.com/webstore/detail/nbjhchagojgjonffingapkcbekglkknm', NULL, 0.00, '1.1'),
+(14, 7, 'https://chrome.google.com/webstore/detail/eoemkhcgjlkoplmgdboielpeoomhppca', 'https://github.com/outadoc/CapsLockDay', 0.00, '1.337'),
+(15, 6, 'http://latrouvaille.fr', NULL, 0.00, ''),
+(16, 6, 'http://ff.outadoc.fr', 'https://github.com/outadoc/CuteFF', 0.00, ''),
+(17, 0, 'https://github.com/outadoc/twitter-archive-parser/zipball/master', 'https://github.com/outadoc/twitter-archive-parser/', 0.00, '1.0'),
+(18, 5, 'https://itunes.apple.com/en/app/server-list-for-minecraft/id568969472', NULL, 0.00, '1.4'),
+(19, 7, 'https://chrome.google.com/webstore/detail/play2twitter/ifpficnhaeboljcjfaoabpgbiomajefp', 'https://github.com/outadoc/Play2Twitter', 0.00, '0.2'),
+(20, 0, 'https://github.com/outadoc/outabot-random-node/zipball/master', 'https://github.com/outadoc/outabot-random-node', 0.00, ''),
+(21, 0, 'http://twitter.com/Rand0matic/', 'https://github.com/outadoc/randomatic-twitter-node', 0.00, ''),
+(22, 0, 'https://github.com/outadoc/Twisto-API/zipball/master', 'https://github.com/outadoc/Twisto-API', 0.00, ''),
+(23, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.twistoast', 'https://github.com/outadoc/Twistoast-android', 0.00, '2.5'),
+(23, 10, 'https://chrome.google.com/webstore/detail/twistoast/olecaebebjbkmcnmobbdhgeicjfhidll?hl=fr', 'https://github.com/outadoc/Twistoast-android/tree/chromium', 0.00, '2.5'),
+(24, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.dmc12speedo', 'https://github.com/outadoc/DeLorean-Speedometer', 0.00, '1.1'),
+(25, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.lastfm.scrobb', 'https://github.com/outadoc/scrobb-android', 0.00, '1.0.3'),
+(26, 4, 'https://play.google.com/store/apps/details?id=fr.outadev.splatcompanion', 'https://github.com/outadoc/SplatCompanion', 0.00, '1.1.5'),
+(27, 12, 'https://github.com/outadoc/linkindle/archive/master.zip', 'http://github.com/outadoc/linkindle', 0.00, '1.0'),
+(28, 13, 'https://github.com/outadoc/bttf-speedometer-arduino', NULL, 0.00, '1.0'),
+(29, 6, 'https://www.echosciences-normandie.fr/articles/vers-une-ville-sans-smartphone-borne-2-be', 'https://gitlab.ecole.ensicaen.fr/borne2be/', 0.00, '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
