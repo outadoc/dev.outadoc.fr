@@ -40,11 +40,11 @@
 
         public function getLogDir()
         {
-            return '/var/cache/dev.outadoc.fr/'.$this->environment;
+            return '/var/log/dev.outadoc.fr/'.$this->environment;
         }
 
         public function getCacheDir()
         {
-            return '/var/log/dev.outadoc.fr/'.$this->environment;
+            return '/var/cache/dev.outadoc.fr/'.$this->environment;
         }
     }
