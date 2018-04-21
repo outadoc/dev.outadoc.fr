@@ -37,4 +37,14 @@
         {
             $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
         }
+
+        public function getLogDir()
+        {
+            return '/var/cache/dev.outadoc.fr/'.$this->environment;
+        }
+
+        public function getCacheDir()
+        {
+            return '/var/log/dev.outadoc.fr/'.$this->environment;
+        }
     }

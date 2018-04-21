@@ -26,10 +26,8 @@ deploy:
   - php app/console doctrine:database:import database_data.sql --env=prod --no-debug
   - rm web/app_dev.php
   - rm web/config.php
-  - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/* || true
+  - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/*
   - cp -R * /var/www/vhosts/dev.outadoc.fr/htdocs/
-  - chmod -R 775 /var/www/vhosts/dev.outadoc.fr/htdocs/app/logs
-  - chmod -R 775 /var/www/vhosts/dev.outadoc.fr/htdocs/app/cache
   tags: 
   - php
   - mysql
