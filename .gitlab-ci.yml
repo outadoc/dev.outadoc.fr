@@ -21,12 +21,12 @@ deploy:
   stage: deploy
   script:
   - php app/console doctrine:database:drop --if-exists --force --env=prod --no-debug
-  - php app/console doctrine:database:create --env=prod --no-debug || true
+  - php app/console doctrine:database:create --env=prod --no-debug
   - php app/console doctrine:schema:create --env=prod --no-debug || true
   - php app/console doctrine:database:import database_data.sql --env=prod --no-debug
   - rm web/app_dev.php
   - rm web/config.php
-  - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/*
+  - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/* || true
   - cp -R * /var/www/vhosts/dev.outadoc.fr/htdocs/
   - chmod -R 775 /var/www/vhosts/dev.outadoc.fr/htdocs/app/logs
   - chmod -R 775 /var/www/vhosts/dev.outadoc.fr/htdocs/app/cache
