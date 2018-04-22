@@ -4,7 +4,7 @@ variables:
 before_script:
   - cp /var/www/vhosts/dev.outadoc.fr/parameters.yml app/config/parameters.yml
   - composer install --no-progress --no-dev --optimize-autoloader
-  - php app/console cache:clear --env=prod --no-debug
+  - sudo php app/console cache:clear --env=prod --no-debug
 
 stages:
   - check
