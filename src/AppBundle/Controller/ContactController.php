@@ -19,7 +19,8 @@
          */
         public function indexAction(Request $request)
         {
-            $form = $this->createForm(MessageType::class);
+            $message = new Message();
+            $form = $this->createForm(MessageType::class, $message);
 
             $form->handleRequest($request);
 

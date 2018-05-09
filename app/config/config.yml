@@ -67,6 +67,7 @@ doctrine:
 ewz_recaptcha:
     public_key:  '%recaptcha_public_key%'
     private_key: '%recaptcha_private_key%'
+    locale_from_request: true
 
 jms_i18n_routing:
     default_locale: en
