@@ -13,17 +13,17 @@ stages:
 check:
     stage: check
     script:
-    - php app/check.php
+    - bin/symfony_requirements
     tags: 
     - php
 
 deploy:
   stage: deploy
   script:
-  - php app/console doctrine:database:drop --if-exists --force --env=prod --no-debug
-  - php app/console doctrine:database:create --env=prod --no-debug
-  - php app/console doctrine:schema:create --env=prod --no-debug || true
-  - php app/console doctrine:database:import database_data.sql --env=prod --no-debug
+  - bin/console doctrine:database:drop --if-exists --force --env=prod --no-debug
+  - bin/console doctrine:database:create --env=prod --no-debug
+  - bin/console doctrine:schema:create --env=prod --no-debug || true
+  - bin/console doctrine:database:import database_data.sql --env=prod --no-debug
   - rm web/app_dev.php
   - rm web/config.php
   - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/*

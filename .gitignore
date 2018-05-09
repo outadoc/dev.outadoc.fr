@@ -1,16 +1,19 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Symfony template
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
-# Cache and logs (Symfony3)
+# Email spool folder
+/app/spool/*
+
+# Cache, session files and logs (Symfony3)
 /var/cache/*
 /var/logs/*
+/var/sessions/*
 !var/cache/.gitkeep
 !var/logs/.gitkeep
+!var/sessions/.gitkeep
 
 # Parameters
 /app/config/parameters.yml
@@ -38,55 +41,8 @@
 # Composer PHAR
 /composer.phar
 
+# Backup entities generated with doctrine:generate:entities command
+**/Entity/*~
 
-### JetBrains template
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
-
-*.iml
-
-## Directory-based project format:
-.idea/
-# if you remove the above rule, at least ignore the following:
-
-# User-specific stuff:
-# .idea/workspace.xml
-# .idea/tasks.xml
-# .idea/dictionaries
-
-# Sensitive or high-churn files:
-# .idea/dataSources.ids
-# .idea/dataSources.xml
-# .idea/sqlDataSources.xml
-# .idea/dynamic.xml
-# .idea/uiDesigner.xml
-
-# Gradle:
-# .idea/gradle.xml
-# .idea/libraries
-
-# Mongo Explorer plugin:
-# .idea/mongoSettings.xml
-
-## File-based project format:
-*.ipr
-*.iws
-
-## Plugin-specific files:
-
-# IntelliJ
-/out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-
-# Old portfolio versions
-web/v1/
-web/v2/
+# Embedded web-server pid file
+/.web-server-pid

@@ -3,6 +3,7 @@
     namespace AppBundle\Controller;
 
     use AppBundle\Entity\Message;
+    use AppBundle\Form\Type\MessageType;
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
     use Symfony\Component\HttpFoundation\Request;
@@ -19,11 +20,11 @@
         public function indexAction(Request $request)
         {
             $message = new Message();
-            $form = $this->createForm('message', $message);
+            $form = $this->createForm(MessageType::class, $message);
 
             $form->handleRequest($request);
 
-            if ($form->isValid()) {
+            if ($form->isSubmitted() && $form->isValid()) {
                 // Send an email with the message
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Message from ' . $message->getName())
@@ -42,7 +43,7 @@
 
             return $this->render('contact/index.html.twig', array(
                 'form'  => $form->createView(),
-                'valid' => $form->isValid()
+                'valid' => $form->isSubmitted() && $form->isValid()
             ));
         }
 
