@@ -6,6 +6,9 @@ before_script:
   - composer install --no-progress --no-dev --optimize-autoloader
   - sudo rm -rf /var/cache/dev.outadoc.fr/prod/* || true
 
+after_script:
+  - bin/console cache:clear --env=prod --no-debug
+
 stages:
   - check
   - deploy
