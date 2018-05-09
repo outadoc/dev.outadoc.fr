@@ -41,6 +41,10 @@
                 ->getRepository('AppBundle:Project')
                 ->findOneBySimpleName($project);
 
+            if ($_project === null) {
+                throw $this->createNotFoundException("Project not found");
+            }
+
             // List all screenshots available to display on the homepage
             $finder = new Finder();
             $finder->files()
