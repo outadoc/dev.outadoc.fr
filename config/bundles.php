@@ -11,5 +11,4 @@ return [
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     Beelab\Recaptcha2Bundle\BeelabRecaptcha2Bundle::class => ['all' => true],
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
-    JMS\I18nRoutingBundle\JMSI18nRoutingBundle::class => ['all' => true]
 ];
