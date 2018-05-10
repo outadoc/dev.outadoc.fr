@@ -11,6 +11,7 @@
 	use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 	use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 	use Beelab\Recaptcha2Bundle\Form\Type\RecaptchaType;
+	use Beelab\Recaptcha2Bundle\Validator\Constraints\Recaptcha2;
 
 	class MessageType extends AbstractType
 	{
@@ -20,7 +21,9 @@
 				->add('name', TextType::class)
 				->add('email', EmailType::class)
 				->add('message', TextareaType::class)
-				->add('recaptcha', RecaptchaType::class)
+				->add('recaptcha', RecaptchaType::class, [
+					'constraints' => new Recaptcha2()
+				])
 				->add('send', SubmitType::class);
 		}
 
