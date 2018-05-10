@@ -1,9 +1,5 @@
-variables:
-  SYMFONY_ENV: prod
-
 before_script:
   - cp /var/www/vhosts/dev.outadoc.fr/.env .
-  - composer install --no-progress --no-dev --optimize-autoloader
   - sudo rm -rf /var/cache/dev.outadoc.fr/prod/* || true
 
 stages:
@@ -13,6 +9,7 @@ stages:
 test:
     stage: test
     script:
+    - composer install --no-progress
     - bin/simple-phpunit
     tags: 
     - php
@@ -20,6 +17,7 @@ test:
 deploy:
   stage: deploy
   script:
+  - composer install --no-progress --no-dev --optimize-autoloader
   - bin/console doctrine:database:drop --if-exists --force --env=prod --no-debug
   - bin/console doctrine:database:create --env=prod --no-debug
   - bin/console doctrine:schema:create --env=prod --no-debug || true
