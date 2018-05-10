@@ -1,11 +1,4 @@
-app_prefixed:
-    resource: '../src/Controller/'
-    prefix:   /{_locale}
-    requirements:
-        _locale: fr|en
-    defaults: { _locale: en}
-
-app_default:
+app:
     resource: '../src/Controller/'
 
 #index:
