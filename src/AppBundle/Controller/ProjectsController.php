@@ -48,7 +48,7 @@
             // List all screenshots available to display on the homepage
             $finder = new Finder();
             $finder->files()
-                ->in("../web/assets/img/data/screen/" . $project)
+                ->in("../public/assets/img/data/screen/" . $project)
                 ->name("*.png")
                 ->depth("== 0");
 

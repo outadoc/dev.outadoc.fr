@@ -10,7 +10,7 @@
 	use Symfony\Component\Form\Extension\Core\Type\EmailType;
 	use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 	use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-	use EWZ\Bundle\RecaptchaBundle\Form\Type\EWZRecaptchaType;
+	use Beelab\Recaptcha2Bundle\Form\Type\RecaptchaType;
 
 	class MessageType extends AbstractType
 	{
@@ -20,7 +20,7 @@
 				->add('name', TextType::class)
 				->add('email', EmailType::class)
 				->add('message', TextareaType::class)
-				->add('recaptcha', EWZRecaptchaType::class)
+				->add('recaptcha', RecaptchaType::class)
 				->add('send', SubmitType::class);
 		}
 
