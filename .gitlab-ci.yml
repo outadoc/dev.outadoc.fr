@@ -10,13 +10,13 @@ after_script:
   - bin/console cache:clear --env=prod --no-debug
 
 stages:
-  - check
+  - test
   - deploy
 
-.check:
-    stage: check
+test:
+    stage: test
     script:
-    - bin/symfony_requirements
+    - bin/simple-phpunit
     tags: 
     - php
 
