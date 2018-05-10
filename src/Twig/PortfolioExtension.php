@@ -1,6 +1,6 @@
 <?php
 
-    namespace AppBundle\Twig;
+    namespace App\Twig;
 
     class PortfolioExtension extends \Twig_Extension
     {

@@ -1,6 +1,6 @@
 <?php
 
-	namespace AppBundle\Entity;
+	namespace App\Entity;
 
 	use Doctrine\ORM\Mapping as ORM;
 
@@ -77,10 +77,10 @@
 		/**
 		 * Add downloads
 		 *
-		 * @param \AppBundle\Entity\Download $downloads
+		 * @param \App\Entity\Download $downloads
 		 * @return Platform
 		 */
-		public function addDownload(\AppBundle\Entity\Download $downloads)
+		public function addDownload(\App\Entity\Download $downloads)
 		{
 			$this->downloads[] = $downloads;
 
@@ -90,9 +90,9 @@
 		/**
 		 * Remove downloads
 		 *
-		 * @param \AppBundle\Entity\Download $downloads
+		 * @param \App\Entity\Download $downloads
 		 */
-		public function removeDownload(\AppBundle\Entity\Download $downloads)
+		public function removeDownload(\App\Entity\Download $downloads)
 		{
 			$this->downloads->removeElement($downloads);
 		}

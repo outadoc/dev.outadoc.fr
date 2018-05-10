@@ -1,6 +1,6 @@
 <?php
 
-	namespace AppBundle\Entity;
+	namespace App\Entity;
 
 	use Symfony\Component\Validator\Constraints as Assert;
 	use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;

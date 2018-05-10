@@ -1,11 +1,11 @@
 <?php
 
-    namespace AppBundle\Controller;
+    namespace App\Controller;
 
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-    use AppBundle\Controller\Twig_Environment;
-    use AppBundle\Controller\Twig_SimpleFunction;
+    use App\Controller\Twig_Environment;
+    use App\Controller\Twig_SimpleFunction;
 
     class AboutController extends Controller
     {

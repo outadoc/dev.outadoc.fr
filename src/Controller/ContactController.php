@@ -1,9 +1,9 @@
 <?php
 
-    namespace AppBundle\Controller;
+    namespace App\Controller;
 
-    use AppBundle\Entity\Message;
-    use AppBundle\Form\Type\MessageType;
+    use App\Entity\Message;
+    use App\Form\Type\MessageType;
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
     use Symfony\Component\HttpFoundation\Request;

@@ -1,6 +1,6 @@
 <?php
 
-    namespace AppBundle\Controller;
+    namespace App\Controller;
 
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -15,14 +15,14 @@
         public function indexAction()
         {
             $featured = $this->getDoctrine()
-                ->getRepository('AppBundle:Project')
+                ->getRepository('App:Project')
                 ->findBy(array(
                     "visible"  => 1,
                     "featured" => 1
                 ));
 
             $categories = $this->getDoctrine()
-                ->getRepository('AppBundle:Category')
+                ->getRepository('App:Category')
                 ->findAll();
 
             return $this->render('projects/index.html.twig', array(
@@ -38,7 +38,7 @@
         public function viewAction($project)
         {
             $_project = $this->getDoctrine()
-                ->getRepository('AppBundle:Project')
+                ->getRepository('App:Project')
                 ->findOneBySimpleName($project);
 
             if ($_project === null) {

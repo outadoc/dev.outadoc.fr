@@ -1,6 +1,6 @@
 <?php
 
-	namespace AppBundle\Entity;
+	namespace App\Entity;
 
 	use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@
 	 * Category
 	 *
 	 * @ORM\Table()
-	 * @ORM\Entity(repositoryClass="AppBundle\Entity\CategoryRepository")
+	 * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
 	 */
 	class Category
 	{
@@ -109,10 +109,10 @@
 		/**
 		 * Add projects
 		 *
-		 * @param \AppBundle\Entity\Project $projects
+		 * @param \App\Entity\Project $projects
 		 * @return Category
 		 */
-		public function addProject(\AppBundle\Entity\Project $projects)
+		public function addProject(\App\Entity\Project $projects)
 		{
 			$this->projects[] = $projects;
 
@@ -122,9 +122,9 @@
 		/**
 		 * Remove projects
 		 *
-		 * @param \AppBundle\Entity\Project $projects
+		 * @param \App\Entity\Project $projects
 		 */
-		public function removeProject(\AppBundle\Entity\Project $projects)
+		public function removeProject(\App\Entity\Project $projects)
 		{
 			$this->projects->removeElement($projects);
 		}

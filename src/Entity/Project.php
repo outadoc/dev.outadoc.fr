@@ -1,6 +1,6 @@
 <?php
 
-	namespace AppBundle\Entity;
+	namespace App\Entity;
 
 	use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@
 	 * Project
 	 *
 	 * @ORM\Table()
-	 * @ORM\Entity(repositoryClass="AppBundle\Entity\ProjectRepository")
+	 * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
 	 */
 	class Project
 	{
@@ -381,10 +381,10 @@
 		/**
 		 * Add downloads
 		 *
-		 * @param \AppBundle\Entity\Download $downloads
+		 * @param \App\Entity\Download $downloads
 		 * @return Project
 		 */
-		public function addDownload(\AppBundle\Entity\Download $downloads)
+		public function addDownload(\App\Entity\Download $downloads)
 		{
 			$this->downloads[] = $downloads;
 
@@ -394,9 +394,9 @@
 		/**
 		 * Remove downloads
 		 *
-		 * @param \AppBundle\Entity\Download $downloads
+		 * @param \App\Entity\Download $downloads
 		 */
-		public function removeDownload(\AppBundle\Entity\Download $downloads)
+		public function removeDownload(\App\Entity\Download $downloads)
 		{
 			$this->downloads->removeElement($downloads);
 		}
@@ -414,10 +414,10 @@
 		/**
 		 * Set category
 		 *
-		 * @param \AppBundle\Entity\Category $category
+		 * @param \App\Entity\Category $category
 		 * @return Project
 		 */
-		public function setCategory(\AppBundle\Entity\Category $category = null)
+		public function setCategory(\App\Entity\Category $category = null)
 		{
 			$this->category = $category;
 
@@ -427,7 +427,7 @@
 		/**
 		 * Get category
 		 *
-		 * @return \AppBundle\Entity\Category
+		 * @return \App\Entity\Category
 		 */
 		public function getCategory()
 		{

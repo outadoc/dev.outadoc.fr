@@ -1,6 +1,6 @@
 <?php
 
-	namespace AppBundle\Entity;
+	namespace App\Entity;
 
 	use Doctrine\ORM\Mapping as ORM;
 
@@ -211,10 +211,10 @@
 		/**
 		 * Set projects
 		 *
-		 * @param \AppBundle\Entity\Project $project
+		 * @param \App\Entity\Project $project
 		 * @return Download
 		 */
-		public function setProject(\AppBundle\Entity\Project $project = null)
+		public function setProject(\App\Entity\Project $project = null)
 		{
 			$this->project = $project;
 
@@ -224,7 +224,7 @@
 		/**
 		 * Get projects
 		 *
-		 * @return \AppBundle\Entity\Project
+		 * @return \App\Entity\Project
 		 */
 		public function getProject()
 		{
@@ -234,10 +234,10 @@
 		/**
 		 * Set platform
 		 *
-		 * @param \AppBundle\Entity\Platform $platform
+		 * @param \App\Entity\Platform $platform
 		 * @return Download
 		 */
-		public function setPlatform(\AppBundle\Entity\Platform $platform = null)
+		public function setPlatform(\App\Entity\Platform $platform = null)
 		{
 			$this->platform = $platform;
 
@@ -247,7 +247,7 @@
 		/**
 		 * Get platform
 		 *
-		 * @return \AppBundle\Entity\Platform
+		 * @return \App\Entity\Platform
 		 */
 		public function getPlatform()
 		{
