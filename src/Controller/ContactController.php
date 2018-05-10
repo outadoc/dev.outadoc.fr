@@ -26,7 +26,7 @@
 
             if ($form->isSubmitted() && $form->isValid()) {
                 // Send an email with the message
-                $message = \Swift_Message::newInstance()
+                $message = (new \Swift_Message())
                     ->setSubject('Message from ' . $message->getName())
                     ->setFrom($message->getEmail())
                     ->setTo('outadoc+dev@gmail.com')
