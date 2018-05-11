@@ -1,36 +1,30 @@
-variables:
-  SYMFONY_ENV: prod
-
 before_script:
-  - cp /var/www/vhosts/dev.outadoc.fr/parameters.yml app/config/parameters.yml
-  - composer install --no-progress --no-dev --optimize-autoloader
+  - cp /var/www/vhosts/dev.outadoc.fr/.env .
   - sudo rm -rf /var/cache/dev.outadoc.fr/prod/* || true
 
-after_script:
-  - bin/console cache:clear --env=prod --no-debug
-
 stages:
-  - check
+  - test
   - deploy
 
-check:
-    stage: check
+test:
+    stage: test
     script:
-    - bin/symfony_requirements
+    - composer install --no-progress
+    - bin/simple-phpunit
     tags: 
     - php
 
 deploy:
   stage: deploy
   script:
+  - composer install --no-progress --no-dev --optimize-autoloader
   - bin/console doctrine:database:drop --if-exists --force --env=prod --no-debug
   - bin/console doctrine:database:create --env=prod --no-debug
   - bin/console doctrine:schema:create --env=prod --no-debug || true
   - bin/console doctrine:database:import database_data.sql --env=prod --no-debug
-  - rm web/app_dev.php
-  - rm web/config.php
   - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/*
   - cp -R * /var/www/vhosts/dev.outadoc.fr/htdocs/
+  - bin/console cache:clear --env=prod --no-debug
   tags: 
   - php
   - mysql
