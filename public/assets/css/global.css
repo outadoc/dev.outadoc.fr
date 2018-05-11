@@ -12,25 +12,8 @@ main {
     margin-top: 20px !important;
 }
 
-.header {
-    font-weight: 300;
-}
-
-header, main, footer {
-    padding-left: 150px;
-}
-
-.side-nav .brand-logo {
-    font-size: 25px;
-}
-
-.side-nav .separator {
-    border-bottom: 1px solid #DDD;
-}
-
-.side-nav a i.fas, .side-nav a i.fab {
+.sidenav a i.fas, .sidenav a i.fab {
     font-size: 20px;
-    line-height: 51px;
 }
 
 nav.top-nav {
@@ -43,12 +26,6 @@ nav.top-nav a.page-title {
     font-size: 48px;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.side-nav [class^="mdi-"] {
-    font-size: 21px;
-    margin-right: 8px;
-    vertical-align: -3px;
 }
 
 a.button-collapse.top-nav.full {
@@ -93,21 +70,4 @@ footer.page-footer {
     header, main, footer {
         padding-left: 0;
     }
-}
-
-ul.side-nav.fixed li a {
-    line-height: 56px;
-    height: 56px;
-}
-
-#slide-out.side-nav li.active {
-    background-color: #489DE3;
-}
-
-#slide-out.side-nav li.active > a {
-    color: white;
-}
-
-#slide-out.side-nav .collapsible-header {
-    margin: 0 10px;
 }
