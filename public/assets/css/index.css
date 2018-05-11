@@ -1,11 +1,6 @@
-@media only screen and (min-width: 992px) {
-    header, main, footer {
-        padding-left: 240px;
-    }
-}
-
 #hello {
     height: 400px;
+    margin-top: -3px;
     background-size: cover;
     margin-bottom: 10px;
     background-position-y: 50%;

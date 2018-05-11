@@ -36,6 +36,10 @@
     margin-top: 20px !important;
 }
 
+nav .project-header.col {
+    padding-bottom: 30px;
+}
+
 #dropdown-downloads {
     width: auto !important;
 }
@@ -62,6 +66,10 @@ a.button-collapse.top-nav {
 .screenshots.container {
     margin: 0;
     padding: 0;
+}
+
+img.screenshot {
+    margin: auto;
 }
 
 .source-code-links {
@@ -91,8 +99,8 @@ a.button-collapse.top-nav {
     text-align: left !important;
 }
 
-#modal-download .collection .secondary-content {
-    top: 26px;
+#modal-download .fab {
+    font-size: 2em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -102,15 +110,7 @@ a.button-collapse.top-nav {
 }
 
 @media only screen and (min-width: 993px) {
-    .container {
-        width: 85%;
-    }
-
     .screenshots.container {
         margin-top: -110px;
-    }
-
-    header, main, footer {
-        padding-left: 240px;
     }
 }

@@ -19,75 +19,74 @@
     <link rel="stylesheet" href="{{ asset('assets/css/single-project.css') }}" type="text/css">
 {% endblock %}
 
-{% block navbar %}
-{% endblock %}
-
-{% block body %}
-    <div class="section blue lighten-1" id="index-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m9">
-                    {# Header: project name, description and dates #}
-                    <h1 class="header center-on-small-only white-text">{{ project.getName() }}</h1>
-                    <h4 class="light text-lighten-4 center-on-small-only light-blue-text">
-                        {% if app.request.getLocale() == "fr" %}
-                            {{ project.getFrenchShortDescription() }}
-                        {% else %}
-                            {{ project.getShortDescription() }}
-                        {% endif %}
-                    </h4>
-                    <h4 class="light text-lighten-3 center-on-small-only light-blue-text project-date">
-                        {% if project.getEndYear() is null %}
-                            {{ project.getStartYear() }}&ndash;{% trans from "projects" %}Today{% endtrans %}
-                        {% elseif project.getStartYear() == project.getEndYear() %}
-                            {{ project.getStartYear() }}
-                        {% else %}
-                            {{ project.getStartYear() }}&ndash;{{ project.getEndYear() }}
-                        {% endif %}
-                    </h4>
-
-                    {% if project.getDownloads()|length > 0 %}
-                        {% set large_classes = "btn btn-large download yellow darken-1 grey-text text-darken-3 waves-effect hide-on-med-and-down" %}
-                        {% set medium_classes = "btn-floating btn-large waves-effect waves-light yellow darken-1 modal-trigger hide-on-large-only" %}
-
-                        {# Download links #}
-                        {% if project.getDownloads()[0].getPlatform().getName() == 'Web' %}
-                            {# Website: only show a "go to" link #}
-                            <a class="{{ large_classes }} website-link" target="_blank"
-                               href="{{ project.getDownloads()[0].getDownloadUrl() }}">
-                                {% trans from "projects" %}Go to the website{% endtrans %}
-                            </a>
-                            <a id="download-fab" class="{{ medium_classes }}" target="_blank"
-                               href="{{ project.getDownloads()[0].getDownloadUrl() }}">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        {% else %}
-                            {# Otherwise, display a dropdown with all the downloads #}
-                            <a class="dropdown-button {{ large_classes }}" href data-activates="dropdown-downloads">
-                                {% trans from "projects" %}Download{% endtrans %} <i class="fas fa-caret-down right"></i>
-                            </a>
-
-                            <ul id="dropdown-downloads" class="dropdown-content">
-                                {% for download in project.getDownloads() %}
-                                    <li>
-                                        <a href="{{ download.getDownloadUrl() }}" class="grey-text text-darken-3">
-                                            {{ download.getPlatform().getName() }}
-                                            ({{- formatMacro.format_price(download.getPrice()) -}},
-                                            v{{ download.getVersion() }})
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-
-                            <a data-target="modal-download" id="download-fab" class="{{ medium_classes }}">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        {% endif %}
+{% block extended_nav %}
+    <div class="nav-content">
+        <div class="row">
+            <div class="col s12 m9 project-header">
+                {# Header: project name, description and dates #}
+                <h1 class="header center-on-small-only white-text">{{ project.getName() }}</h1>
+                <h4 class="light text-lighten-4 center-on-small-only light-blue-text">
+                    {% if app.request.getLocale() == "fr" %}
+                        {{ project.getFrenchShortDescription() }}
+                    {% else %}
+                        {{ project.getShortDescription() }}
                     {% endif %}
-                </div>
+                </h4>
+                
+                <h4 class="light text-lighten-3 center-on-small-only light-blue-text project-date">
+                    {% if project.getEndYear() is null %}
+                        {{ project.getStartYear() }}&ndash;{% trans from "projects" %}Today{% endtrans %}
+                    {% elseif project.getStartYear() == project.getEndYear() %}
+                        {{ project.getStartYear() }}
+                    {% else %}
+                        {{ project.getStartYear() }}&ndash;{{ project.getEndYear() }}
+                    {% endif %}
+                </h4>
+
+                {% if project.getDownloads()|length > 0 %}
+                    {% set large_classes = "btn btn-large download yellow darken-1 grey-text text-darken-3 waves-effect hide-on-med-and-down" %}
+                    {% set medium_classes = "btn-floating btn-large waves-effect waves-light yellow darken-1 modal-trigger hide-on-large-only" %}
+
+                    {# Download links #}
+                    {% if project.getDownloads()[0].getPlatform().getName() == 'Web' %}
+                        {# Website: only show a "go to" link #}
+                        <a class="{{ large_classes }} website-link" target="_blank"
+                            href="{{ project.getDownloads()[0].getDownloadUrl() }}">
+                            {% trans from "projects" %}Go to the website{% endtrans %}
+                        </a>
+                        <a id="download-fab" class="{{ medium_classes }}" target="_blank"
+                            href="{{ project.getDownloads()[0].getDownloadUrl() }}">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    {% else %}
+                        {# Otherwise, display a dropdown with all the downloads #}
+                        <a class="dropdown-trigger {{ large_classes }}" href="#" data-target="dropdown-downloads">
+                            {% trans from "projects" %}Download{% endtrans %} <i class="fas fa-caret-down right"></i>
+                        </a>
+
+                        <ul id="dropdown-downloads" class="dropdown-content">
+                            {% for download in project.getDownloads() %}
+                                <li>
+                                    <a href="{{ download.getDownloadUrl() }}" class="grey-text text-darken-3">
+                                        {{ download.getPlatform().getName() }}
+                                        ({{- formatMacro.format_price(download.getPrice()) -}},
+                                        v{{ download.getVersion() }})
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <a data-target="modal-download" id="download-fab" class="{{ medium_classes }}">
+                            <i class="fas fa-download"></i>
+                        </a>
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block body %}
     <div class="container project-single">
         <div class="row">
             <div class="col s12 m12 l7 project-description">
@@ -111,14 +110,16 @@
                     </p>
                 {% endif %}
             </div>
+
             <div class="col s12 m12 l5">
                 <div class="container screenshots">
                     <div class="row">
-                        <div class="col s12 m12 center">
+                        <div class="col s12 m12">
                             <img class="materialboxed screenshot z-depth-1"
                                  src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/0.png') }}">
                         </div>
                     </div>
+
                     <div class="row row-centered">
                         {# Display every secondary screenshot under the main one #}
                         {% if screen_count > 1 %}
@@ -165,12 +166,11 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript">
-        $('.dropdown-button').dropdown({
-                    hover: true,
-                    constrain_width: false,
-                    belowOrigin: true
-                }
-        );
+        $('.dropdown-trigger').dropdown({
+            hover: true,
+            constrain_width: false,
+            coverTrigger: false
+        });
 
         $(document).ready(function () {
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
