@@ -24,6 +24,7 @@ deploy:
   - bin/console doctrine:database:import database_data.sql --env=prod --no-debug
   - rm -rf /var/www/vhosts/dev.outadoc.fr/htdocs/*
   - cp -R * /var/www/vhosts/dev.outadoc.fr/htdocs/
+  - cp .env /var/www/vhosts/dev.outadoc.fr/htdocs/
   - bin/console cache:clear --env=prod --no-debug
   tags: 
   - php
