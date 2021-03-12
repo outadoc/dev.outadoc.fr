@@ -17,20 +17,12 @@ class Kernel extends BaseKernel
 
     public function getCacheDir()
     {
-        if ('prod' === $this->getEnvironment()) {
-            return '/var/cache/dev.outadoc.fr/'.$this->environment;
-        }
-
-        return $this->getProjectDir().'/var/cache/'.$this->environment;
+        return '/var/cache/dev.outadoc.fr/'.$this->environment;
     }
 
     public function getLogDir()
     {
-        if ('prod' === $this->getEnvironment()) {
-            return '/var/log/dev.outadoc.fr/'.$this->environment;
-        }
-        
-        return $this->getProjectDir().'/var/log';
+        return '/var/log/dev.outadoc.fr/'.$this->environment;
     }
 
     public function registerBundles()

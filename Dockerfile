@@ -12,6 +12,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 COPY entrypoint.sh /bin/entrypoint.sh
 COPY nginx-site.conf /etc/nginx/sites-enabled/default
 
+RUN mkdir -p /var/cache/dev.outadoc.fr
+RUN mkdir -p /var/log/dev.outadoc.fr
+
 # Build app
 WORKDIR /var/www/html
 COPY --chown=www-data:www-data . .
