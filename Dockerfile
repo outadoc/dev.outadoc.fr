@@ -2,6 +2,8 @@ FROM php:7.1.3-fpm
 
 EXPOSE 80
 
+RUN echo "memory_limit = 512M" > "$PHP_INI_DIR/conf.d/custom-php.ini"
+
 # Install dependencies
 RUN docker-php-ext-install pdo_mysql
 RUN apt-get update -y \
