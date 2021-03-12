@@ -48,11 +48,6 @@
                                     {% trans from "global" %}About me{% endtrans %}
                                 </a>
                             </li>
-                            <li class="{% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
-                                <a href="{{ path('contact') }}" class="waves-effect">
-                                    {% trans from "global" %}Contact{% endtrans %}
-                                </a>
-                            </li>
                             <li class="separator"></li>
                             <li><a href="https://twitter.com/outadev" target="_blank">
                                     <i class="fab fa-twitter"></i></a></li>
@@ -96,11 +91,6 @@
             <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
                 <a href="{{ path('about') }}" class="waves-effect">
                     <i class="fas fa-user-circle"></i> {% trans from "global" %}About me{% endtrans %}
-                </a>
-            </li>
-            <li class="{% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
-                <a href="{{ path('contact') }}" class="waves-effect">
-                    <i class="fas fa-envelope"></i> {% trans from "global" %}Contact{% endtrans %}
                 </a>
             </li>
             <li class="separator"></li>
