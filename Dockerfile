@@ -2,6 +2,8 @@ FROM php:7.1.3-fpm
 
 EXPOSE 80
 
+VOLUME [ "/var/www/html/public/assets/img/data" ]
+
 RUN echo "memory_limit = 512M" > "$PHP_INI_DIR/conf.d/custom-php.ini"
 
 # Install dependencies
