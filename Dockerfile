@@ -1,7 +1,20 @@
-FROM php:7.1.3-fpm-alpine
+FROM php:7.1.3-fpm
+
+EXPOSE 80
+
+# Install dependencies
 RUN docker-php-ext-install pdo_mysql
-RUN apk add --no-cache --virtual unzip zip
+RUN apt-get update -y \
+    && apt-get install -y nginx unzip
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
-COPY . .
+# Setup NGINX
+COPY entrypoint.sh /bin/entrypoint.sh
+COPY nginx-site.conf /etc/nginx/sites-enabled/default
+
+# Build app
+WORKDIR /var/www/html
+COPY --chown=www-data:www-data . .
 RUN composer install --no-progress --no-dev --optimize-autoloader --ignore-platform-reqs
+
+ENTRYPOINT ["sh", "/bin/entrypoint.sh"]
