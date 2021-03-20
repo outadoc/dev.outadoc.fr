@@ -1,4 +1,6 @@
 {
+    "name": "outadoc/dev.outadoc.fr",
+    "description": "Baptiste Candellier's portfolio",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
