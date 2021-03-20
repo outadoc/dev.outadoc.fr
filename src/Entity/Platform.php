@@ -2,7 +2,9 @@
 
 	namespace App\Entity;
 
-	use Doctrine\ORM\Mapping as ORM;
+	use Doctrine\Common\Collections\ArrayCollection;
+    use Doctrine\Common\Collections\Collection;
+    use Doctrine\ORM\Mapping as ORM;
 
 	/**
 	 * Platform
@@ -38,19 +40,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getId()
-		{
+		public function getId(): int
+        {
 			return $this->id;
 		}
 
-		/**
-		 * Set platformName
-		 *
-		 * @param string $name
-		 * @return Platform
-		 */
-		public function setName($name)
-		{
+        /**
+         * Set platformName
+         *
+         * @param string $name
+         * @return Platform
+         */
+		public function setName(string $name): Platform
+        {
 			$this->name = $name;
 
 			return $this;
@@ -61,8 +63,8 @@
 		 *
 		 * @return string
 		 */
-		public function getName()
-		{
+		public function getName(): string
+        {
 			return $this->name;
 		}
 
@@ -71,17 +73,17 @@
 		 */
 		public function __construct()
 		{
-			$this->downloads = new \Doctrine\Common\Collections\ArrayCollection();
+			$this->downloads = new ArrayCollection();
 		}
 
 		/**
 		 * Add downloads
 		 *
-		 * @param \App\Entity\Download $downloads
+		 * @param Download $downloads
 		 * @return Platform
 		 */
-		public function addDownload(\App\Entity\Download $downloads)
-		{
+		public function addDownload(Download $downloads): Platform
+        {
 			$this->downloads[] = $downloads;
 
 			return $this;
@@ -90,9 +92,9 @@
 		/**
 		 * Remove downloads
 		 *
-		 * @param \App\Entity\Download $downloads
+		 * @param Download $downloads
 		 */
-		public function removeDownload(\App\Entity\Download $downloads)
+		public function removeDownload(Download $downloads)
 		{
 			$this->downloads->removeElement($downloads);
 		}
@@ -100,7 +102,7 @@
 		/**
 		 * Get downloads
 		 *
-		 * @return \Doctrine\Common\Collections\Collection
+		 * @return Collection
 		 */
 		public function getDownloads()
 		{

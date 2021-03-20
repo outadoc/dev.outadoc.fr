@@ -5,6 +5,7 @@
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Component\Finder\Finder;
+    use Symfony\Flex\Response;
 
     class ProjectsController extends AbstractController
     {
@@ -12,7 +13,7 @@
          * @Route("/projects", name="projects")
          * @Route("/projects/")
          */
-        public function indexAction()
+        public function indexAction(): Response
         {
             $featured = $this->getDoctrine()
                 ->getRepository('App:Project')

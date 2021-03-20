@@ -7,19 +7,19 @@
 
     class PortfolioExtension extends AbstractExtension
     {
-        public function getFunctions()
+        public function getFunctions(): array
         {
             return array(
                 new TwigFunction('age_from_birthday', array($this, 'ageFromBirthday'))
             );
         }
 
-        public function ageFromBirthday($date)
+        public function ageFromBirthday($date): int
         {
             return floor((time() - strtotime($date)) / 86400 / 365);
         }
 
-        public function getName()
+        public function getName(): string
         {
             return 'portfolio_extension';
         }
