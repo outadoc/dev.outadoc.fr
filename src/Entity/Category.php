@@ -2,7 +2,9 @@
 
 	namespace App\Entity;
 
-	use Doctrine\ORM\Mapping as ORM;
+	use Doctrine\Common\Collections\ArrayCollection;
+    use Doctrine\Common\Collections\Collection;
+    use Doctrine\ORM\Mapping as ORM;
 
 	/**
 	 * Category
@@ -47,19 +49,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getId()
-		{
+		public function getId(): int
+        {
 			return $this->id;
 		}
 
-		/**
-		 * Set name
-		 *
-		 * @param string $name
-		 * @return Category
-		 */
-		public function setName($name)
-		{
+        /**
+         * Set name
+         *
+         * @param string $name
+         * @return Category
+         */
+		public function setName(string $name): Category
+        {
 			$this->name = $name;
 
 			return $this;
@@ -70,19 +72,19 @@
 		 *
 		 * @return string
 		 */
-		public function getName()
-		{
+		public function getName(): string
+        {
 			return $this->name;
 		}
 
-		/**
-		 * Set nameLong
-		 *
-		 * @param string $nameLong
-		 * @return Category
-		 */
-		public function setNameLong($nameLong)
-		{
+        /**
+         * Set nameLong
+         *
+         * @param string $nameLong
+         * @return Category
+         */
+		public function setNameLong(string $nameLong): Category
+        {
 			$this->nameLong = $nameLong;
 
 			return $this;
@@ -93,8 +95,8 @@
 		 *
 		 * @return string
 		 */
-		public function getNameLong()
-		{
+		public function getNameLong(): string
+        {
 			return $this->nameLong;
 		}
 
@@ -103,17 +105,17 @@
 		 */
 		public function __construct()
 		{
-			$this->projects = new \Doctrine\Common\Collections\ArrayCollection();
+			$this->projects = new ArrayCollection();
 		}
 
 		/**
 		 * Add projects
 		 *
-		 * @param \App\Entity\Project $projects
+		 * @param Project $projects
 		 * @return Category
 		 */
-		public function addProject(\App\Entity\Project $projects)
-		{
+		public function addProject(Project $projects): Category
+        {
 			$this->projects[] = $projects;
 
 			return $this;
@@ -122,9 +124,9 @@
 		/**
 		 * Remove projects
 		 *
-		 * @param \App\Entity\Project $projects
+		 * @param Project $projects
 		 */
-		public function removeProject(\App\Entity\Project $projects)
+		public function removeProject(Project $projects)
 		{
 			$this->projects->removeElement($projects);
 		}
@@ -132,7 +134,7 @@
 		/**
 		 * Get projects
 		 *
-		 * @return \Doctrine\Common\Collections\Collection
+		 * @return Collection
 		 */
 		public function getProjects()
 		{

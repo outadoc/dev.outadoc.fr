@@ -2,21 +2,22 @@
 
 	namespace App\Controller;
 
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+	use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\HttpFoundation\Response;
+    use Symfony\Component\Routing\Annotation\Route;
 	use Symfony\Component\Finder\Finder;
 
-	class DefaultController extends Controller
+	class DefaultController extends AbstractController
 	{
 		/**
 		 * @Route("/", name="home")
 		 */
-		public function indexAction()
-		{
+		public function indexAction(): Response
+        {
 			// List all screenshots available to display on the homepage
 			$finder = new Finder();
 			$finder->files()
-				->in($this->get('kernel')->getProjectDir() . "/public/assets/img/hello")
+				->in($this->getParameter('kernel.project_dir') . "/public/assets/img/hello")
 				->name("*.png")
 				->depth("== 0");
 

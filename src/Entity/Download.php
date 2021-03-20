@@ -75,19 +75,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getProjectId()
-		{
+		public function getProjectId(): int
+        {
 			return $this->projectId;
 		}
 
-		/**
-		 * Set downloadUrl
-		 *
-		 * @param string $downloadUrl
-		 * @return Download
-		 */
-		public function setDownloadUrl($downloadUrl)
-		{
+        /**
+         * Set downloadUrl
+         *
+         * @param string $downloadUrl
+         * @return Download
+         */
+		public function setDownloadUrl(string $downloadUrl): Download
+        {
 			$this->downloadUrl = $downloadUrl;
 
 			return $this;
@@ -98,19 +98,19 @@
 		 *
 		 * @return string
 		 */
-		public function getDownloadUrl()
-		{
+		public function getDownloadUrl(): string
+        {
 			return $this->downloadUrl;
 		}
 
-		/**
-		 * Set sourceUrl
-		 *
-		 * @param string $sourceUrl
-		 * @return Download
-		 */
-		public function setSourceUrl($sourceUrl)
-		{
+        /**
+         * Set sourceUrl
+         *
+         * @param string $sourceUrl
+         * @return Download
+         */
+		public function setSourceUrl(string $sourceUrl): Download
+        {
 			$this->sourceUrl = $sourceUrl;
 
 			return $this;
@@ -121,19 +121,19 @@
 		 *
 		 * @return string
 		 */
-		public function getSourceUrl()
-		{
+		public function getSourceUrl(): string
+        {
 			return $this->sourceUrl;
 		}
 
-		/**
-		 * Set platformId
-		 *
-		 * @param integer $platformId
-		 * @return Download
-		 */
-		public function setPlatformId($platformId)
-		{
+        /**
+         * Set platformId
+         *
+         * @param integer $platformId
+         * @return Download
+         */
+		public function setPlatformId(int $platformId): Download
+        {
 			$this->platformId = $platformId;
 
 			return $this;
@@ -144,19 +144,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getPlatformId()
-		{
+		public function getPlatformId(): int
+        {
 			return $this->platformId;
 		}
 
-		/**
-		 * Set downloadPrice
-		 *
-		 * @param string $price
-		 * @return Download
-		 */
-		public function setPrice($price)
-		{
+        /**
+         * Set downloadPrice
+         *
+         * @param string $price
+         * @return Download
+         */
+		public function setPrice(string $price): Download
+        {
 			$this->price = $price;
 
 			return $this;
@@ -167,19 +167,19 @@
 		 *
 		 * @return string
 		 */
-		public function getPrice()
-		{
+		public function getPrice(): string
+        {
 			return $this->price;
 		}
 
-		/**
-		 * Set downloadVersion
-		 *
-		 * @param string $version
-		 * @return Download
-		 */
-		public function setVersion($version)
-		{
+        /**
+         * Set downloadVersion
+         *
+         * @param string $version
+         * @return Download
+         */
+		public function setVersion(string $version): Download
+        {
 			$this->version = $version;
 
 			return $this;
@@ -190,32 +190,32 @@
 		 *
 		 * @return string
 		 */
-		public function getVersion()
-		{
+		public function getVersion(): string
+        {
 			return $this->version;
 		}
 
-		/**
-		 * Set projectId
-		 *
-		 * @param integer $projectId
-		 * @return Download
-		 */
-		public function setProjectId($projectId)
-		{
+        /**
+         * Set projectId
+         *
+         * @param integer $projectId
+         * @return Download
+         */
+		public function setProjectId(int $projectId): Download
+        {
 			$this->projectId = $projectId;
 
 			return $this;
 		}
 
-		/**
-		 * Set projects
-		 *
-		 * @param \App\Entity\Project $project
-		 * @return Download
-		 */
-		public function setProject(\App\Entity\Project $project = null)
-		{
+        /**
+         * Set projects
+         *
+         * @param Project|null $project
+         * @return Download
+         */
+		public function setProject(Project $project = null): Download
+        {
 			$this->project = $project;
 
 			return $this;
@@ -224,21 +224,21 @@
 		/**
 		 * Get projects
 		 *
-		 * @return \App\Entity\Project
+		 * @return Project
 		 */
-		public function getProject()
-		{
+		public function getProject(): Project
+        {
 			return $this->project;
 		}
 
-		/**
-		 * Set platform
-		 *
-		 * @param \App\Entity\Platform $platform
-		 * @return Download
-		 */
-		public function setPlatform(\App\Entity\Platform $platform = null)
-		{
+        /**
+         * Set platform
+         *
+         * @param Platform|null $platform
+         * @return Download
+         */
+		public function setPlatform(Platform $platform = null): Download
+        {
 			$this->platform = $platform;
 
 			return $this;
@@ -247,10 +247,10 @@
 		/**
 		 * Get platform
 		 *
-		 * @return \App\Entity\Platform
+		 * @return Platform
 		 */
-		public function getPlatform()
-		{
+		public function getPlatform(): Platform
+        {
 			return $this->platform;
 		}
 	}

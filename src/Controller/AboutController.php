@@ -2,30 +2,20 @@
 
     namespace App\Controller;
 
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-    use App\Controller\Twig_Environment;
-    use App\Controller\Twig_SimpleFunction;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\HttpFoundation\Response;
+    use Symfony\Component\Routing\Annotation\Route;
 
-    class AboutController extends Controller
+    class AboutController extends AbstractController
     {
 
         /**
          * @Route("/about", name="about")
          * @Route("/about/")
          */
-        public function indexAction()
+        public function indexAction(): Response
         {
             return $this->render('about/index.html.twig');
-        }
-
-        /**
-         * @deprecated
-         * @Route("/about.html")
-         */
-        public function oldIndexAction()
-        {
-            return $this->redirectToRoute('about', array(), 301);
         }
 
     }

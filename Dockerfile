@@ -1,4 +1,4 @@
-FROM php:7.1.3-fpm
+FROM php:8.0-fpm
 
 EXPOSE 80
 
@@ -22,6 +22,6 @@ RUN mkdir -p /var/log/dev.outadoc.fr && chown -R www-data:www-data /var/log/dev.
 # Build app
 WORKDIR /var/www/html
 COPY --chown=www-data:www-data . .
-RUN composer install --no-progress --no-dev --optimize-autoloader --ignore-platform-reqs
+RUN composer install --no-progress --optimize-autoloader --ignore-platform-reqs
 
 ENTRYPOINT ["sh", "/bin/entrypoint.sh"]

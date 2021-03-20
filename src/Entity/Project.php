@@ -2,7 +2,9 @@
 
 	namespace App\Entity;
 
-	use Doctrine\ORM\Mapping as ORM;
+	use Doctrine\Common\Collections\ArrayCollection;
+    use Doctrine\Common\Collections\Collection;
+    use Doctrine\ORM\Mapping as ORM;
 
 	/**
 	 * Project
@@ -112,7 +114,7 @@
 
 		public function __construct()
 		{
-			$this->downloads = new \Doctrine\Common\Collections\ArrayCollection();
+			$this->downloads = new ArrayCollection();
 		}
 
 		/**
@@ -120,19 +122,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getId()
-		{
+		public function getId(): int
+        {
 			return $this->id;
 		}
 
-		/**
-		 * Set name
-		 *
-		 * @param string $name
-		 * @return Project
-		 */
-		public function setName($name)
-		{
+        /**
+         * Set name
+         *
+         * @param string $name
+         * @return Project
+         */
+		public function setName(string $name): Project
+        {
 			$this->name = $name;
 
 			return $this;
@@ -143,19 +145,19 @@
 		 *
 		 * @return string
 		 */
-		public function getName()
-		{
+		public function getName(): string
+        {
 			return $this->name;
 		}
 
-		/**
-		 * Set nameNormalized
-		 *
-		 * @param string $simpleName
-		 * @return Project
-		 */
-		public function setSimpleName($simpleName)
-		{
+        /**
+         * Set nameNormalized
+         *
+         * @param string $simpleName
+         * @return Project
+         */
+		public function setSimpleName(string $simpleName): Project
+        {
 			$this->simpleName = $simpleName;
 
 			return $this;
@@ -166,19 +168,19 @@
 		 *
 		 * @return string
 		 */
-		public function getSimpleName()
-		{
+		public function getSimpleName(): string
+        {
 			return $this->simpleName;
 		}
 
-		/**
-		 * Set shortDescription
-		 *
-		 * @param string $shortDescription
-		 * @return Project
-		 */
-		public function setShortDescription($shortDescription)
-		{
+        /**
+         * Set shortDescription
+         *
+         * @param string $shortDescription
+         * @return Project
+         */
+		public function setShortDescription(string $shortDescription): Project
+        {
 			$this->shortDescription = $shortDescription;
 
 			return $this;
@@ -189,19 +191,19 @@
 		 *
 		 * @return string
 		 */
-		public function getFrenchShortDescription()
-		{
+		public function getFrenchShortDescription(): string
+        {
 			return $this->frenchShortDescription;
 		}
 
-		/**
-		 * Set frenchShortDescription
-		 *
-		 * @param string $frenchShortDescription
-		 * @return Project
-		 */
-		public function setFrenchShortDescription($frenchShortDescription)
-		{
+        /**
+         * Set frenchShortDescription
+         *
+         * @param string $frenchShortDescription
+         * @return Project
+         */
+		public function setFrenchShortDescription(string $frenchShortDescription): Project
+        {
 			$this->frenchShortDescription = $frenchShortDescription;
 
 			return $this;
@@ -212,19 +214,19 @@
 		 *
 		 * @return string
 		 */
-		public function getShortDescription()
-		{
+		public function getShortDescription(): string
+        {
 			return $this->shortDescription;
 		}
 
-		/**
-		 * Set description
-		 *
-		 * @param string $description
-		 * @return Project
-		 */
-		public function setDescription($description)
-		{
+        /**
+         * Set description
+         *
+         * @param string $description
+         * @return Project
+         */
+		public function setDescription(string $description): Project
+        {
 			$this->description = $description;
 
 			return $this;
@@ -235,19 +237,19 @@
 		 *
 		 * @return string
 		 */
-		public function getDescription()
-		{
+		public function getDescription(): string
+        {
 			return $this->description;
 		}
 
-		/**
-		 * Set frenchDescription
-		 *
-		 * @param string $frenchDescription
-		 * @return Project
-		 */
-		public function setFrenchDescription($frenchDescription)
-		{
+        /**
+         * Set frenchDescription
+         *
+         * @param string $frenchDescription
+         * @return Project
+         */
+		public function setFrenchDescription(string $frenchDescription): Project
+        {
 			$this->frenchDescription = $frenchDescription;
 
 			return $this;
@@ -258,19 +260,19 @@
 		 *
 		 * @return string
 		 */
-		public function getFrenchDescription()
-		{
+		public function getFrenchDescription(): string
+        {
 			return $this->frenchDescription;
 		}
 
-		/**
-		 * Set startYear
-		 *
-		 * @param integer $startYear
-		 * @return Project
-		 */
-		public function setStartYear($startYear)
-		{
+        /**
+         * Set startYear
+         *
+         * @param integer $startYear
+         * @return Project
+         */
+		public function setStartYear(int $startYear): Project
+        {
 			$this->startYear = $startYear;
 
 			return $this;
@@ -281,19 +283,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getStartYear()
-		{
+		public function getStartYear(): int
+        {
 			return $this->startYear;
 		}
 
-		/**
-		 * Set endYear
-		 *
-		 * @param integer $endYear
-		 * @return Project
-		 */
-		public function setEndYear($endYear)
-		{
+        /**
+         * Set endYear
+         *
+         * @param integer $endYear
+         * @return Project
+         */
+		public function setEndYear(int $endYear): Project
+        {
 			$this->endYear = $endYear;
 
 			return $this;
@@ -304,19 +306,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getEndYear()
-		{
+		public function getEndYear(): ?int
+        {
 			return $this->endYear;
 		}
 
-		/**
-		 * Set categoryId
-		 *
-		 * @param integer $categoryId
-		 * @return Project
-		 */
-		public function setCategoryId($categoryId)
-		{
+        /**
+         * Set categoryId
+         *
+         * @param integer $categoryId
+         * @return Project
+         */
+		public function setCategoryId(int $categoryId): Project
+        {
 			$this->categoryId = $categoryId;
 
 			return $this;
@@ -327,19 +329,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getCategoryId()
-		{
+		public function getCategoryId(): int
+        {
 			return $this->categoryId;
 		}
 
-		/**
-		 * Set showOnHome
-		 *
-		 * @param integer $featured
-		 * @return Project
-		 */
-		public function setFeatured($featured)
-		{
+        /**
+         * Set showOnHome
+         *
+         * @param integer $featured
+         * @return Project
+         */
+		public function setFeatured(int $featured): Project
+        {
 			$this->featured = $featured;
 
 			return $this;
@@ -350,19 +352,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getFeatured()
-		{
+		public function getFeatured(): int
+        {
 			return $this->featured;
 		}
 
-		/**
-		 * Set visible
-		 *
-		 * @param integer $visible
-		 * @return Project
-		 */
-		public function setVisible($visible)
-		{
+        /**
+         * Set visible
+         *
+         * @param integer $visible
+         * @return Project
+         */
+		public function setVisible(int $visible): Project
+        {
 			$this->visible = $visible;
 
 			return $this;
@@ -373,19 +375,19 @@
 		 *
 		 * @return integer
 		 */
-		public function getVisible()
-		{
+		public function getVisible(): int
+        {
 			return $this->visible;
 		}
 
 		/**
 		 * Add downloads
 		 *
-		 * @param \App\Entity\Download $downloads
+		 * @param Download $downloads
 		 * @return Project
 		 */
-		public function addDownload(\App\Entity\Download $downloads)
-		{
+		public function addDownload(Download $downloads): Project
+        {
 			$this->downloads[] = $downloads;
 
 			return $this;
@@ -394,9 +396,9 @@
 		/**
 		 * Remove downloads
 		 *
-		 * @param \App\Entity\Download $downloads
+		 * @param Download $downloads
 		 */
-		public function removeDownload(\App\Entity\Download $downloads)
+		public function removeDownload(Download $downloads)
 		{
 			$this->downloads->removeElement($downloads);
 		}
@@ -404,21 +406,21 @@
 		/**
 		 * Get downloads
 		 *
-		 * @return \Doctrine\Common\Collections\Collection
+		 * @return Collection
 		 */
 		public function getDownloads()
 		{
 			return $this->downloads;
 		}
 
-		/**
-		 * Set category
-		 *
-		 * @param \App\Entity\Category $category
-		 * @return Project
-		 */
-		public function setCategory(\App\Entity\Category $category = null)
-		{
+        /**
+         * Set category
+         *
+         * @param Category|null $category
+         * @return Project
+         */
+		public function setCategory(Category $category = null): Project
+        {
 			$this->category = $category;
 
 			return $this;
@@ -427,15 +429,15 @@
 		/**
 		 * Get category
 		 *
-		 * @return \App\Entity\Category
+		 * @return Category
 		 */
-		public function getCategory()
-		{
+		public function getCategory(): Category
+        {
 			return $this->category;
 		}
 
-		public function getPlatforms()
-		{
+		public function getPlatforms(): array
+        {
 			$platforms = array();
 
 			foreach ($this->getDownloads() as $dl) {

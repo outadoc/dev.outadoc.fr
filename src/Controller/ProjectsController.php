@@ -2,17 +2,18 @@
 
     namespace App\Controller;
 
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Component\Finder\Finder;
+    use Symfony\Flex\Response;
 
-    class ProjectsController extends Controller
+    class ProjectsController extends AbstractController
     {
         /**
          * @Route("/projects", name="projects")
          * @Route("/projects/")
          */
-        public function indexAction()
+        public function indexAction(): Response
         {
             $featured = $this->getDoctrine()
                 ->getRepository('App:Project')
