@@ -91,9 +91,9 @@
         <div class="row">
             <div class="col s12 m12 l7 project-description">
                 {% if app.request.getLocale() == "fr" %}
-                    {{ project.getFrenchDescription()|markdown }}
+                    {{ project.getFrenchDescription()|markdown_to_html }}
                 {% else %}
-                    {{ project.getDescription()|markdown }}
+                    {{ project.getDescription()|markdown_to_html }}
                 {% endif %}
 
                 {% if has_source_links %}
