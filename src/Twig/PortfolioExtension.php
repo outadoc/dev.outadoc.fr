@@ -2,12 +2,15 @@
 
     namespace App\Twig;
 
-    class PortfolioExtension extends \Twig_Extension
+    use Twig\Extension\AbstractExtension;
+    use Twig\TwigFunction;
+
+    class PortfolioExtension extends AbstractExtension
     {
         public function getFunctions()
         {
             return array(
-                new \Twig_SimpleFunction('age_from_birthday', array($this, 'ageFromBirthday'))
+                new TwigFunction('age_from_birthday', array($this, 'ageFromBirthday'))
             );
         }
 
