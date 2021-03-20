@@ -1,4 +1,4 @@
-FROM php:7.1.3-fpm
+FROM php:8.0-fpm
 
 EXPOSE 80
 
