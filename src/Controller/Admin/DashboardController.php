@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Category;
 use App\Entity\Download;
 use App\Entity\Platform;
+use App\Entity\Screenshot;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\UserMenu;
@@ -36,6 +37,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Projects', 'fa fa-home');
 
         yield MenuItem::section('Details');
+        yield MenuItem::linkToCrud('Screenshots', 'fas fa-images', Screenshot::class);
         yield MenuItem::linkToCrud('Downloads', 'fas fa-download', Download::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-boxes', Category::class);
         yield MenuItem::linkToCrud('Platforms', 'fas fa-microchip', Platform::class);

@@ -44,7 +44,7 @@ class Screenshot
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -76,7 +76,7 @@ class Screenshot
     /**
      * @return string
      */
-    public function getFileName(): string
+    public function getFileName(): ?string
     {
         return $this->fileName;
     }
@@ -92,7 +92,7 @@ class Screenshot
     /**
      * @return Project
      */
-    public function getProject(): Project
+    public function getProject(): ?Project
     {
         return $this->project;
     }
