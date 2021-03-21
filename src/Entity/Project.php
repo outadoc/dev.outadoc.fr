@@ -401,6 +401,14 @@ class Project
     }
 
     /**
+     * @param string|null $thumbnailFileName
+     */
+    public function setThumbnailFileName(?string $thumbnailFileName): void
+    {
+        $this->thumbnailFileName = $thumbnailFileName;
+    }
+
+    /**
      * @return mixed
      */
     public function getScreenshots()
