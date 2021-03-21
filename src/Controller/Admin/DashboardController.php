@@ -32,9 +32,10 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
 
-        yield MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class);
-        yield MenuItem::linkToCrud('Platforms', 'fas fa-list', Platform::class);
-        yield MenuItem::linkToCrud('Projects', 'fas fa-list', Project::class);
-        yield MenuItem::linkToCrud('Downloads', 'fas fa-list', Download::class);
+        yield MenuItem::section('Projects');
+        yield MenuItem::linkToCrud('Projects', 'fas fa-mobile-alt', Project::class);
+        yield MenuItem::linkToCrud('Downloads', 'fas fa-download', Download::class);
+        yield MenuItem::linkToCrud('Categories', 'fas fa-boxes', Category::class);
+        yield MenuItem::linkToCrud('Platforms', 'fas fa-microchip', Platform::class);
     }
 }
