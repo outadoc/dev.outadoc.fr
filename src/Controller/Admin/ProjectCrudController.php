@@ -6,7 +6,6 @@ use App\Entity\Project;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -29,6 +28,10 @@ class ProjectCrudController extends AbstractCrudController
             BooleanField::new("featured"),
             BooleanField::new("visible"),
             AssociationField::new('category'),
+            ImageField::new('thumbnailFileName', 'Thumbnail')
+                ->setUploadedFileNamePattern("[randomhash].[extension]")
+                ->setBasePath("assets/img/data/thumb")
+                ->setUploadDir("public/assets/img/data/thumb"),
             TextField::new('shortDescription'),
             TextField::new('frenchShortDescription')->hideOnIndex(),
             TextareaField::new('description')->hideOnIndex(),

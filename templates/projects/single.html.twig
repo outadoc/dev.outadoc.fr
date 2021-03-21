@@ -113,23 +113,23 @@
 
             <div class="col s12 m12 l5">
                 <div class="container screenshots">
-                    <div class="row">
-                        <div class="col s12 m12">
-                            <img class="materialboxed screenshot z-depth-1"
-                                 src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/0.png') }}">
+                    {% if not project.screenshots.empty %}
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <img class="materialboxed screenshot z-depth-1"
+                                     src="{{ asset('assets/img/data/screen/' ~ project.screenshots.first.fileName) }}">
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
 
                     <div class="row row-centered">
                         {# Display every secondary screenshot under the main one #}
-                        {% if screen_count > 1 %}
-                            {% for i in 1..screen_count - 1 %}
-                                <div class="col s3 m3 col-centered">
-                                    <img class="materialboxed screenshot z-depth-1"
-                                         src="{{ asset('assets/img/data/screen/' ~ project.getSimpleName() ~ '/' ~ i ~ '.png') }}">
-                                </div>
-                            {% endfor %}
-                        {% endif %}
+                        {% for screenshot in project.screenshots %}
+                            <div class="col s3 m3 col-centered">
+                                <img class="materialboxed screenshot z-depth-1"
+                                     src="{{ asset('assets/img/data/screen/' ~ screenshot.fileName) }}">
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
