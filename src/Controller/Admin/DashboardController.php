@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/admin", name="admin", options={"i18n" = false})
      */
     public function index(): Response
     {
