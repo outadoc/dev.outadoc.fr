@@ -82,7 +82,7 @@ class Download
      *
      * @return integer
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -243,7 +243,7 @@ class Download
      *
      * @return Project
      */
-    public function getProject(): Project
+    public function getProject(): ?Project
     {
         return $this->project;
     }
@@ -266,7 +266,7 @@ class Download
      *
      * @return Platform
      */
-    public function getPlatform(): Platform
+    public function getPlatform(): ?Platform
     {
         return $this->platform;
     }

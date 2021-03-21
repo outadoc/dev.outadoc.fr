@@ -122,7 +122,7 @@ class Project
      *
      * @return integer
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -431,7 +431,7 @@ class Project
      *
      * @return Category
      */
-    public function getCategory(): Category
+    public function getCategory(): ?Category
     {
         return $this->category;
     }

@@ -40,7 +40,7 @@ class Platform
      *
      * @return integer
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
