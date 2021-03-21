@@ -54,6 +54,12 @@ a.button-collapse.top-nav {
     z-index: 2;
 }
 
+.card.card-project img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
 .card.card-project .card-content {
     padding: 15px;
 }

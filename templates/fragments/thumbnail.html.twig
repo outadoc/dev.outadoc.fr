@@ -3,7 +3,9 @@
     <div class="card-image waves-effect">
         <a href="{{ path('project', {"project": project.getSimpleName()}) }}">
             <img src="{{ asset('assets/img/data/thumb/' ~ project.getThumbnailFileName()) }}"
-                 alt="{{ project.getName() }}">
+                 alt="{{ project.getName() }}"
+                 height="307" width="512"
+                 loading="lazy">
         </a>
     </div>
     <div class="card-content">
