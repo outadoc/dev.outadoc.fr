@@ -40,7 +40,7 @@ class Platform
      *
      * @return integer
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -107,5 +107,10 @@ class Platform
     public function getDownloads()
     {
         return $this->downloads;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }

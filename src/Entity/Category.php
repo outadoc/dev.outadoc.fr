@@ -49,7 +49,7 @@ class Category
      *
      * @return integer
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -139,5 +139,10 @@ class Category
     public function getProjects()
     {
         return $this->projects;
+    }
+
+    public function __toString(): string
+    {
+        return $this->nameLong;
     }
 }
