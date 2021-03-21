@@ -3,8 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
-use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -49,19 +47,6 @@ class ProjectsController extends AbstractController
             throw $this->createNotFoundException("Project not found");
         }
 
-        try {
-            // List all screenshots available to display on the homepage
-            $finder = new Finder();
-            $finder->files()
-                ->in($this->getParameter('kernel.project_dir') . "/public/assets/img/data/screen/" . $project)
-                ->name("*.png")
-                ->depth("== 0");
-
-            $screenshot_count = iterator_count($finder);
-        } catch (DirectoryNotFoundException $e) {
-            $screenshot_count = 0;
-        }
-
         $has_source_links = false;
 
         foreach ($_project->getDownloads() as $download) {
@@ -72,7 +57,6 @@ class ProjectsController extends AbstractController
 
         return $this->render('projects/single.html.twig', array(
             "project" => $_project,
-            "screen_count" => $screenshot_count,
             "has_source_links" => $has_source_links
         ));
     }

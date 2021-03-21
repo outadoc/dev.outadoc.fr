@@ -395,7 +395,7 @@ class Project
     /**
      * @return string
      */
-    public function getThumbnailFileName(): string
+    public function getThumbnailFileName(): ?string
     {
         return $this->thumbnailFileName;
     }

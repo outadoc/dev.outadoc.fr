@@ -2,7 +2,7 @@
      data-tooltip="{{ app.request.getLocale() == "fr" ? project.getFrenchShortDescription() : project.getShortDescription() }}">
     <div class="card-image waves-effect">
         <a href="{{ path('project', {"project": project.getSimpleName()}) }}">
-            <img src="{{ asset('assets/img/data/thumb/' ~ project.getSimpleName() ~ '.png') }}"
+            <img src="{{ asset('assets/img/data/thumb/' ~ project.getThumbnailFileName()) }}"
                  alt="{{ project.getName() }}">
         </a>
     </div>
