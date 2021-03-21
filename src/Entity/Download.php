@@ -270,4 +270,9 @@ class Download
     {
         return $this->platform;
     }
+
+    public function __toString(): string
+    {
+        return "$this->project on $this->platform";
+    }
 }

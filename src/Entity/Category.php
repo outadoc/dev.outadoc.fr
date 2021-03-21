@@ -140,4 +140,9 @@ class Category
     {
         return $this->projects;
     }
+
+    public function __toString(): string
+    {
+        return $this->nameLong;
+    }
 }

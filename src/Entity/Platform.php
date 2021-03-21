@@ -108,4 +108,9 @@ class Platform
     {
         return $this->downloads;
     }
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 }

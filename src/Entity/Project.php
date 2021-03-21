@@ -87,16 +87,16 @@ class Project
     private $categoryId;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="project_featured", type="smallint")
+     * @ORM\Column(name="project_featured", type="boolean")
      */
     private $featured;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="project_visible", type="smallint")
+     * @ORM\Column(name="project_visible", type="boolean")
      */
     private $visible;
 
@@ -337,10 +337,10 @@ class Project
     /**
      * Set showOnHome
      *
-     * @param integer $featured
+     * @param boolean $featured
      * @return Project
      */
-    public function setFeatured(int $featured): Project
+    public function setFeatured(bool $featured): Project
     {
         $this->featured = $featured;
 
@@ -350,9 +350,9 @@ class Project
     /**
      * Get showOnHome
      *
-     * @return integer
+     * @return boolean
      */
-    public function getFeatured(): int
+    public function getFeatured(): bool
     {
         return $this->featured;
     }
@@ -360,10 +360,10 @@ class Project
     /**
      * Set visible
      *
-     * @param integer $visible
+     * @param boolean $visible
      * @return Project
      */
-    public function setVisible(int $visible): Project
+    public function setVisible(bool $visible): Project
     {
         $this->visible = $visible;
 
@@ -373,9 +373,9 @@ class Project
     /**
      * Get visible
      *
-     * @return integer
+     * @return boolean
      */
-    public function getVisible(): int
+    public function getVisible(): bool
     {
         return $this->visible;
     }
@@ -447,4 +447,8 @@ class Project
         return $platforms;
     }
 
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 }

@@ -4,6 +4,13 @@ namespace App\Controller\Admin;
 
 use App\Entity\Project;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ProjectCrudController extends AbstractCrudController
 {
@@ -12,14 +19,20 @@ class ProjectCrudController extends AbstractCrudController
         return Project::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('name'),
+            TextField::new('simpleName'),
+            IntegerField::new("startYear"),
+            IntegerField::new("endYear"),
+            BooleanField::new("featured"),
+            BooleanField::new("visible"),
+            AssociationField::new('category'),
+            TextField::new('shortDescription'),
+            TextField::new('frenchShortDescription')->hideOnIndex(),
+            TextareaField::new('description')->hideOnIndex(),
+            TextareaField::new('frenchDescription')->hideOnIndex()
         ];
     }
-    */
 }
