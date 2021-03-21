@@ -18,6 +18,8 @@ services:
     image: mariadb:10.5
     container_name: outadev_db
     restart: unless-stopped
+    ports:
+    - 3306:3306
     environment:
       MYSQL_DATABASE: dev
       MYSQL_USER: dev

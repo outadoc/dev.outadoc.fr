@@ -16,9 +16,24 @@ class Download
      * @var integer
      *
      * @ORM\Id
+     * @ORM\Column(name="download_id", type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="project_id", type="integer")
      */
     private $projectId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="platform_id", type="integer")
+     */
+    private $platformId;
 
     /**
      * @var string
@@ -33,14 +48,6 @@ class Download
      * @ORM\Column(name="download_source_url", type="string", length=512)
      */
     private $sourceUrl;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(name="platform_id", type="integer")
-     */
-    private $platformId;
 
     /**
      * @var string
@@ -72,6 +79,16 @@ class Download
 
     /**
      * Get id
+     *
+     * @return integer
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get project id
      *
      * @return integer
      */
