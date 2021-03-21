@@ -100,11 +100,22 @@ class Project
      */
     private $visible;
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name = "thumbnail_file_name", type="string", nullable=true)
+     */
+    private $thumbnailFileName;
 
     /**
      * @ORM\OneToMany(targetEntity="Download", mappedBy="project")
      */
     private $downloads;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Screenshot", mappedBy="project")
+     */
+    private $screenshots;
 
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="projects")
@@ -115,6 +126,7 @@ class Project
     public function __construct()
     {
         $this->downloads = new ArrayCollection();
+        $this->screenshots = new ArrayCollection();
     }
 
     /**
@@ -378,6 +390,22 @@ class Project
     public function getVisible(): bool
     {
         return $this->visible;
+    }
+
+    /**
+     * @return string
+     */
+    public function getThumbnailFileName(): string
+    {
+        return $this->thumbnailFileName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getScreenshots()
+    {
+        return $this->screenshots;
     }
 
     /**
