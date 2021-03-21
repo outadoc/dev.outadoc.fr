@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% include 'fragments/topkek.html.twig' %}
 <html lang="{{ app.request.locale }}">
 <head>
     <meta charset="UTF-8">
@@ -46,7 +45,7 @@
                                     {% trans from "global" %}Projects{% endtrans %}
                                 </a>
                             </li>
-                            <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
+                            <li>
                                 <a href="{{ path('about') }}" class="waves-effect">
                                     {% trans from "global" %}About me{% endtrans %}
                                 </a>
@@ -89,9 +88,9 @@
                     <i class="fab fa-app-store-ios"></i> {% trans from "global" %}Projects{% endtrans %}
                 </a>
             </li>
-            <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">
+            <li>
                 <a href="{{ path('about') }}" class="waves-effect">
-                    <i class="fas fa-user-circle"></i> {% trans from "global" %}About me{% endtrans %}
+                    <i class="fas fa-external-link"></i> {% trans from "global" %}About me{% endtrans %}
                 </a>
             </li>
             <li class="separator"></li>

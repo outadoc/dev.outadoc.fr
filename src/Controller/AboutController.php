@@ -15,7 +15,7 @@ class AboutController extends AbstractController
      */
     public function indexAction(): Response
     {
-        return $this->render('about/index.html.twig');
+        return $this->redirect('https://baptiste.candellier.me', 301);
     }
 
 }
