@@ -273,6 +273,6 @@ class Download
 
     public function __toString(): string
     {
-        return "$this->project on $this->platform";
+        return "$this->project / $this->platform";
     }
 }

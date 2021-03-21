@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Platform;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class PlatformCrudController extends AbstractCrudController
@@ -13,10 +15,16 @@ class PlatformCrudController extends AbstractCrudController
         return Platform::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud->setDefaultSort(['name' => 'ASC']);
+    }
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('name')
+            TextField::new('name'),
+            AssociationField::new('downloads')
         ];
     }
 }
