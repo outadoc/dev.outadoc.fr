@@ -16,7 +16,7 @@ nav li.separator + li {
     margin-top: 20px !important;
 }
 
-.sidenav a i.fas, .sidenav a i.fab {
+.sidenav a svg {
     font-size: 20px;
 }
 

@@ -16,7 +16,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('assets/css/single-project.css') }}" type="text/css">
+    {{ encore_entry_link_tags('single-project') }}
 {% endblock %}
 
 {% block extended_nav %}
@@ -165,21 +165,5 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript">
-        $('.dropdown-trigger').dropdown({
-            hover: true,
-            constrain_width: false,
-            coverTrigger: false
-        });
-
-        $(document).ready(function () {
-            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-            $('.modal').modal();
-        });
-
-        $(document).ready(function () {
-            $('.materialboxed').materialbox();
-        });
-
-    </script>
+    {{ encore_entry_script_tags('single-project') }}
 {% endblock %}

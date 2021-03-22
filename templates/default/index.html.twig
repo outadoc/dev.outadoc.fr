@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('assets/css/index.css') }}" rel="stylesheet" type="text/css">
+    {{ encore_entry_link_tags('index') }}
 {% endblock %}
 
 {% block title %}
