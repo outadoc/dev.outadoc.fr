@@ -9,7 +9,6 @@ services:
       - 8083:80
     environment:
       DATABASE_URL: 'mysql://dev:S3NSxRn7TEkGKyrJ@db:3306/dev'
-      ADMIN_PASSWORD: '$$2y$$12$$eES1tgO7KsmlInhtEwousegl7gCO9RhoE8lw2AxXq6prFWo6cC/3u'
     volumes:
       - /Users/outadoc/Downloads/_data:/var/www/html/public/assets/img/data
     links:

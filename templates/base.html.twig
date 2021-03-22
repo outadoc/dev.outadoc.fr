@@ -10,17 +10,11 @@
         <style type="text/css">
             @font-face {
                 font-family: "I pixel u";
-                src: url('{{ asset("/assets/fonts/I-pixel-u.ttf") }}');
+                src: url('{{ asset("build/fonts/I-pixel-u.ttf") }}');
             }
         </style>
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
-              integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
-              crossorigin="anonymous">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-        <link href="{{ asset('assets/css/global.css') }}" rel="stylesheet" type="text/css">
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
 <body>
@@ -117,14 +111,7 @@
     </div>
 </footer>
 {% block javascripts %}
-    <script type="text/javascript" src="{{ asset('assets/js/jquery-2.1.4.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-        });
-    </script>
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 </body>
 </html>
