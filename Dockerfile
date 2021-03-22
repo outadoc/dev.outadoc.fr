@@ -15,8 +15,13 @@ RUN mkdir -p /var/log/dev.outadoc.fr && chown -R www-data:www-data /var/log/dev.
 
 # Install dependencies
 RUN docker-php-ext-install pdo_mysql
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
 RUN apt-get update -y \
-    && apt-get install -y nginx unzip
+    && apt-get install -y nginx unzip yarn
+
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
 # Build app
