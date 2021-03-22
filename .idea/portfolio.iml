@@ -5,8 +5,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="App\Tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/assets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/templates" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-csrf" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/proxy-manager-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher-contracts" />
