@@ -17,7 +17,7 @@ class DefaultController extends AbstractController
         // List all screenshots available to display on the homepage
         $finder = new Finder();
         $finder->files()
-            ->in($this->getParameter('kernel.project_dir') . "/public/assets/img/hello")
+            ->in($this->getParameter('kernel.project_dir') . "/public/build/img/hello")
             ->name("*.png")
             ->depth("== 0");
 
