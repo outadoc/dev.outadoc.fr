@@ -8,8 +8,14 @@ import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 
-const $ = require("jquery");
+document.addEventListener('DOMContentLoaded', function () {
+    M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'), {
+        hover: true,
+        constrain_width: false,
+        coverTrigger: false
+    });
 
-$(document).ready(function () {
-    $('.sidenav').sidenav();
+    M.Sidenav.init(document.querySelectorAll('.sidenav'));
+    M.Modal.init(document.querySelectorAll('.modal'));
+    M.Materialbox.init(document.querySelectorAll('.materialboxed'));
 });

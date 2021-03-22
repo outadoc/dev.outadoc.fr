@@ -18,6 +18,7 @@ nav li.separator + li {
 
 .sidenav a svg {
     font-size: 20px;
+    margin-right: 8px;
 }
 
 nav.top-nav {
