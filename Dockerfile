@@ -13,11 +13,10 @@ COPY nginx-site.conf /etc/nginx/sites-enabled/default
 RUN mkdir -p /var/cache/dev.outadoc.fr && chown -R www-data:www-data /var/cache/dev.outadoc.fr
 RUN mkdir -p /var/log/dev.outadoc.fr && chown -R www-data:www-data /var/log/dev.outadoc.fr
 
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
 # Install dependencies
 RUN docker-php-ext-install pdo_mysql
-
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update -y \
     && apt-get install -y nginx unzip yarn
