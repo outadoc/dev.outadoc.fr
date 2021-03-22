@@ -19,6 +19,7 @@ nav li.separator + li {
 .sidenav a svg {
     font-size: 20px;
     margin-right: 8px;
+    vertical-align: -0.2em;
 }
 
 nav.top-nav {

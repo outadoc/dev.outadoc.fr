@@ -10,11 +10,6 @@
     padding-right: 12px;
 }
 
-.btn.download svg {
-    /* Fix conflict with Materialize */
-    float: none !important;
-}
-
 .collection a p {
     color: rgba(0, 0, 0, 0.71);
 }
@@ -45,9 +40,15 @@ nav .project-header.col {
     width: auto !important;
 }
 
-.collection .secondary-content svg {
+.collection-item .secondary-content svg {
     top: 15px;
     position: relative;
+    font-size: 18pt;
+}
+
+.collection-item.avatar svg.circle {
+    padding: 8px;
+    color: white;
 }
 
 .project-description {
