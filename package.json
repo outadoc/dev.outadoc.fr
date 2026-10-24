@@ -1,13 +1,14 @@
 {
     "devDependencies": {
-        "@symfony/webpack-encore": "^1.1.2",
-        "core-js": "^3.0.0",
-        "file-loader": "^6.0.0",
-        "regenerator-runtime": "^0.13.2",
-        "webpack-notifier": "^1.6.0"
+        "@babel/core": "^8.0.0",
+        "@babel/preset-env": "^8.0.0",
+        "@symfony/webpack-encore": "^7.2.0",
+        "webpack": "^5.112.2",
+        "webpack-cli": "^7.2.3"
     },
     "license": "UNLICENSED",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev-server": "encore dev-server",
         "dev": "encore dev",
@@ -15,7 +16,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.3",
-        "materialize-css": "^1.0.0"
+        "@fortawesome/fontawesome-free": "^7.3.1",
+        "@materializecss/materialize": "^2.4.0"
     }
 }

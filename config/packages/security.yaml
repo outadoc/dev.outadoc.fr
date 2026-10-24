@@ -1,4 +1,9 @@
 security:
+    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
+    # "auto" verifies the existing bcrypt hashes, and picks the best algorithm for new ones
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory:
@@ -6,14 +11,13 @@ security:
                 users:
                     admin:
                         password: '%env(ADMIN_PASSWORD)%'
-                        roles: 'ROLE_ADMIN'
+                        roles: ['ROLE_ADMIN']
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
             lazy: true
             provider: in_memory
 
@@ -30,8 +34,3 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-
-    encoders:
-        Symfony\Component\Security\Core\User\User:
-            algorithm: bcrypt
-            cost: 12

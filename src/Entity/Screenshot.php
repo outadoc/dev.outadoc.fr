@@ -6,40 +6,28 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Screenshot
- *
- * @ORM\Table()
- * @ORM\Entity
  */
+#[ORM\Entity]
+#[ORM\Table]
 class Screenshot
 {
     /**
      * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(name="screenshot_id", type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="project_id", type="integer")
-     */
-    private $projectId;
+    #[ORM\Id]
+    #[ORM\Column(name: 'screenshot_id', type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
+    private ?int $id = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="file_name", type="string")
      */
-    private $fileName;
+    #[ORM\Column(name: 'file_name', type: 'string')]
+    private ?string $fileName = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Project", inversedBy="screenshots")
-     * @ORM\JoinColumn(name="project_id", referencedColumnName="project_id")
-     */
-    private $project;
+    #[ORM\ManyToOne(targetEntity: Project::class, inversedBy: 'screenshots')]
+    #[ORM\JoinColumn(name: 'project_id', referencedColumnName: 'project_id', nullable: false)]
+    private ?Project $project = null;
 
     /**
      * @return int
@@ -55,22 +43,6 @@ class Screenshot
     public function setId(int $id): void
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getProjectId(): int
-    {
-        return $this->projectId;
-    }
-
-    /**
-     * @param int $projectId
-     */
-    public function setProjectId(int $projectId): void
-    {
-        $this->projectId = $projectId;
     }
 
     /**

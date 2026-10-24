@@ -1,0 +1,14 @@
+.git
+.github
+.idea
+.env.local
+.env.*.local
+.phpunit.cache
+docker-compose.*.yml
+node_modules
+public/assets/img/data
+public/build
+public/bundles
+tests
+var
+vendor

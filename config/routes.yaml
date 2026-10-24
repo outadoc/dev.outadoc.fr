@@ -1,3 +1,14 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# Public pages are localized: English at the root, French under /fr
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+    exclude: '../src/Controller/Admin/'
+    prefix:
+        en: ''
+        fr: '/fr'
+
+kernel:
+    resource: App\Kernel
+    type: attribute

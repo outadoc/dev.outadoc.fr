@@ -2,126 +2,101 @@
 
 namespace App\Entity;
 
+use App\Repository\ProjectRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Project
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
  */
+#[ORM\Entity(repositoryClass: ProjectRepository::class)]
+#[ORM\Table]
 class Project
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="project_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    #[ORM\Column(name: 'project_id', type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
+    private ?int $id = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="project_name", type="string", length=60)
      */
-    private $name;
+    #[ORM\Column(name: 'project_name', type: 'string', length: 60)]
+    private ?string $name = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="project_simple_name", type="string", length=30)
      */
-    private $simpleName;
+    #[ORM\Column(name: 'project_simple_name', type: 'string', length: 30)]
+    private ?string $simpleName = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="project_description_short", type="string", length=500)
      */
-    private $shortDescription;
+    #[ORM\Column(name: 'project_description_short', type: 'string', length: 500)]
+    private ?string $shortDescription = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="project_description_short_fr", type="string", length=500)
      */
-    private $frenchShortDescription;
+    #[ORM\Column(name: 'project_description_short_fr', type: 'string', length: 500)]
+    private ?string $frenchShortDescription = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="project_description", type="text")
      */
-    private $description;
+    #[ORM\Column(name: 'project_description', type: 'text')]
+    private ?string $description = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="project_description_fr", type="text")
      */
-    private $frenchDescription;
+    #[ORM\Column(name: 'project_description_fr', type: 'text')]
+    private ?string $frenchDescription = null;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="project_start_year", type="integer")
      */
-    private $startYear;
+    #[ORM\Column(name: 'project_start_year', type: 'integer')]
+    private ?int $startYear = null;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="project_end_year", type="integer", nullable=true)
      */
-    private $endYear = null;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="category_id", type="integer")
-     */
-    private $categoryId;
+    #[ORM\Column(name: 'project_end_year', type: 'integer', nullable: true)]
+    private ?int $endYear = null;
 
     /**
      * @var boolean
-     *
-     * @ORM\Column(name="project_featured", type="boolean")
      */
-    private $featured;
+    #[ORM\Column(name: 'project_featured', type: 'boolean')]
+    private ?bool $featured = null;
 
     /**
      * @var boolean
-     *
-     * @ORM\Column(name="project_visible", type="boolean")
      */
-    private $visible;
+    #[ORM\Column(name: 'project_visible', type: 'boolean')]
+    private ?bool $visible = null;
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name = "thumbnail_file_name", type="string", nullable=true)
      */
-    private $thumbnailFileName;
+    #[ORM\Column(name: 'thumbnail_file_name', type: 'string', nullable: true)]
+    private ?string $thumbnailFileName = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Download", mappedBy="project")
-     */
-    private $downloads;
+    #[ORM\OneToMany(targetEntity: Download::class, mappedBy: 'project')]
+    private Collection $downloads;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Screenshot", mappedBy="project")
-     */
-    private $screenshots;
+    #[ORM\OneToMany(targetEntity: Screenshot::class, mappedBy: 'project')]
+    private Collection $screenshots;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="projects")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")
-     */
-    private $category;
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'projects')]
+    #[ORM\JoinColumn(name: 'category_id', referencedColumnName: 'category_id', nullable: false)]
+    private ?Category $category = null;
 
     public function __construct()
     {
@@ -303,10 +278,10 @@ class Project
     /**
      * Set endYear
      *
-     * @param integer $endYear
+     * @param integer|null $endYear
      * @return Project
      */
-    public function setEndYear(int $endYear): Project
+    public function setEndYear(?int $endYear): Project
     {
         $this->endYear = $endYear;
 
@@ -321,29 +296,6 @@ class Project
     public function getEndYear(): ?int
     {
         return $this->endYear;
-    }
-
-    /**
-     * Set categoryId
-     *
-     * @param integer $categoryId
-     * @return Project
-     */
-    public function setCategoryId(int $categoryId): Project
-    {
-        $this->categoryId = $categoryId;
-
-        return $this;
-    }
-
-    /**
-     * Get categoryId
-     *
-     * @return integer
-     */
-    public function getCategoryId(): int
-    {
-        return $this->categoryId;
     }
 
     /**
@@ -455,7 +407,7 @@ class Project
      * @param Category|null $category
      * @return Project
      */
-    public function setCategory(Category $category = null): Project
+    public function setCategory(?Category $category = null): Project
     {
         $this->category = $category;
 

@@ -116,7 +116,7 @@
                     {% if not project.screenshots.empty %}
                         <div class="row">
                             <div class="col s12 m12">
-                                <img class="materialboxed screenshot z-depth-1"
+                                <img class="screenshot z-depth-1"
                                      src="{{ asset('assets/img/data/screen/' ~ project.screenshots.first.fileName) }}">
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                         {# Display every secondary screenshot under the main one #}
                         {% for screenshot in project.screenshots %}
                             <div class="col s3 m3 col-centered">
-                                <img class="materialboxed screenshot z-depth-1"
+                                <img class="screenshot z-depth-1"
                                      src="{{ asset('assets/img/data/screen/' ~ screenshot.fileName) }}">
                             </div>
                         {% endfor %}
@@ -135,7 +135,7 @@
             </div>
         </div>
     </div>
-    <div id="modal-download" class="modal bottom-sheet">
+    <dialog id="modal-download" class="modal bottom-sheet" tabindex="-1">
         <div class="modal-content">
             <div class="collection-header"><h4>Download {{ project.getName() }}</h4></div>
             <div class="collection">
@@ -160,7 +160,7 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </dialog>
 {% endblock %}
 
 {% block javascripts %}

@@ -16,11 +16,6 @@ class PortfolioExtension extends AbstractExtension
 
     public function ageFromBirthday($date): int
     {
-        return floor((time() - strtotime($date)) / 86400 / 365);
-    }
-
-    public function getName(): string
-    {
-        return 'portfolio_extension';
+        return (int) floor((time() - strtotime($date)) / 86400 / 365);
     }
 }
