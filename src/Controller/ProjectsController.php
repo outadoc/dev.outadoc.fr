@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
+use App\Entity\Project;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,14 +17,14 @@ class ProjectsController extends AbstractController
     public function indexAction(): Response
     {
         $featured = $this->getDoctrine()
-            ->getRepository('App:Project')
+            ->getRepository(Project::class)
             ->findBy(array(
                 "visible" => 1,
                 "featured" => 1
             ));
 
         $categories = $this->getDoctrine()
-            ->getRepository('App:Category')
+            ->getRepository(Category::class)
             ->findAll();
 
         return $this->render('projects/index.html.twig', array(
@@ -40,7 +42,7 @@ class ProjectsController extends AbstractController
     public function viewAction($project): Response
     {
         $_project = $this->getDoctrine()
-            ->getRepository('App:Project')
+            ->getRepository(Project::class)
             ->findOneBySimpleName($project);
 
         if ($_project === null) {
