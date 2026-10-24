@@ -36,10 +36,6 @@ nav .project-header.col {
     padding-bottom: 30px;
 }
 
-#dropdown-downloads {
-    width: auto !important;
-}
-
 .collection-item .secondary-content svg {
     top: 15px;
     position: relative;
@@ -68,6 +64,9 @@ a.button-collapse.top-nav {
 .screenshots.container {
     margin: 0;
     padding: 0;
+    /* Screenshots overlap the header, so keep them above it */
+    position: relative;
+    z-index: 1;
 }
 
 img.screenshot {
@@ -115,4 +114,27 @@ img.screenshot {
     .screenshots.container {
         margin-top: -110px;
     }
+}
+
+img.screenshot {
+    cursor: zoom-in;
+}
+
+dialog.screenshot-viewer {
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 90vw;
+    max-height: 90vh;
+    cursor: zoom-out;
+}
+
+dialog.screenshot-viewer::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+dialog.screenshot-viewer img {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
 }

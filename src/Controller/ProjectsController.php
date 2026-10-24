@@ -2,30 +2,25 @@
 
 namespace App\Controller;
 
-use App\Entity\Category;
-use App\Entity\Project;
+use App\Repository\CategoryRepository;
+use App\Repository\ProjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 class ProjectsController extends AbstractController
 {
-    /**
-     * @Route("/projects", name="projects")
-     * @Route("/projects/")
-     */
-    public function indexAction(): Response
+    #[Route('/projects', name: 'projects')]
+    #[Route('/projects/')]
+    public function indexAction(ProjectRepository $projectRepository, CategoryRepository $categoryRepository): Response
     {
-        $featured = $this->getDoctrine()
-            ->getRepository(Project::class)
+        $featured = $projectRepository
             ->findBy(array(
                 "visible" => 1,
                 "featured" => 1
             ));
 
-        $categories = $this->getDoctrine()
-            ->getRepository(Category::class)
-            ->findAll();
+        $categories = $categoryRepository->findAll();
 
         return $this->render('projects/index.html.twig', array(
             "categories" => $categories,
@@ -33,17 +28,11 @@ class ProjectsController extends AbstractController
         ));
     }
 
-    /**
-     * @Route("/projects/{project}", name="project")
-     * @Route("/projects/{project}/")
-     * @param $project
-     * @return Response
-     */
-    public function viewAction($project): Response
+    #[Route('/projects/{project}', name: 'project')]
+    #[Route('/projects/{project}/')]
+    public function viewAction(string $project, ProjectRepository $projectRepository): Response
     {
-        $_project = $this->getDoctrine()
-            ->getRepository(Project::class)
-            ->findOneBySimpleName($project);
+        $_project = $projectRepository->findOneBy(array("simpleName" => $project));
 
         if ($_project === null) {
             throw $this->createNotFoundException("Project not found");

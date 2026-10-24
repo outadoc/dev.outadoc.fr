@@ -6,75 +6,51 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Download
- *
- * @ORM\Table()
- * @ORM\Entity
  */
+#[ORM\Entity]
+#[ORM\Table]
 class Download
 {
     /**
      * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(name="download_id", type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="project_id", type="integer")
-     */
-    private $projectId;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="platform_id", type="integer")
-     */
-    private $platformId;
+    #[ORM\Id]
+    #[ORM\Column(name: 'download_id', type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
+    private ?int $id = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="download_url", type="string", length=512)
      */
-    private $downloadUrl;
+    #[ORM\Column(name: 'download_url', type: 'string', length: 512)]
+    private ?string $downloadUrl = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="download_source_url", type="string", length=512)
      */
-    private $sourceUrl;
+    #[ORM\Column(name: 'download_source_url', type: 'string', length: 512)]
+    private ?string $sourceUrl = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="download_price", type="decimal")
      */
-    private $price;
+    #[ORM\Column(name: 'download_price', type: 'decimal', precision: 10, scale: 0)]
+    private ?string $price = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="download_version", type="string", length=6)
      */
-    private $version;
+    #[ORM\Column(name: 'download_version', type: 'string', length: 6)]
+    private ?string $version = null;
 
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Project", inversedBy="downloads")
-     * @ORM\JoinColumn(name="project_id", referencedColumnName="project_id")
-     */
-    private $project;
+    #[ORM\ManyToOne(targetEntity: Project::class, inversedBy: 'downloads')]
+    #[ORM\JoinColumn(name: 'project_id', referencedColumnName: 'project_id', nullable: false)]
+    private ?Project $project = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Platform", inversedBy="downloads")
-     * @ORM\JoinColumn(name="platform_id", referencedColumnName="platform_id")
-     */
-    private $platform;
+    #[ORM\ManyToOne(targetEntity: Platform::class, inversedBy: 'downloads')]
+    #[ORM\JoinColumn(name: 'platform_id', referencedColumnName: 'platform_id', nullable: false)]
+    private ?Platform $platform = null;
 
 
     /**
@@ -85,16 +61,6 @@ class Download
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * Get project id
-     *
-     * @return integer
-     */
-    public function getProjectId(): int
-    {
-        return $this->projectId;
     }
 
     /**
@@ -144,29 +110,6 @@ class Download
     }
 
     /**
-     * Set platformId
-     *
-     * @param integer $platformId
-     * @return Download
-     */
-    public function setPlatformId(int $platformId): Download
-    {
-        $this->platformId = $platformId;
-
-        return $this;
-    }
-
-    /**
-     * Get platformId
-     *
-     * @return integer
-     */
-    public function getPlatformId(): int
-    {
-        return $this->platformId;
-    }
-
-    /**
      * Set downloadPrice
      *
      * @param string $price
@@ -213,25 +156,12 @@ class Download
     }
 
     /**
-     * Set projectId
-     *
-     * @param integer $projectId
-     * @return Download
-     */
-    public function setProjectId(int $projectId): Download
-    {
-        $this->projectId = $projectId;
-
-        return $this;
-    }
-
-    /**
      * Set projects
      *
      * @param Project|null $project
      * @return Download
      */
-    public function setProject(Project $project = null): Download
+    public function setProject(?Project $project = null): Download
     {
         $this->project = $project;
 
@@ -254,7 +184,7 @@ class Download
      * @param Platform|null $platform
      * @return Download
      */
-    public function setPlatform(Platform $platform = null): Download
+    public function setPlatform(?Platform $platform = null): Download
     {
         $this->platform = $platform;
 

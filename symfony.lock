@@ -1,27 +1,6 @@
 {
-    "composer/package-versions-deprecated": {
-        "version": "1.11.99.1"
-    },
-    "doctrine/annotations": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "a2759dd6123694c8d901d0ec80006e044c2e6457"
-        },
-        "files": [
-            "config/routes/annotations.yaml"
-        ]
-    },
-    "doctrine/cache": {
-        "version": "1.10.2"
-    },
     "doctrine/collections": {
         "version": "1.6.7"
-    },
-    "doctrine/common": {
-        "version": "3.1.1"
     },
     "doctrine/dbal": {
         "version": "2.12.1"
@@ -96,18 +75,6 @@
             "ref": "b131e6cbfe1b898a508987851963fff485986285"
         }
     },
-    "erusev/parsedown": {
-        "version": "1.7.4"
-    },
-    "friendsofphp/proxy-manager-lts": {
-        "version": "v1.0.3"
-    },
-    "jms/i18n-routing-bundle": {
-        "version": "3.1.0"
-    },
-    "laminas/laminas-code": {
-        "version": "3.4.1"
-    },
     "laminas/laminas-eventmanager": {
         "version": "3.3.1"
     },
@@ -129,6 +96,21 @@
     "phpdocumentor/type-resolver": {
         "version": "1.4.0"
     },
+    "phpunit/phpunit": {
+        "version": "13.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "11.1",
+            "ref": "ca0bc067abfb40a8de1b2561b96cbfc2b833c314"
+        },
+        "files": [
+            ".env.test",
+            "phpunit.dist.xml",
+            "tests/bootstrap.php",
+            "bin/phpunit"
+        ]
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -143,18 +125,6 @@
     },
     "psr/log": {
         "version": "1.1.3"
-    },
-    "sensio/framework-extra-bundle": {
-        "version": "5.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "5.2",
-            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
-        },
-        "files": [
-            "config/packages/sensio_framework_extra.yaml"
-        ]
     },
     "symfony/asset": {
         "version": "v5.2.4"
@@ -332,21 +302,6 @@
     "symfony/orm-pack": {
         "version": "v2.1.0"
     },
-    "symfony/phpunit-bridge": {
-        "version": "5.1",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "5.1",
-            "ref": "bf16921ef8309a81d9f046e9b6369c46bcbd031f"
-        },
-        "files": [
-            ".env.test",
-            "bin/phpunit",
-            "phpunit.xml.dist",
-            "tests/bootstrap.php"
-        ]
-    },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.22.1"
     },
@@ -362,12 +317,6 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.22.1"
     },
-    "symfony/polyfill-php73": {
-        "version": "v1.22.1"
-    },
-    "symfony/polyfill-php80": {
-        "version": "v1.22.1"
-    },
     "symfony/polyfill-uuid": {
         "version": "v1.22.1"
     },
@@ -381,9 +330,6 @@
         "version": "v5.2.4"
     },
     "symfony/property-info": {
-        "version": "v5.2.4"
-    },
-    "symfony/proxy-manager-bridge": {
         "version": "v5.2.4"
     },
     "symfony/routing": {
@@ -416,9 +362,6 @@
         "version": "v5.2.5"
     },
     "symfony/security-csrf": {
-        "version": "v5.2.4"
-    },
-    "symfony/security-guard": {
         "version": "v5.2.4"
     },
     "symfony/security-http": {
@@ -480,6 +423,18 @@
     },
     "symfony/uid": {
         "version": "v5.2.4"
+    },
+    "symfony/ux-twig-component": {
+        "version": "3.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.13",
+            "ref": "f367ae2a1faf01c503de2171f1ec22567febeead"
+        },
+        "files": [
+            "config/packages/twig_component.yaml"
+        ]
     },
     "symfony/validator": {
         "version": "4.3",

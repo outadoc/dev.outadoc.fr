@@ -8,32 +8,27 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Platform
- *
- * @ORM\Table()
- * @ORM\Entity
  */
+#[ORM\Entity]
+#[ORM\Table]
 class Platform
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="platform_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    #[ORM\Column(name: 'platform_id', type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
+    private ?int $id = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="platform_name", type="string", length=128)
      */
-    private $name;
+    #[ORM\Column(name: 'platform_name', type: 'string', length: 128)]
+    private ?string $name = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Download", mappedBy="platform")
-     */
-    private $downloads;
+    #[ORM\OneToMany(targetEntity: Download::class, mappedBy: 'platform')]
+    private Collection $downloads;
 
     /**
      * Get id

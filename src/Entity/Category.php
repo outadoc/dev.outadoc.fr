@@ -2,47 +2,43 @@
 
 namespace App\Entity;
 
+use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use SortDirection;
 
 /**
  * Category
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
  */
+#[ORM\Entity(repositoryClass: CategoryRepository::class)]
+#[ORM\Table]
 class Category
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="category_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    #[ORM\Column(name: 'category_id', type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
+    private ?int $id = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="category_name", type="string", length=128)
      */
-    private $name;
+    #[ORM\Column(name: 'category_name', type: 'string', length: 128)]
+    private ?string $name = null;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="category_name_long", type="string", length=128)
      */
-    private $nameLong;
+    #[ORM\Column(name: 'category_name_long', type: 'string', length: 128)]
+    private ?string $nameLong = null;
 
 
-    /**
-     * @ORM\OneToMany(targetEntity="Project", mappedBy="category")
-     * @ORM\OrderBy({"startYear" = "DESC", "name" = "ASC"})
-     */
-    private $projects;
+    #[ORM\OneToMany(targetEntity: Project::class, mappedBy: 'category')]
+    #[ORM\OrderBy(['startYear' => SortDirection::Descending, 'name' => SortDirection::Ascending])]
+    private Collection $projects;
 
     /**
      * Get id

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app.request.locale }}">
+<html lang="{{ app.request.locale }}" theme="light">
 <head>
     <meta charset="UTF-8">
     <title>outa[dev] - {% block title %}{% endblock %}</title>
@@ -21,7 +21,7 @@
 <header>
     {% block header %}
         {% block navbar %}
-            <nav class="nav-extended  blue lighten-1">
+            <nav class="nav-extended blue lighten-1">
                 <div class="container">
                     <div class="nav-wrapper">
                         <a href="{{ url('home') }}" class="brand-logo">outa[dev]</a>
