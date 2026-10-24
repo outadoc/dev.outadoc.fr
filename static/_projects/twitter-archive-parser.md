@@ -3,14 +3,9 @@ name: Twitter Archive Parser
 category: other
 start_year: 2012
 end_year: 2012
-thumbnail: a0b8a6ab06657ae0cbac6d6fa7662bff8c7fa00c.png
 short_description:
   en: Store all of your tweets in a single database.
   fr: Stockez tous vos tweets dans une base de données unifiée.
-screenshots:
-- 8690ee7c0428c2bf057193d9735584512a2cebf7.png
-- 7fc14829e6a59281c0bed4fdd297e89ecc0bb0e2.png
-- e7523be114f09ad50b996426935fb8a113b8f5ec.png
 downloads:
 - platform: Unknown
   url: https://github.com/outadoc/twitter-archive-parser/zipball/master

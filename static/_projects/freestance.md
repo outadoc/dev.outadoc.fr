@@ -3,15 +3,9 @@ name: FreeStance
 category: app
 start_year: 2012
 end_year: 2014
-thumbnail: 6183f8651c358e3656058d3575600f897bc366ed.png
 short_description:
   en: Remote control your Freebox.
   fr: Contrôlez votre Freebox à distance.
-screenshots:
-- d5cea5efff7612ba59dfd3bdbb645adb1cb16e6a.png
-- 3745b384c0efcc24187f0f7c9a28fe943b7812ab.png
-- 10daf40348ecc9971dfd20abc095add590da0100.png
-- 23ae1db2f8e09f6c674a851006d6cc056154599b.png
 downloads:
 - platform: iOS
   url: https://itunes.apple.com/fr/app/freestance-telecommande-pour/id527012176?l=fr&ls=1&mt=8

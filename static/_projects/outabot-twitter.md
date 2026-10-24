@@ -3,12 +3,9 @@ name: outa[bot] for Twitter
 category: other
 start_year: 2013
 end_year: 2013
-thumbnail: ea99780973ba647333d7212f36618bc5e43356ed.png
 short_description:
   en: '"Intelligent" customizable bot for Twitter.'
   fr: Robot "intelligent" et personnalisable pour Twitter.
-screenshots:
-- 59e94ea4654410c56503be41e7064e178a47da3d.png
 downloads:
 - platform: Unknown
   url: https://github.com/outadoc/outabot-random-node/zipball/master

@@ -3,13 +3,9 @@ name: CAPS LOCK DAY
 category: extension
 start_year: 2012
 end_year: 2012
-thumbnail: 0fca0f356c3df1aa20eb022414f513ec4d4a97c3.png
 short_description:
   en: WHEN IT'S CAPS LOCK DAY, YOU'LL KNOW IT. REALLY.
   fr: QUAND LE CAPS LOCK DAY ARRIVERA, VOUS LE SAUREZ. VRAIMENT.
-screenshots:
-- b946e3c9d8aff276f087a4d9cc6e90c22020d002.png
-- 14bc40be3d634fee01f859a8fd6f5827bed98f8b.png
 downloads:
 - platform: Google Chrome
   url: https://chrome.google.com/webstore/detail/eoemkhcgjlkoplmgdboielpeoomhppca

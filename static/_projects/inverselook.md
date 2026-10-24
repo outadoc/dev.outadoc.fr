@@ -3,13 +3,9 @@ name: InverseLook
 category: extension
 start_year: 2011
 end_year: 2013
-thumbnail: 5110c025406af03617e073eb1a46daa694023bd1.png
 short_description:
   en: 'Invert the columns of the #NewNewTwitter.'
   fr: 'Inversez les colonnes du #NewNewTwitter.'
-screenshots:
-- fa6122d8041b5ace02b7b4398f4c4246fed18d28.png
-- 012ccba9d75e39bf859812d787adc3de89a0c61b.png
 downloads:
 - platform: Google Chrome
   url: https://chrome.google.com/webstore/detail/pkfckoaeaiccpacjdngfkcgkfbcpikbf

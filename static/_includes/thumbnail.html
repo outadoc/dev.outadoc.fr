@@ -1,15 +1,10 @@
-{%- comment -%}Project card. Parameters: project. Projects without a thumbnail fall back to their first screenshot.{%- endcomment -%}
+{%- comment -%}Project card. Parameters: project.{%- endcomment -%}
 {%- assign project = include.project -%}
-{%- if project.thumbnail -%}
-    {%- assign thumbnail = "/assets/img/data/thumb/" | append: project.thumbnail -%}
-{%- else -%}
-    {%- assign thumbnail = "/assets/img/data/screen/" | append: project.screenshots.first -%}
-{%- endif -%}
 <div class="card card-project tooltipped"
      data-tooltip="{{ project.short_description[page.lang] | escape }}">
     <div class="card-image waves-effect">
         <a href="{{ prefix }}/projects/{{ project.slug }}/">
-            <img src="{{ thumbnail }}"
+            <img src="{{ project.thumbnail_url }}"
                  alt="{{ project.name | escape }}"
                  height="307" width="512"
                  loading="lazy">

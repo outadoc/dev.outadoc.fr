@@ -3,15 +3,9 @@ name: FantaBobMod
 category: other
 start_year: 2011
 end_year: 2013
-thumbnail: f3fa2a31e8d7b9485ab69293fe9358bf10734e05.png
 short_description:
   en: Mod for Minecraft featuring TheFantasion974 and Boblennon.
   fr: Mod Minecraft avec Fanta et Bob.
-screenshots:
-- 4db991c9ca31fbbf0a86c4611397b602d925d91b.png
-- fe0b62f38de0b0d0ef38c1d624f960cedac7e06a.png
-- b68caf7bb75ac405a94148aefe4fef641f7b92e0.png
-- fae46dc8fc2f82ba66ab2537057ea24393d6be61.png
 downloads:
 - platform: Minecraft
   url: http://forum.fantabobshow.com/index.php?threads/mod-fantabobshow.4976/

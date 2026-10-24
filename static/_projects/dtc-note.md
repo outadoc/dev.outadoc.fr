@@ -3,13 +3,9 @@ name: DansTonChat Note
 category: extension
 start_year: 2011
 end_year: 2013
-thumbnail: 9dec5bf7ab50d08059d94d44bbbea453aea68ed1.png
 short_description:
   en: Show the scores on DansTonChat's quotes.
   fr: Affichez de nouveau les notes sur les quotes de DansTonChat.
-screenshots:
-- 112928eb2e51e63cced01f315b1da397aa570f2f.png
-- 2b954862b2a2cbf38af4fd071e8a788bb609435c.png
 downloads:
 - platform: Google Chrome
   url: https://chrome.google.com/webstore/detail/nbjhchagojgjonffingapkcbekglkknm

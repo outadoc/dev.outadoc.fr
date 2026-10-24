@@ -3,14 +3,9 @@ name: FreeStance Chrome
 category: extension
 start_year: 2010
 end_year: 2013
-thumbnail: 3955caea3ef299597feae93c710cc0f21baff37c.png
 short_description:
   en: Remote control your Freebox from your browser.
   fr: Contrôlez votre Freebox depuis votre navigateur.
-screenshots:
-- 34b4479a0083dae81c35392f4cd0eaaa0ae7d607.png
-- 527f6d2425d59f486b9d5416004c9c7b9937dcf1.png
-- 1a9d77fb43c5f1819fe0a381d02e8b33e43ae386.png
 downloads:
 - platform: Google Chrome
   url: https://chrome.google.com/webstore/detail/cpchednnjdladkifnhcohdhkjpkabmjf

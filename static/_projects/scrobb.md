@@ -3,13 +3,9 @@ name: Scrobb
 category: app
 start_year: 2015
 end_year: null
-thumbnail: f93374ef7539569507c667ddf4b1e094734ae964.png
 short_description:
   en: A simple, lightweight Last.fm scrobbler.
   fr: Un scrobbler Last.fm simple et léger.
-screenshots:
-- 4fac765b36908e43d031b7b5806a9e3a88d3eb32.png
-- 2511cce232b26c1e477ee5136c67cb2124fe8607.png
 downloads:
 - platform: Android
   url: https://play.google.com/store/apps/details?id=fr.outadev.lastfm.scrobb

@@ -16,12 +16,9 @@ category: app                 # a key from _data/categories.yml
 start_year: 2013
 end_year: null                # null means "–Today"
 featured: true                # optional: shown at the top of the projects page
-thumbnail: <file>.png         # in assets/img/data/thumb/; optional, falls back to the first screenshot
 short_description:
   en: Stay informed of the schedule of the Twisto bus network in real time.
   fr: Restez informé en temps réel des horaires sur le réseau Twisto.
-screenshots:                  # in assets/img/data/screen/
-- <file>.png
 downloads:
 - platform: Android           # "Web" as the first platform shows a "Go to the website" button instead
   url: https://play.google.com/store/apps/details?id=fr.outadev.twistoast
@@ -35,6 +32,14 @@ English description, in Markdown.
 ```
 
 To hide a project without deleting it, add `published: false`.
+
+A project's images go in a folder named after it, like `assets/img/projects/twistoast/`:
+
+- `thumbnail.png`: the card shown on the projects page (512×307). Optional, the first screenshot is used otherwise.
+- `screenshot-01.png`, `screenshot-02.png`…: shown on the project page in filename order, so keep the numbers zero-padded.
+
+Any common image format works (PNG, JPEG, WebP, GIF, SVG). The build warns about projects without images,
+and about image folders that don't match any project.
 
 Interface strings (navigation, home page, category names) are translated in `_data/i18n.yml`.
 
@@ -72,4 +77,4 @@ bundle exec htmlproofer _site --disable-external --ignore-missing-alt --checks L
 - `_layouts/`, `_includes/`: page templates.
 - `_plugins/localized_project_pages.rb`: generates each project's page in every language.
 - `_assets/`: JavaScript and CSS sources, bundled by esbuild into `assets/build/` (not committed).
-- `assets/img/data/`: project thumbnails and screenshots.
+- `assets/img/projects/`: project thumbnails and screenshots, one folder per project.

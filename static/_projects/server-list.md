@@ -6,9 +6,6 @@ end_year: 2013
 short_description:
   en: Your favorite Minecraft servers, anywhere.
   fr: Vos serveurs Minecraft préférés, n'importe où.
-screenshots:
-- 4cb6d3f592543c4eaa0f258bd33ed6cf532f7ce5.png
-- 3fadd2baad3b4441dd82cae5abcb02c363066743.png
 downloads:
 - platform: iOS
   url: https://itunes.apple.com/en/app/server-list-for-minecraft/id568969472

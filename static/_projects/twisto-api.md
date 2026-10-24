@@ -3,13 +3,9 @@ name: Twisto API
 category: other
 start_year: 2013
 end_year: 2014
-thumbnail: 1208a7f1d6711d6147eeb3686001994b72cf3d33.png
 short_description:
   en: API allowing you to get the schedules of the Twisto bus network in real time.
   fr: API permettant de récupérer les horaires du réseau Twisto en temps réel.
-screenshots:
-- 972c2ca3c252a249ddd3b5a28b34721830e3ab49.png
-- eba8f4cb1104d6787c5c56844742b56b5b6f2e19.png
 downloads:
 - platform: Unknown
   url: https://github.com/outadoc/Twisto-API/zipball/master

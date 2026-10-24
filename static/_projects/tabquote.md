@@ -3,13 +3,9 @@ name: TabQuote
 category: extension
 start_year: 2012
 end_year: 2012
-thumbnail: 25edd9c7fd07802f901fee65f0ca383ccbc6ba15.png
 short_description:
   en: A new quote on your new tab page, every day.
   fr: Chaque jour, une nouvelle citation sur votre page "nouvel onglet".
-screenshots:
-- afff0c3f2b8fb3d400de67f988fe6f3b9ff3f64d.png
-- 92557256089697681157e84ddf25074b4c816621.png
 downloads:
 - platform: Google Chrome
   url: https://chrome.google.com/webstore/detail/mhhkgpgpmehojoocnfmijjcnjakhaefh

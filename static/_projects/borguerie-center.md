@@ -3,14 +3,9 @@ name: Borguerie Center
 category: web
 start_year: 2012
 end_year: 2012
-thumbnail: ed9d79b698dd2e8c428a3d21ded5f600cd51326f.png
 short_description:
   en: Website that lists Jérôme Keinborg's "best" puns.
   fr: Site regroupant les "borgueries" de Jérôme Keinborg.
-screenshots:
-- 00a6d59877b575f531480cf97e520e8f44aa692b.png
-- 6ac71be40b3b2eb489757c93eb21fa5905d6a052.png
-- 35d89cec6d4044932d42f1772ea32bc437816987.png
 downloads:
 - platform: Web
   url: https://borguerie.outadoc.fr

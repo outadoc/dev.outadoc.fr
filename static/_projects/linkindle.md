@@ -4,12 +4,9 @@ category: other
 start_year: 2016
 end_year: null
 featured: true
-thumbnail: 0dbe69fc728c0c75048a14ff0648497448012a37.png
 short_description:
   en: Display your energy consumption trends right from your Linky, onto a Kindle
   fr: Affichez le graphe de votre consommation énergétique directement depuis votre Linky, sur une Kindle
-screenshots:
-- e11b37f31fa419083433060d987d1ac4d160d78d.png
 downloads:
 - platform: Python 3
   url: https://github.com/outadoc/linkindle/archive/master.zip

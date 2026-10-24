@@ -3,12 +3,9 @@ name: DeLorean Speedometer
 category: app
 start_year: 2014
 end_year: 2014
-thumbnail: 8d992d8a6214d9bc1626042df553f0a1cfa6f354.png
 short_description:
   en: OBD-II enabled Back to the Future-style speedometer for Android.
   fr: Compteur de vitesse OBD-II dans le style de Retour vers le Futur.
-screenshots:
-- 2b122d88125f88beb3050ef05f6b089cb3b97400.png
 downloads:
 - platform: Android
   url: https://play.google.com/store/apps/details?id=fr.outadev.dmc12speedo

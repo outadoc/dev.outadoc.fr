@@ -4,13 +4,9 @@ category: app
 start_year: 2015
 end_year: null
 featured: true
-thumbnail: 28afacf953dd8d94c19d04c9a310ccf787613349.png
 short_description:
   en: Get the freshest Splatoon™ stage rotations right on your mobile device!
   fr: Visualisez facilement les stages actuellement en rotation sur Splatoon™ !
-screenshots:
-- 122b742d239ca4bb2aa8223a908f21d5d6369f82.png
-- 8c59bf280a22b2eb20376d3140c0e95c832fdda4.png
 downloads:
 - platform: Android
   url: https://play.google.com/store/apps/details?id=fr.outadev.splatcompanion

@@ -4,15 +4,9 @@ category: app
 start_year: 2013
 end_year: null
 featured: true
-thumbnail: 4ad7ff1f3433d1eb7e6388a7ab4ba69feb242fdd.png
 short_description:
   en: Stay informed of the schedule of the Twisto bus network in real time.
   fr: Restez informé en temps réel des horaires sur le réseau Twisto.
-screenshots:
-- 2b2e009ee03131ca02cda0c1638102441a9cdeba.png
-- d9aaae80d67823f602d126f655beea293389d994.png
-- e230408a59488d600bb0f534d50d933f0dd36bff.png
-- f0f867638744ef4dcc15adfbca094bd8b3ef2cf2.png
 downloads:
 - platform: Android
   url: https://play.google.com/store/apps/details?id=fr.outadev.twistoast

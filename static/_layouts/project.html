@@ -24,21 +24,21 @@ layout: base
 
         <div class="col s12 m12 l5">
             <div class="container screenshots">
-                {%- if project.screenshots.size > 0 %}
+                {%- if project.screenshot_urls.size > 0 %}
                 <div class="row">
                     <div class="col s12 m12">
                         <img class="screenshot z-depth-1"
-                             src="/assets/img/data/screen/{{ project.screenshots.first }}">
+                             src="{{ project.screenshot_urls.first }}">
                     </div>
                 </div>
                 {%- endif %}
 
                 <div class="row row-centered">
                     {%- comment -%}Display every secondary screenshot under the main one{%- endcomment %}
-                    {%- for screenshot in project.screenshots %}
+                    {%- for screenshot in project.screenshot_urls %}
                     <div class="col s3 m3 col-centered">
                         <img class="screenshot z-depth-1"
-                             src="/assets/img/data/screen/{{ screenshot }}">
+                             src="{{ screenshot }}">
                     </div>
                     {%- endfor %}
                 </div>

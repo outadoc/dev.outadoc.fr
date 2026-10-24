@@ -3,14 +3,9 @@ name: FreeStance Desktop
 category: desktop
 start_year: 2009
 end_year: 2011
-thumbnail: fb6a60e32396255f98e7a53a112cf2686b93390c.png
 short_description:
   en: Remote control your Freebox from your computer.
   fr: Contrôlez votre Freebox depuis votre ordinateur.
-screenshots:
-- 4cf1b1692386d26e4c2efc8b97225b76318798ee.png
-- 578eec6000b265e498a2f592cbd5d762bdd22e33.png
-- 74051b9227bea11ee958d44dccd6f17999fc4d4a.png
 downloads:
 - platform: Windows
   url: https://files.outadoc.fr/dev/FreeStance/FreeStance_2.0.1-win.exe

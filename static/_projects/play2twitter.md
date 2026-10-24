@@ -3,12 +3,9 @@ name: Play2Twitter
 category: extension
 start_year: 2012
 end_year: 2013
-thumbnail: 3276b45bb3f6a8e3df3e7adf789a44e0e3f125c8.png
 short_description:
   en: Share the music you're listening to on Twitter.
   fr: Partagez sur Twitter la musique que vous écoutez.
-screenshots:
-- 842e254acd67b9ec51f145cde9b52b8c4a109d76.png
 downloads:
 - platform: Google Chrome
   url: https://chrome.google.com/webstore/detail/play2twitter/ifpficnhaeboljcjfaoabpgbiomajefp

@@ -3,15 +3,9 @@ name: SkinSwitch
 category: app
 start_year: 2012
 end_year: 2015
-thumbnail: 4103a3be31294559764eb5aa5e1a495b87a35484.png
 short_description:
   en: Complete skin manager for Minecraft.
   fr: Gestionnaire de skins pour Minecraft.
-screenshots:
-- 0c533ca28b25c662ab6789dbe9f64816139fa489.png
-- 132be07ca27d96269fc9661459d3593c2d9eaa6e.png
-- 829e7a48a55575dd5ba7947f9a09b3dce341ebac.png
-- bcba2fc32c18a6291b1f30cc35efdd728f60d3fd.png
 downloads:
 - platform: Android
   url: https://play.google.com/store/apps/details?id=fr.outadev.skinswitch

@@ -1,11 +1,15 @@
 # Generates a page per project and per language (/projects/<slug>/ and /fr/projects/<slug>/),
-# and exposes projects sorted the way the projects page lists them.
+# exposes projects sorted the way the projects page lists them, and finds each project's images.
 module LocalizedProjectPages
+  IMAGES_DIR = "/assets/img/projects"
+  IMAGE_EXTENSIONS = %w[.png .jpg .jpeg .gif .webp .svg].freeze
+
   class Generator < Jekyll::Generator
     safe true
 
     def generate(site)
       projects = site.collections["projects"].docs
+      assign_images(site, projects)
 
       # Within a category: most recent first, then by name (case-insensitive, like the original database collation)
       site.data["projects_by_category"] = projects
@@ -32,6 +36,34 @@ module LocalizedProjectPages
           )
           site.pages << page
         end
+      end
+    end
+
+    private
+
+    # Images live in assets/img/projects/<slug>/: `thumbnail.*`, and `screenshot*` files shown in filename order.
+    # Projects without a thumbnail use their first screenshot.
+    def assign_images(site, projects)
+      images = site.static_files
+        .select { |file| file.url.start_with?("#{IMAGES_DIR}/") && IMAGE_EXTENSIONS.include?(File.extname(file.url).downcase) }
+        .group_by { |file| File.basename(File.dirname(file.url)) }
+
+      projects.each do |doc|
+        slug = doc.data["slug"]
+        urls = (images.delete(slug) || []).map(&:url)
+        screenshots = urls.select { |url| File.basename(url).start_with?("screenshot") }.sort
+        thumbnail = urls.find { |url| File.basename(url, ".*") == "thumbnail" } || screenshots.first
+
+        Jekyll.logger.warn "Projects:", "no images found in #{IMAGES_DIR}/#{slug}/" if thumbnail.nil?
+        doc.data["screenshot_urls"] = screenshots
+        doc.data["thumbnail_url"] = thumbnail
+      end
+
+      # Remaining folders belong to unpublished projects, or to none at all
+      images.each_key do |dir|
+        next if File.exist?(site.in_source_dir("_projects", "#{dir}.md"))
+
+        Jekyll.logger.warn "Projects:", "#{IMAGES_DIR}/#{dir}/ doesn't match any project"
       end
     end
   end
