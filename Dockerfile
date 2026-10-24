@@ -16,6 +16,8 @@ EXPOSE 80
 
 VOLUME [ "/var/www/html/public/assets/img/data" ]
 
+# Use PHP's production defaults: never print errors in responses, log them instead
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 RUN echo "memory_limit = 1024M" > "$PHP_INI_DIR/conf.d/custom-php.ini"
 
 # Setup NGINX
