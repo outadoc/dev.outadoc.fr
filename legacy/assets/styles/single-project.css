@@ -43,6 +43,8 @@ nav .project-header.col {
 }
 
 .collection-item.avatar svg.circle {
+    /* Keep the padding inside the 42px circle, as with Materialize 1 */
+    box-sizing: border-box;
     padding: 8px;
     color: white;
 }

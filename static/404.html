@@ -1,0 +1,119 @@
+---
+layout: null
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+    <title>Err... woops.</title>
+</head>
+<body>
+<style type="text/css">
+
+    body {
+        text-align: center;
+        font-family: Helvetica, Arial, serif;
+    }
+
+    #wrapper {
+        position: absolute;
+        top: 50%;
+        height: 350px;
+        margin-top: -200px;
+        width: 99%;
+    }
+
+    #content {
+        margin: auto;
+    }
+
+    #content h1, h1 small {
+        font-size: 28px;
+    }
+
+    h1 small {
+        color: lightgray;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: gray;
+        cursor: pointer;
+    }
+
+    .links {
+        margin-top: 30px;
+    }
+
+    #carrot img {
+        width: 500px;
+        height: auto;
+    }
+
+    #carrot {
+        width: 100%;
+        margin-top: 10px;
+        animation: fly 3s infinite ease-in-out;
+        -moz-animation: fly 3s infinite ease-in-out; /* Firefox */
+        -webkit-animation: fly 3s infinite ease-in-out; /* Safari and Chrome */
+    }
+
+    .very-small {
+        font-size: 10px;
+    }
+
+    @keyframes fly {
+        from {
+            transform: translate(0, 0px);
+        }
+        65% {
+            transform: translate(0, 15px);
+        }
+        to {
+            transform: translate(0, -0px);
+        }
+    }
+
+    @-moz-keyframes fly {
+        from {
+            -moz-transform: translate(0, 0px);
+        }
+        65% {
+            -moz-transform: translate(0, 15px);
+        }
+        to {
+            -moz-transform: translate(0, -0px);
+        }
+    }
+
+    @-webkit-keyframes fly {
+        from {
+            -webkit-transform: translate(0, 0px);
+        }
+        65% {
+            -webkit-transform: translate(0, 15px);
+        }
+        to {
+            -webkit-transform: translate(0, -0px);
+        }
+    }
+
+</style>
+
+<div id="wrapper">
+    <div id="content">
+        <h1>Error 404
+            <small>Not Found</small>
+        </h1>
+        <p>Where did I leave that page? I can't find it anymore.</p>
+        <small class="very-small">Here's a flying carrot to comfort you. &lt;3</small>
+        <div id="carrot">
+            <img src="/assets/img/carrot.png" alt="Carrot? Carrot.">
+        </div>
+        <div class="links"><a href="/">HOME</a> | <a onclick="history.go(-1);">PREVIOUS</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+name: Static site
+
+# Builds the Jekyll site and checks its links and images.
+# Runs on pull requests, and is reused by pages.yml to build what gets deployed.
+on:
+  pull_request:
+    paths:
+      - static/**
+      - .github/workflows/static-site.yml
+
+  workflow_call:
+    inputs:
+      upload-pages-artifact:
+        description: Upload the built site for actions/deploy-pages
+        type: boolean
+        default: false
+
+# Supersede in-progress checks of the same pull request (deployment builds have their own concurrency group)
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('static-site-{0}', github.ref) || format('static-site-{0}', github.run_id) }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: static
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: read
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: static/package-lock.json
+
+      - name: Build front-end assets
+        run: |
+          npm ci
+          npm run build
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          working-directory: static
+          bundler-cache: true
+
+      - uses: actions/configure-pages@v6
+        if: inputs.upload-pages-artifact
+
+      - name: Build site
+        # Fail on broken front matter, and on missing project images or Liquid warnings, which Jekyll only logs
+        run: |
+          set -o pipefail
+          bundle exec jekyll build --strict_front_matter 2>&1 | tee "$RUNNER_TEMP/jekyll.log"
+          if grep -E "Projects:|Liquid Warning" "$RUNNER_TEMP/jekyll.log"; then
+            echo "::error::The site built with warnings, see above"
+            exit 1
+          fi
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check links and images
+        run: bundle exec htmlproofer _site --disable-external --ignore-missing-alt --checks Links,Images,Scripts --no-enforce-https --allow-missing-href
+
+      - uses: actions/upload-pages-artifact@v5
+        if: inputs.upload-pages-artifact
+        with:
+          path: static/_site

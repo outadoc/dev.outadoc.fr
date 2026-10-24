@@ -1,0 +1,60 @@
+{%- assign project = page.project -%}
+{%- assign downloads = project.downloads -%}
+<div class="nav-content">
+    <div class="row">
+        <div class="col s12 m9 project-header">
+            {%- comment -%}Header: project name, description and dates{%- endcomment %}
+            <h1 class="header center-on-small-only white-text">{{ project.name }}</h1>
+            <h4 class="light text-lighten-4 center-on-small-only light-blue-text">
+                {{ project.short_description[page.lang] }}
+            </h4>
+
+            <h4 class="light text-lighten-3 center-on-small-only light-blue-text project-date">
+                {%- if project.end_year == nil %}
+                {{ project.start_year }}&ndash;{{ t.today }}
+                {%- elsif project.start_year == project.end_year %}
+                {{ project.start_year }}
+                {%- else %}
+                {{ project.start_year }}&ndash;{{ project.end_year }}
+                {%- endif %}
+            </h4>
+
+            {%- if downloads.size > 0 %}
+            {%- assign large_classes = "btn btn-large download yellow darken-1 grey-text text-darken-3 waves-effect hide-on-med-and-down" %}
+            {%- assign medium_classes = "btn-floating btn-large waves-effect waves-light yellow darken-1 modal-trigger hide-on-large-only" %}
+
+            {%- if downloads.first.platform == "Web" %}
+            {%- comment -%}Website: only show a "go to" link{%- endcomment %}
+            <a class="{{ large_classes }} website-link" target="_blank"
+               href="{{ downloads.first.url }}">
+                {{ t.go_to_website }}
+            </a>
+            <a id="download-fab" class="{{ medium_classes }}" target="_blank"
+               href="{{ downloads.first.url }}">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            {%- else %}
+            {%- comment -%}Otherwise, display a dropdown with all the downloads{%- endcomment %}
+            <a class="dropdown-trigger {{ large_classes }}" href="#" data-target="dropdown-downloads">
+                {{ t.download }} <i class="fas fa-caret-down"></i>
+            </a>
+
+            <ul id="dropdown-downloads" class="dropdown-content">
+                {%- for download in downloads %}
+                <li>
+                    <a href="{{ download.url }}" class="grey-text text-darken-3">
+                        {{ download.platform }}
+                        ({% include price.html price=download.price %}{% if download.version != "" %}, v{{ download.version }}{% endif %})
+                    </a>
+                </li>
+                {%- endfor %}
+            </ul>
+
+            <a data-target="modal-download" id="download-fab" class="{{ medium_classes }}">
+                <i class="fas fa-download"></i>
+            </a>
+            {%- endif %}
+            {%- endif %}
+        </div>
+    </div>
+</div>

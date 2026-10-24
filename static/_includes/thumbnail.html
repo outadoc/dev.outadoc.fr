@@ -1,0 +1,20 @@
+{%- comment -%}Project card. Parameters: project.{%- endcomment -%}
+{%- assign project = include.project -%}
+<div class="card card-project tooltipped"
+     data-tooltip="{{ project.short_description[page.lang] | escape }}">
+    <div class="card-image waves-effect">
+        <a href="{{ prefix }}/projects/{{ project.slug }}/">
+            <img src="{{ project.thumbnail_url }}"
+                 alt="{{ project.name | escape }}"
+                 height="307" width="512"
+                 loading="lazy">
+        </a>
+    </div>
+    <div class="card-content">
+        <p class="center truncate">
+            <a class="grey-text text-darken-2" href="{{ prefix }}/projects/{{ project.slug }}/">
+                {{ project.name }}
+            </a>
+        </p>
+    </div>
+</div>

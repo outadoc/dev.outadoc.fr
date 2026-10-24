@@ -1,0 +1,76 @@
+---
+layout: base
+---
+{%- include locale.html -%}
+{%- assign project = page.project -%}
+{%- assign source_downloads = project.downloads | where_exp: "download", "download.source != ''" -%}
+<div class="container project-single">
+    <div class="row">
+        <div class="col s12 m12 l7 project-description">
+            {{ page.description | markdownify }}
+
+            {%- if source_downloads.size > 0 %}
+            <p class="source-code-links">
+                <em class="grey-text">
+                    {{ t.source_code_for }}
+                    {%- for download in source_downloads -%}
+                    {% unless forloop.first %},{% endunless %}
+                    <a href="{{ download.source }}">{{ download.platform }}</a>
+                    {%- endfor %}
+                </em>
+            </p>
+            {%- endif %}
+        </div>
+
+        <div class="col s12 m12 l5">
+            <div class="container screenshots">
+                {%- if project.screenshot_urls.size > 0 %}
+                <div class="row">
+                    <div class="col s12 m12">
+                        <img class="screenshot z-depth-1"
+                             src="{{ project.screenshot_urls.first }}">
+                    </div>
+                </div>
+                {%- endif %}
+
+                <div class="row row-centered">
+                    {%- comment -%}Display every secondary screenshot under the main one{%- endcomment %}
+                    {%- for screenshot in project.screenshot_urls %}
+                    <div class="col s3 m3 col-centered">
+                        <img class="screenshot z-depth-1"
+                             src="{{ screenshot }}">
+                    </div>
+                    {%- endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<dialog id="modal-download" class="modal bottom-sheet" tabindex="-1">
+    <div class="modal-content">
+        <div class="collection-header"><h4>{{ t.download }} {{ project.name }}</h4></div>
+        <div class="collection">
+            {%- for download in project.downloads %}
+            <div class="row collection-item avatar">
+                <div class="col s11">
+                    <a href="{{ download.url }}">
+                        <i class="fas fa-download circle blue lighten-1"></i>
+                        <span class="title">{{ download.platform }}</span>
+
+                        <p>{% if download.version != "" %}Version {{ download.version }}<br>{% endif %}
+                            {%- include price.html price=download.price -%}
+                        </p>
+                    </a>
+                </div>
+                {%- if download.source != "" %}
+                <div class="col s1">
+                    <a href="{{ download.source }}" target="_blank" class="secondary-content">
+                        <span class="fab fa-github grey-text darken-2"></span>
+                    </a>
+                </div>
+                {%- endif %}
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</dialog>

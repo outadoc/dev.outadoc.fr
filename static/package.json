@@ -1,0 +1,16 @@
+{
+    "private": true,
+    "license": "UNLICENSED",
+    "type": "module",
+    "scripts": {
+        "build": "esbuild _assets/js/app.js _assets/js/index.js _assets/js/single-project.js --bundle --minify --outdir=assets/build",
+        "watch": "npm run build -- --watch=forever"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^7.3.1",
+        "@materializecss/materialize": "^2.4.0"
+    },
+    "devDependencies": {
+        "esbuild": "^0.28.2"
+    }
+}

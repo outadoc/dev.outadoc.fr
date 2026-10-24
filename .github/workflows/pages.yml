@@ -1,0 +1,40 @@
+name: Pages
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - static/**
+      - .github/workflows/pages.yml
+      - .github/workflows/static-site.yml
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a deployment in progress finish, but skip queued ones in favor of the latest
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    uses: ./.github/workflows/static-site.yml
+    with:
+      upload-pages-artifact: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/deploy-pages@v5
+        id: deployment

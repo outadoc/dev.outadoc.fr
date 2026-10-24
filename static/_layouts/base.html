@@ -1,0 +1,121 @@
+{%- include locale.html -%}
+{%- case page.layout -%}
+    {%- when "home" -%}{%- assign title = t.home -%}{%- assign entry = "index" -%}
+    {%- when "projects" -%}{%- assign title = t.projects -%}{%- assign entry = nil -%}
+    {%- when "project" -%}{%- assign title = page.title -%}{%- assign entry = "single-project" -%}
+{%- endcase -%}
+{%- assign version = site.time | date: "%s" -%}
+<!DOCTYPE html>
+<html lang="{{ page.lang }}" theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>outa[dev] - {{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1C8DE8">
+    <link rel="icon" href="/favicon.png">
+
+    <style type="text/css">
+        @font-face {
+            font-family: "I pixel u";
+            src: url('/assets/fonts/I-pixel-u.ttf');
+        }
+    </style>
+
+    <link rel="stylesheet" href="/assets/build/app.css?v={{ version }}">
+    {%- if entry %}
+    <link rel="stylesheet" href="/assets/build/{{ entry }}.css?v={{ version }}">
+    {%- endif %}
+</head>
+<body>
+<header>
+    <nav class="nav-extended blue lighten-1">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="{{ prefix }}/" class="brand-logo">outa[dev]</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="{% if page.nav == 'home' %}active{% endif %}">
+                        <a href="{{ prefix }}/" class="waves-effect">{{ t.home }}</a>
+                    </li>
+                    <li class="{% if page.nav == 'projects' %}active{% endif %}">
+                        <a href="{{ prefix }}/projects/" class="waves-effect">{{ t.projects }}</a>
+                    </li>
+                    <li>
+                        <a href="https://baptiste.candellier.me" class="waves-effect">{{ t.about_me }}</a>
+                    </li>
+                    <li class="separator"></li>
+                    <li><a href="https://github.com/outadoc" target="_blank">
+                            <i class="fab fa-github"></i></a></li>
+                    <li><a href="https://stackoverflow.com/story/candellierba" target="_blank">
+                            <i class="fab fa-stack-overflow"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/candellierba" target="_blank">
+                            <i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+
+            {%- if page.layout == "project" %}
+            {% include project-header.html %}
+            {%- elsif page.layout != "home" %}
+            <div class="nav-content">
+                <span class="nav-title">{{ title }}</span>
+            </div>
+            {%- endif %}
+        </div>
+    </nav>
+
+    <ul id="slide-out" class="sidenav">
+        <li class="logo">
+            <a id="logo-container" href="{{ prefix }}/" class="brand-logo">
+                outa[dev]
+            </a>
+        </li>
+        <li class="separator"></li>
+        <li class="{% if page.nav == 'home' %}active{% endif %}">
+            <a href="{{ prefix }}/" class="waves-effect">
+                <i class="fas fa-home"></i> {{ t.home }}
+            </a>
+        </li>
+        <li class="{% if page.nav == 'projects' %}active{% endif %}">
+            <a href="{{ prefix }}/projects/" class="waves-effect">
+                <i class="fab fa-app-store-ios"></i> {{ t.projects }}
+            </a>
+        </li>
+        <li>
+            <a href="https://baptiste.candellier.me" class="waves-effect">
+                <i class="fas fa-external-link-alt"></i> {{ t.about_me }}
+            </a>
+        </li>
+        <li class="separator"></li>
+        <li>
+            <a class="subheader">{{ t.social }}</a>
+        </li>
+        <li><a href="https://stackoverflow.com/story/candellierba" target="_blank">
+                <i class="fab fa-stack-overflow"></i> Stack Overflow</a></li>
+        <li><a href="https://github.com/outadoc" target="_blank">
+                <i class="fab fa-github"></i> Github</a></li>
+        <li><a href="https://www.linkedin.com/in/candellierba" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn</a></li>
+    </ul>
+
+    {%- if page.layout == "projects" %}
+    {% include featured-projects.html %}
+    {%- endif %}
+</header>
+<main>
+    {{ content }}
+</main>
+<footer class="page-footer blue lighten-1">
+    <div class="footer-copyright">
+        <div class="container">
+            © 2012 - 2018 Baptiste Candellier. Built with Jekyll + ❤︎.
+        </div>
+    </div>
+</footer>
+<script src="/assets/build/app.js?v={{ version }}" defer></script>
+{%- if entry %}
+<script src="/assets/build/{{ entry }}.js?v={{ version }}" defer></script>
+{%- endif %}
+</body>
+</html>

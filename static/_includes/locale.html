@@ -1,0 +1,3 @@
+{%- comment -%}Sets `t` (interface strings) and `prefix` (URL prefix) for the current page language.{%- endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- if page.lang == site.languages.first -%}{%- assign prefix = "" -%}{%- else -%}{%- assign prefix = "/" | append: page.lang -%}{%- endif -%}

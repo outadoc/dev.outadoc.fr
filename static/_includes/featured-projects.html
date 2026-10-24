@@ -1,0 +1,11 @@
+<div class="top-extra blue lighten-1">
+    <div class="container">
+        <div class="row">
+            {%- for project in site.data.featured_projects %}
+            <div class="col s6 m4">
+                {% include thumbnail.html project=project %}
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</div>
