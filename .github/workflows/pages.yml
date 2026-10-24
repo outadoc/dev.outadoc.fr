@@ -7,6 +7,7 @@ on:
     paths:
       - static/**
       - .github/workflows/pages.yml
+      - .github/workflows/static-site.yml
 
   workflow_dispatch:
 
@@ -20,46 +21,11 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-defaults:
-  run:
-    working-directory: static
-
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-          cache-dependency-path: static/package-lock.json
-
-      - name: Build front-end assets
-        run: |
-          npm ci
-          npm run build
-
-      - uses: ruby/setup-ruby@v1
-        with:
-          working-directory: static
-          bundler-cache: true
-
-      - uses: actions/configure-pages@v6
-
-      - name: Build site
-        run: bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
-
-      - name: Check links and images
-        run: bundle exec htmlproofer _site --disable-external --ignore-missing-alt --checks Links,Images,Scripts --no-enforce-https --allow-missing-href
-
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: static/_site
+    uses: ./.github/workflows/static-site.yml
+    with:
+      upload-pages-artifact: true
 
   deploy:
     needs: build

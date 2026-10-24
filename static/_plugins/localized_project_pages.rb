@@ -3,12 +3,14 @@
 module LocalizedProjectPages
   IMAGES_DIR = "/assets/img/projects"
   IMAGE_EXTENSIONS = %w[.png .jpg .jpeg .gif .webp .svg].freeze
+  REQUIRED_FIELDS = %w[name category start_year].freeze
 
   class Generator < Jekyll::Generator
     safe true
 
     def generate(site)
       projects = site.collections["projects"].docs
+      validate(site, projects)
       assign_images(site, projects)
 
       # Within a category: most recent first, then by name (case-insensitive, like the original database collation)
@@ -40,6 +42,23 @@ module LocalizedProjectPages
     end
 
     private
+
+    # Fail with a clear message rather than a cryptic error, or a project silently missing from the projects page
+    def validate(site, projects)
+      categories = site.data["categories"].map { |category| category["key"] }
+
+      projects.each do |doc|
+        missing = REQUIRED_FIELDS.select { |field| doc.data[field].nil? }
+        unless missing.empty?
+          raise Jekyll::Errors::FatalException, "#{doc.relative_path}: missing #{missing.join(", ")}"
+        end
+
+        unless categories.include?(doc.data["category"])
+          raise Jekyll::Errors::FatalException,
+                "#{doc.relative_path}: unknown category '#{doc.data["category"]}' (see _data/categories.yml)"
+        end
+      end
+    end
 
     # Images live in assets/img/projects/<slug>/: `thumbnail.*`, and `screenshot*` files shown in filename order.
     # Projects without a thumbnail use their first screenshot.

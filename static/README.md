@@ -2,6 +2,8 @@
 
 Static version of the portfolio, built with [Jekyll](https://jekyllrb.com) and deployed to GitHub Pages
 by `.github/workflows/pages.yml` on every push to `develop` that touches `static/`.
+Pull requests touching `static/` are checked by `.github/workflows/static-site.yml`, which runs the same build:
+it fails on invalid front matter, missing project images, or broken internal links and images.
 
 English pages are served at the root and French pages under `/fr/`.
 
