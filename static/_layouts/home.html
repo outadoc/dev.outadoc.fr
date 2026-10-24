@@ -1,0 +1,39 @@
+---
+layout: base
+---
+{%- include locale.html -%}
+{%- assign backgrounds = site.static_files | where_exp: "file", "file.path contains '/assets/img/hello/'" | map: "path" -%}
+<div class="col m12 z-depth-1" id="hello"
+     data-backgrounds='{{ backgrounds | jsonify | escape }}'
+     style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ backgrounds.first }}')">
+    <div class="title">
+        <h2>{{ t.welcome }}</h2>
+        <h3>{{ t.welcome_text }}</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col m4 s12">
+            <div class="center promo">
+                <i class="fas fa-heart"></i>
+                <p class="promo-caption">{{ t.fun_title }}</p>
+                <p class="light center">{{ t.fun_text }}</p>
+            </div>
+        </div>
+        <div class="col m4 s12">
+            <div class="center promo">
+                <i class="fas fa-share-alt"></i>
+                <p class="promo-caption">{{ t.open_source_title }}</p>
+                <p class="light center">{{ t.open_source_text }}</p>
+            </div>
+        </div>
+        <div class="col m4 s12">
+            <div class="center promo">
+                <i class="fas fa-flask"></i>
+                <p class="promo-caption">{{ t.experimentation_title }}</p>
+                <p class="light center">{{ t.experimentation_text }}</p>
+            </div>
+        </div>
+    </div>
+</div>

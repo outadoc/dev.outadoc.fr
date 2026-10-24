@@ -1,0 +1,23 @@
+---
+layout: base
+---
+{%- include locale.html -%}
+<div class="container">
+    {%- for category in site.data.categories %}
+    {%- assign projects = site.data.projects_by_category[category.key] %}
+    <div class="section">
+        <h5>{{ t.categories[category.key] | default: category.name }}</h5>
+
+        <div class="row">
+            {%- for project in projects %}
+            <div class="col s6 m3">
+                {% include thumbnail.html project=project %}
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+    {%- unless forloop.last %}
+    <div class="divider"></div>
+    {%- endunless %}
+    {%- endfor %}
+</div>

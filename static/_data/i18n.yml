@@ -1,0 +1,52 @@
+# Interface strings, by language
+en:
+  home: Home
+  projects: Projects
+  about_me: About me
+  social: Social
+  welcome: Welcome!
+  welcome_text: You have successfully reached Baptiste Candellier's software projects portfolio.
+  fun_title: Fun Everywhere
+  fun_text: I'm a soon-to-be software engineer making programs for my fun and everybody else's in my free time.
+  open_source_title: Open-Source Software
+  open_source_text: By making most of my projects free and open-source, I hope to give back the community what it has given to me.
+  experimentation_title: Experimentation
+  experimentation_text: I like to experiment with new technologies and having fun with them making stuff, useful or not. Have fun too!
+  free: Free
+  today: Today
+  go_to_website: Go to the website
+  download: Download
+  source_code_for: Check out the source code for
+  categories:
+    app: Mobile Applications
+    desktop: Desktop Programs
+    web: Websites
+    extension: Browser Extensions
+    other: Other
+    hardware: Hardware
+
+fr:
+  home: Accueil
+  projects: Projets
+  about_me: À propos de moi
+  social: Réseaux sociaux
+  welcome: Bienvenue !
+  welcome_text: Vous êtes bien sur le portfolio de projets logiciels de Baptiste Candellier.
+  fun_title: Fun, fun, fun !
+  fun_text: Je suis futur ingénieur en informatique qui fait des programmes pour son plaisir et celui des autres.
+  open_source_title: Logiciels open-source
+  open_source_text: En rendant la plupart de mes projets libres et open-source, j'espère rendre la communauté ce qu'elle m'a apporté.
+  experimentation_title: Expérimentation
+  experimentation_text: J'aime expérimenter avec de nouvelles technologies et m'amuser en créant, utile ou pas. Amusez-vous autant que moi !
+  free: Gratuit
+  today: Aujourd'hui
+  go_to_website: Aller sur le site
+  download: Télécharger
+  source_code_for: Accéder au code source pour
+  categories:
+    app: Applications mobiles
+    desktop: Programmes bureau
+    web: Sites web
+    extension: Extensions navigateur
+    other: Autres
+    hardware: Matériel

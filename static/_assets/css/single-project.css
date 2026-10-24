@@ -1,0 +1,142 @@
+.card-image.waves-effect {
+    display: block;
+}
+
+.btn.download {
+    top: 10px;
+}
+
+.dropdown-button.download {
+    padding-right: 12px;
+}
+
+.collection a p {
+    color: rgba(0, 0, 0, 0.71);
+}
+
+.collection a .title {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.collection .collection-item.avatar .circle {
+    margin-top: 7px;
+}
+
+#download-fab {
+    position: absolute;
+    right: 28px;
+}
+
+.project-single {
+    margin-top: 20px !important;
+}
+
+nav .project-header.col {
+    padding-bottom: 30px;
+}
+
+.collection-item .secondary-content svg {
+    top: 15px;
+    position: relative;
+    font-size: 18pt;
+}
+
+.collection-item.avatar svg.circle {
+    /* Keep the padding inside the 42px circle, as with Materialize 1 */
+    box-sizing: border-box;
+    padding: 8px;
+    color: white;
+}
+
+.project-description {
+    font-size: 16px;
+}
+
+.screenshot:not(.active) {
+    max-height: 460px;
+    max-width: 100%;
+    width: auto;
+}
+
+a.button-collapse.top-nav {
+    top: -30px;
+}
+
+.screenshots.container {
+    margin: 0;
+    padding: 0;
+    /* Screenshots overlap the header, so keep them above it */
+    position: relative;
+    z-index: 1;
+}
+
+img.screenshot {
+    margin: auto;
+}
+
+.source-code-links {
+    margin-top: 20px;
+}
+
+.project-date {
+    font-size: 28px;
+}
+
+.project-description ul {
+    padding-left: 25px;
+}
+
+.project-description ul li {
+    list-style-type: disc;
+}
+
+/* Cute centering hack for screenshot thumbnails */
+.row-centered {
+    text-align: center !important;
+}
+
+.col-centered {
+    display: inline-block !important;
+    float: none !important;
+    text-align: left !important;
+}
+
+#modal-download .fab {
+    font-size: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+    main .section {
+        padding-top: 37px;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .screenshots.container {
+        margin-top: -110px;
+    }
+}
+
+img.screenshot {
+    cursor: zoom-in;
+}
+
+dialog.screenshot-viewer {
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 90vw;
+    max-height: 90vh;
+    cursor: zoom-out;
+}
+
+dialog.screenshot-viewer::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+dialog.screenshot-viewer img {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+}

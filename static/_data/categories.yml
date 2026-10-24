@@ -1,0 +1,13 @@
+# Categories, in the order they appear on the projects page
+- key: app
+  name: Mobile Applications
+- key: desktop
+  name: Desktop Programs
+- key: web
+  name: Websites
+- key: extension
+  name: Browser Extensions
+- key: other
+  name: Other
+- key: hardware
+  name: Hardware

@@ -1,0 +1,31 @@
+title: outa[dev]
+url: https://dev.outadoc.fr
+
+# Languages: the first one is served at the root, the others under /<lang>/
+languages: [en, fr]
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  projects:
+    # Project pages are generated for each language by _plugins/localized_project_pages.rb
+    output: false
+
+defaults:
+  - scope:
+      type: projects
+    values:
+      render_with_liquid: false
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .ruby-version
+  - package.json
+  - package-lock.json
+  - node_modules
+  - vendor
